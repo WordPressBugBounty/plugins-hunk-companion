@@ -513,6 +513,32 @@ header {
     justify-content: space-between;
     border-radius: 25px;
   }
+
+  /**searchbox **/
+.asib-main-tmpl .th-searchbar {
+  text-align: center;
+}
+
+.asib-main-tmpl .th-searchbar input,
+
+.asib-main-tmpl .th-searchbar input[type=text]:focus  {
+border: 2px solid #f1f1f1;
+  width: 32%;
+  font-size: 1rem;
+  color: #a1a1a1;
+}
+
+.asib-main-tmpl .th-searchbar input::placeholder {
+  font-size: 1rem;
+  color: #a1a1a1;
+}
+
+.asib-main-tmpl .th-searchbar .th-not-found-list {
+  margin-top: 20px;
+  color: #a9a9a9;
+  font-size: 15px;
+}
+
   
   .aisb-container-main-tmpl  .category-list {
     margin-bottom: 20px;
