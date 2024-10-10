@@ -23,24 +23,25 @@ class HUNK_COMPANION_SITES_APP{
 
   }
 
-    public function register_routes() {
+  public function register_routes() {
+    if(current_user_can('manage_options')){
 
-        register_rest_route( 'hc/v1', 'themehunk-import', array(
-          'methods' => 'POST',
-          'callback' => array( $this, 'tp_install' ),
-          'permission_callback' => '__return_true',
-      ) );
-
-
-        register_rest_route( 'ai/v1', 'ai-site-import', array(
-          'methods' => 'POST',
-          'callback' =>  array( $this, 'data_import' ),
-          'login_user_id' => get_current_user_id(),
-          'permission_callback' => '__return_true',
-      ) );
+      register_rest_route( 'hc/v1', 'themehunk-import', array(
+        'methods' => 'POST',
+        'callback' => array( $this, 'tp_install' ),
+        'permission_callback' => '__return_true',
+    ) );
 
 
+      register_rest_route( 'ai/v1', 'ai-site-import', array(
+        'methods' => 'POST',
+        'callback' =>  array( $this, 'data_import' ),
+        'login_user_id' => get_current_user_id(),
+        'permission_callback' => '__return_true',
+    ) );
     }
+
+  }
 
 
   public function tp_install(WP_REST_Request $request){
