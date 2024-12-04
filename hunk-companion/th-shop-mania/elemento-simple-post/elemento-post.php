@@ -118,13 +118,13 @@ class elementoPostSimple extends Widget_Base
                 'label'   => __('Title Html Tag', 'elemento-addons'),
                 'type'    => Controls_Manager::SELECT,
                 'options' => [
-                    'h1' => __("H1", "elemento-addons"),
-                    'h2' => __("H2", "elemento-addons"),
-                    'h3' => __("H3", "elemento-addons"),
-                    'h4' => __("H4", "elemento-addons"),
-                    'h5' => __("H5", "elemento-addons"),
-                    'h6' => __("H6", "elemento-addons"),
-                    'p' => __("P", "elemento-addons"),
+                    'h1'  => __("H1", "elemento-addons"),
+                    'h2'  => __("H2", "elemento-addons"),
+                    'h3'  => __("H3", "elemento-addons"),
+                    'h4'  => __("H4", "elemento-addons"),
+                    'h5'  => __("H5", "elemento-addons"),
+                    'h6'  => __("H6", "elemento-addons"),
+                    'p'   => __("P", "elemento-addons"),
                 ],
                 'default' => 'h2',
                 // 'condition' => [
@@ -395,10 +395,7 @@ class elementoPostSimple extends Widget_Base
                 'label'     => __('Background Color', 'elemento-addons'),
                 'type'      => Controls_Manager::COLOR,
                 "default"   => "#f9f9f9",
-                'scheme'    => [
-                    'type'  => Scheme_Color::get_type(),
-                    'value' => Scheme_Color::COLOR_1,
-                ],
+                
                 'selectors' => [
                     '{{WRAPPER}} .elemento-post-layout-listGrid .elemento-post-layout-iteme > div' => 'background-color: {{VALUE}};',
                 ],
@@ -523,10 +520,7 @@ class elementoPostSimple extends Widget_Base
                 'label'     => __('Color', 'elemento-addons'),
                 'type'      => Controls_Manager::COLOR,
                 "default"   => "#54595f",
-                'scheme'    => [
-                    'type'  => Scheme_Color::get_type(),
-                    'value' => Scheme_Color::COLOR_1,
-                ],
+               
                 'selectors' => [
                     '{{WRAPPER}} .elemento-post-content .elemento-post-title' => 'color: {{VALUE}};',
                 ],
@@ -545,10 +539,7 @@ class elementoPostSimple extends Widget_Base
                 'label'     => __('Color', 'elemento-addons'),
                 'type'      => Controls_Manager::COLOR,
                 "default"   => "#383a3c",
-                'scheme'    => [
-                    'type'  => Scheme_Color::get_type(),
-                    'value' => Scheme_Color::COLOR_1,
-                ],
+                
                 'selectors' => [
                     '{{WRAPPER}} .elemento-post-content .elemento-post-title:hover' => 'color: {{VALUE}};',
                 ],
@@ -591,10 +582,7 @@ class elementoPostSimple extends Widget_Base
                 'label'     => __('Color', 'elemento-addons'),
                 'type'      => Controls_Manager::COLOR,
                 "default"   => "#adadad",
-                'scheme'    => [
-                    'type'  => Scheme_Color::get_type(),
-                    'value' => Scheme_Color::COLOR_1,
-                ],
+               
                 'selectors' => [
                     '{{WRAPPER}} .elemento-post-content .elemento-post-meta-data' => 'color: {{VALUE}};',
                 ],
@@ -606,10 +594,7 @@ class elementoPostSimple extends Widget_Base
                 'label'     => __('Separator Color', 'elemento-addons'),
                 'type'      => Controls_Manager::COLOR,
                 "default"   => "#adadad",
-                'scheme'    => [
-                    'type'  => Scheme_Color::get_type(),
-                    'value' => Scheme_Color::COLOR_1,
-                ],
+                
                 'selectors' => [
                     '{{WRAPPER}} .elemento-post-content .elemento-post-meta-data span + span:before' => 'color: {{VALUE}};',
                 ],
@@ -669,10 +654,7 @@ class elementoPostSimple extends Widget_Base
                 'label'     => __('Color', 'elemento-addons'),
                 'type'      => Controls_Manager::COLOR,
                 "default"   => "#777",
-                'scheme'    => [
-                    'type'  => Scheme_Color::get_type(),
-                    'value' => Scheme_Color::COLOR_1,
-                ],
+               
                 'selectors' => [
                     '{{WRAPPER}} .elemento-post-content .elemento-post-excerpt p' => 'color: {{VALUE}};',
                 ],
@@ -747,10 +729,7 @@ class elementoPostSimple extends Widget_Base
                 'label'     => __('Color', 'elemento-addons'),
                 'type'      => Controls_Manager::COLOR,
                 "default"   => "#61ce70",
-                'scheme'    => [
-                    'type'  => Scheme_Color::get_type(),
-                    'value' => Scheme_Color::COLOR_1,
-                ],
+               
                 'selectors' => [
                     '{{WRAPPER}} .elemento-post-content .elemento-post-read-more' => 'color: {{VALUE}};',
                 ],
@@ -762,10 +741,7 @@ class elementoPostSimple extends Widget_Base
                 'label'     => __('Background Color', 'elemento-addons'),
                 'type'      => Controls_Manager::COLOR,
                 "default"   => "transparent",
-                'scheme'    => [
-                    'type'  => Scheme_Color::get_type(),
-                    'value' => Scheme_Color::COLOR_1,
-                ],
+                
                 'selectors' => [
                     '{{WRAPPER}} .elemento-post-content .elemento-post-read-more' => 'background-color: {{VALUE}};',
                 ],
@@ -784,10 +760,7 @@ class elementoPostSimple extends Widget_Base
                 'label'     => __('Color', 'elemento-addons'),
                 'type'      => Controls_Manager::COLOR,
                 "default"   => "#383a3c",
-                'scheme'    => [
-                    'type'  => Scheme_Color::get_type(),
-                    'value' => Scheme_Color::COLOR_1,
-                ],
+                
                 'selectors' => [
                     '{{WRAPPER}} .elemento-post-content .elemento-post-read-more:hover' => 'color: {{VALUE}};',
                 ],
@@ -799,10 +772,7 @@ class elementoPostSimple extends Widget_Base
                 'label'     => __('Background Color', 'elemento-addons'),
                 'type'      => Controls_Manager::COLOR,
                 "default"   => "transparent",
-                'scheme'    => [
-                    'type'  => Scheme_Color::get_type(),
-                    'value' => Scheme_Color::COLOR_1,
-                ],
+               
                 'selectors' => [
                     '{{WRAPPER}} .elemento-post-content .elemento-post-read-more:hover' => 'background-color: {{VALUE}};',
                 ],
@@ -900,10 +870,7 @@ class elementoPostSimple extends Widget_Base
                 'label'     => __('Color', 'elemento-addons'),
                 'type'      => Controls_Manager::COLOR,
                 "default"   => "#616161",
-                'scheme'    => [
-                    'type'  => Scheme_Color::get_type(),
-                    'value' => Scheme_Color::COLOR_1,
-                ],
+               
                 'selectors' => [
                     '{{WRAPPER}} .elemento-addons-pagination .elemento-post-link' => 'color: {{VALUE}};',
                 ],
@@ -915,10 +882,7 @@ class elementoPostSimple extends Widget_Base
                 'label'     => __('Background Color', 'elemento-addons'),
                 'type'      => Controls_Manager::COLOR,
                 "default"   => "#ffff",
-                'scheme'    => [
-                    'type'  => Scheme_Color::get_type(),
-                    'value' => Scheme_Color::COLOR_1,
-                ],
+                
                 'selectors' => [
                     '{{WRAPPER}} .elemento-addons-pagination .elemento-post-link' => 'background-color: {{VALUE}};',
                 ],
@@ -937,10 +901,7 @@ class elementoPostSimple extends Widget_Base
                 'label'     => __('Color', 'elemento-addons'),
                 'type'      => Controls_Manager::COLOR,
                 "default"   => "#1b1a1a",
-                'scheme'    => [
-                    'type'  => Scheme_Color::get_type(),
-                    'value' => Scheme_Color::COLOR_1,
-                ],
+                
                 'selectors' => [
                     '{{WRAPPER}} .elemento-addons-pagination .elemento-post-link:hover,
                     {{WRAPPER}} .elemento-addons-pagination .elemento-post-link.active' => 'color: {{VALUE}};',
@@ -953,10 +914,7 @@ class elementoPostSimple extends Widget_Base
                 'label'     => __('Background Color', 'elemento-addons'),
                 'type'      => Controls_Manager::COLOR,
                 "default"   => "#f3f3f3",
-                'scheme'    => [
-                    'type'  => Scheme_Color::get_type(),
-                    'value' => Scheme_Color::COLOR_1,
-                ],
+                
                 'selectors' => [
                     '{{WRAPPER}} .elemento-addons-pagination .elemento-post-link:hover,
                     {{WRAPPER}} .elemento-addons-pagination .elemento-post-link.active' => 'background-color: {{VALUE}};',

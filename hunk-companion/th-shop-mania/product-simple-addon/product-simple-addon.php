@@ -101,10 +101,7 @@ class elementoProductSimple extends Widget_Base
                 'label'     => __('Color', 'elemento-addons'),
                 'type'      => Controls_Manager::COLOR,
                 "default"   => "white",
-                'scheme'    => [
-                    'type'  => Scheme_Color::get_type(),
-                    'value' => Scheme_Color::COLOR_1,
-                ],
+                
                 'selectors' => [
                     '{{WRAPPER}} .elemento-product-outer-wrap a.elemento-addons-quickview-simple' => 'color: {{VALUE}};',
                 ],
@@ -116,10 +113,7 @@ class elementoProductSimple extends Widget_Base
                 'label'     => __('Background Color', 'elemento-addons'),
                 'type'      => Controls_Manager::COLOR,
                 "default"   => "#20C9AE",
-                'scheme'    => [
-                    'type'  => Scheme_Color::get_type(),
-                    'value' => Scheme_Color::COLOR_1,
-                ],
+                
                 'selectors' => [
                     '{{WRAPPER}} .elemento-product-outer-wrap a.elemento-addons-quickview-simple' => 'background-color: {{VALUE}};',
                 ],
@@ -138,10 +132,7 @@ class elementoProductSimple extends Widget_Base
                 'label'     => __('Color', 'elemento-addons'),
                 'type'      => Controls_Manager::COLOR,
                 "default"   => "white",
-                'scheme'    => [
-                    'type'  => Scheme_Color::get_type(),
-                    'value' => Scheme_Color::COLOR_1,
-                ],
+                
                 'selectors' => [
                     '{{WRAPPER}} .elemento-product-outer-wrap a.elemento-addons-quickview-simple:hover' => 'color: {{VALUE}};',
                 ],
@@ -153,10 +144,7 @@ class elementoProductSimple extends Widget_Base
                 'label'     => __('background Color', 'elemento-addons'),
                 'type'      => Controls_Manager::COLOR,
                 "default"   => "#20C9AE",
-                'scheme'    => [
-                    'type'  => Scheme_Color::get_type(),
-                    'value' => Scheme_Color::COLOR_1,
-                ],
+                
                 'selectors' => [
                     '{{WRAPPER}} .elemento-product-outer-wrap a.elemento-addons-quickview-simple:hover' => 'background-color: {{VALUE}};',
                 ],
@@ -341,10 +329,7 @@ class elementoProductSimple extends Widget_Base
                 'label'     => __('Background Color', 'elemento-addons'),
                 'type'      => Controls_Manager::COLOR,
                 'default'   => "#F9F9F9",
-                'scheme'    => [
-                    'type'  => Scheme_Color::get_type(),
-                    'value' => Scheme_Color::COLOR_1,
-                ],
+                
                 'selectors' => [
                     '{{WRAPPER}} .elemento-product-outer-wrap .elemento-product-simple-inner-wrap,{{WRAPPER}} .elemento-product-simple-inner-bottom,{{WRAPPER}} .elemento-product-simple-inner-bottom:before' => 'background-color: {{VALUE}};',
                 ],
@@ -548,10 +533,7 @@ class elementoProductSimple extends Widget_Base
                 'label'     => __('Box Shadow Color', 'elemento-addons'),
                 'type'      => Controls_Manager::COLOR,
                 'default'   => "#4B58FF00",
-                'scheme'    => [
-                    'type'  => Scheme_Color::get_type(),
-                    'value' => Scheme_Color::COLOR_1,
-                ],
+               
                 'selectors' => [
                     '{{WRAPPER}} .elemento-product-simple-inner-wrap,{{WRAPPER}} .elemento-product-simple-inner-bottom' => 'color: {{VALUE}};',
                 ],
@@ -572,10 +554,7 @@ class elementoProductSimple extends Widget_Base
                 'label'     => __('Box Shadow Color', 'elemento-addons'),
                 'type'      => Controls_Manager::COLOR,
                 'default'   => "#B0ADAD40",
-                'scheme'    => [
-                    'type'  => Scheme_Color::get_type(),
-                    'value' => Scheme_Color::COLOR_1,
-                ],
+                
                 'selectors' => [
                     '{{WRAPPER}} .elemento-product-outer-wrap:hover .elemento-product-simple-inner-wrap,{{WRAPPER}} .elemento-product-outer-wrap:hover .elemento-product-simple-inner-bottom' => 'color: {{VALUE}};',
                 ],
@@ -635,10 +614,7 @@ class elementoProductSimple extends Widget_Base
                 'label'     => __('Color', 'elemento-addons'),
                 'type'      => Controls_Manager::COLOR,
                 "default"   => "#3B3B3B",
-                'scheme'    => [
-                    'type'  => Scheme_Color::get_type(),
-                    'value' => Scheme_Color::COLOR_1,
-                ],
+                
                 'selectors' => [
                     '{{WRAPPER}} .elemento-addons-product-title' => 'color: {{VALUE}};',
                 ],
@@ -658,10 +634,7 @@ class elementoProductSimple extends Widget_Base
                 'label'     => __('Color', 'elemento-addons'),
                 'type'      => Controls_Manager::COLOR,
                 "default"   => "#181818",
-                'scheme'    => [
-                    'type'  => Scheme_Color::get_type(),
-                    'value' => Scheme_Color::COLOR_1,
-                ],
+                
                 'selectors' => [
                     '{{WRAPPER}} .elemento-addons-product-title:hover' => 'color: {{VALUE}};',
                 ],
@@ -703,10 +676,7 @@ class elementoProductSimple extends Widget_Base
                 'label'     => __('Color', 'elemento-addons'),
                 'type'      => Controls_Manager::COLOR,
                 "default"   => "#ffd200",
-                'scheme'    => [
-                    'type'  => Scheme_Color::get_type(),
-                    'value' => Scheme_Color::COLOR_1,
-                ],
+                
                 'selectors' => [
                     '{{WRAPPER}} .elemento-addons-rating .star-rating:before' => 'color: {{VALUE}};',
                 ],
@@ -718,10 +688,6 @@ class elementoProductSimple extends Widget_Base
                 'label'     => __('Background Color', 'elemento-addons'),
                 'type'      => Controls_Manager::COLOR,
                 "default"   => "#191919",
-                'scheme'    => [
-                    'type'  => Scheme_Color::get_type(),
-                    'value' => Scheme_Color::COLOR_1,
-                ],
                 'selectors' => [
                     '{{WRAPPER}} .elemento-addons-rating .star-rating' => 'color: {{VALUE}};',
                 ],
@@ -751,10 +717,7 @@ class elementoProductSimple extends Widget_Base
                 'label'     => __('Color', 'elemento-addons'),
                 'type'      => Controls_Manager::COLOR,
                 "default"   => "#20C9AE",
-                'scheme'    => [
-                    'type'  => Scheme_Color::get_type(),
-                    'value' => Scheme_Color::COLOR_1,
-                ],
+               
                 'selectors' => [
                     '{{WRAPPER}} .elemento-product-outer-wrap .elemento-addons-price > ins' => 'color: {{VALUE}};',
                     '{{WRAPPER}} .elemento-product-outer-wrap .elemento-addons-price > .amount > bdi' => 'color: {{VALUE}};',
@@ -767,10 +730,7 @@ class elementoProductSimple extends Widget_Base
                 'label'     => __('Sale Price Color', 'elemento-addons'),
                 'type'      => Controls_Manager::COLOR,
                 'default'   => "#878787",
-                'scheme'    => [
-                    'type'  => Scheme_Color::get_type(),
-                    'value' => Scheme_Color::COLOR_1,
-                ],
+                
                 'selectors' => [
                     '{{WRAPPER}} .elemento-product-outer-wrap .elemento-addons-price > del' => 'color: {{VALUE}};',
                 ],
@@ -855,7 +815,7 @@ class elementoProductSimple extends Widget_Base
             \Elementor\Group_Control_Typography::get_type(),
             [
                 'name' => 'add_to_cart_typography',
-                'scheme' => Elementor\Core\Schemes\Typography::TYPOGRAPHY_1,
+                
                 'selector' => '{{WRAPPER}} .elemento-product-outer-wrap a.elemento-add-to-cart-btn',
                 // typo 
                 'fields_options' => [
@@ -905,9 +865,9 @@ class elementoProductSimple extends Widget_Base
                 ],
                 'default' => [
                     'top' => 6,
-                    'right' => 60,
+                    'right' => 6,
                     'bottom' => 6,
-                    'left' => 60,
+                    'left' => 6,
                     'unit' => 'px',
                     'isLinked' => true,
                 ]
@@ -971,10 +931,7 @@ class elementoProductSimple extends Widget_Base
                 'label'     => __('Color', 'elemento-addons'),
                 'type'      => Controls_Manager::COLOR,
                 "default"   => "#20C9AE",
-                'scheme'    => [
-                    'type'  => Scheme_Color::get_type(),
-                    'value' => Scheme_Color::COLOR_1,
-                ],
+               
                 'selectors' => [
                     '{{WRAPPER}} .ea-simple-product-slider .elemento-product-outer-wrap .elemento-add-to-cart-btn' => 'color: {{VALUE}};',
                 ],
@@ -986,10 +943,7 @@ class elementoProductSimple extends Widget_Base
                 'label'     => __('Background Color', 'elemento-addons'),
                 'type'      => Controls_Manager::COLOR,
                 "default"   => "transparent",
-                'scheme'    => [
-                    'type'  => Scheme_Color::get_type(),
-                    'value' => Scheme_Color::COLOR_1,
-                ],
+                
                 'selectors' => [
                     '{{WRAPPER}} .ea-simple-product-slider .elemento-product-outer-wrap .elemento-add-to-cart-btn' => 'background-color: {{VALUE}};',
                 ],
@@ -1009,10 +963,7 @@ class elementoProductSimple extends Widget_Base
                 'label'     => __('Color', 'elemento-addons'),
                 'type'      => Controls_Manager::COLOR,
                 "default"   => "#20C9AE",
-                'scheme'    => [
-                    'type'  => Scheme_Color::get_type(),
-                    'value' => Scheme_Color::COLOR_1,
-                ],
+               
                 'selectors' => [
                     '{{WRAPPER}} .ea-simple-product-slider .elemento-product-outer-wrap .elemento-add-to-cart-btn:hover' => 'color: {{VALUE}};',
                 ],
@@ -1024,10 +975,7 @@ class elementoProductSimple extends Widget_Base
                 'label'     => __('Background Color', 'elemento-addons'),
                 'type'      => Controls_Manager::COLOR,
                 "default"   => "transparent",
-                'scheme'    => [
-                    'type'  => Scheme_Color::get_type(),
-                    'value' => Scheme_Color::COLOR_1,
-                ],
+                
                 'selectors' => [
                     '{{WRAPPER}} .ea-simple-product-slider .elemento-product-outer-wrap .elemento-add-to-cart-btn:hover' => 'background-color: {{VALUE}};',
                 ],
@@ -1053,7 +1001,7 @@ class elementoProductSimple extends Widget_Base
             \Elementor\Group_Control_Typography::get_type(),
             [
                 'name' => 'sale_tag_typography',
-                'scheme' => Elementor\Core\Schemes\Typography::TYPOGRAPHY_1,
+                
                 'selector' => '{{WRAPPER}} .elemento-product-outer-wrap .elemento-addons-sale-tag',
                 // typo 
                 'fields_options' => [
@@ -1073,10 +1021,7 @@ class elementoProductSimple extends Widget_Base
                 'label'     => __('Background Color', 'elemento-addons'),
                 'type'      => Controls_Manager::COLOR,
                 "default"   => "black",
-                'scheme'    => [
-                    'type'  => Scheme_Color::get_type(),
-                    'value' => Scheme_Color::COLOR_1,
-                ],
+                
                 'selectors' => [
                     '{{WRAPPER}} .elemento-product-outer-wrap .elemento-addons-sale-tag' => 'background-color: {{VALUE}};',
                 ],
@@ -1088,10 +1033,7 @@ class elementoProductSimple extends Widget_Base
                 'label'     => __('Color', 'elemento-addons'),
                 'type'      => Controls_Manager::COLOR,
                 "default"   => "white",
-                'scheme'    => [
-                    'type'  => Scheme_Color::get_type(),
-                    'value' => Scheme_Color::COLOR_1,
-                ],
+               
                 'selectors' => [
                     '{{WRAPPER}} .elemento-product-outer-wrap .elemento-addons-sale-tag' => 'color: {{VALUE}};',
                 ],
