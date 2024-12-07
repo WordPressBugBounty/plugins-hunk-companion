@@ -7,8 +7,14 @@ if ( ! defined( 'ABSPATH' ) ) exit;
 add_action('wp_ajax_open_mart_cat_filter_ajax', 'open_mart_cat_filter_ajax');
 add_action('wp_ajax_nopriv_open_mart_cat_filter_ajax', 'open_mart_cat_filter_ajax');
 function open_mart_cat_filter_ajax(){
+if ( ! current_user_can( 'administrator' ) ) {
+  
+        wp_die( - 1, 403 );
+        
+} 
+check_ajax_referer('openmart_nonce','nonce');
 $prdct_optn = get_theme_mod('open_mart_category_optn','recent');
-   if( taxonomy_exists( 'product_cat' ) ){
+   if( taxonomy_exists( 'product_cat' ) ){ 
      // product filter  
             $args = array(
                       'tax_query' => array(

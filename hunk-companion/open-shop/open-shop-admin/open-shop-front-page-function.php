@@ -208,7 +208,7 @@ function open_shop_highlight_content($open_shop_highlight_content_id,$default){
 		$open_shop_highlight_content = json_decode( $open_shop_highlight_content );
 		if ( ! empty( $open_shop_highlight_content ) ) {
 			foreach ( $open_shop_highlight_content as $ship_item ) :
-               $icon   = ! empty( $ship_item->icon_value ) ? apply_filters( 'open_shop_translate_single_string', $ship_item->icon_value, '' ) : '';
+                $icon   = ! empty( $ship_item->icon_value ) ? apply_filters( 'open_shop_translate_single_string', $ship_item->icon_value, '' ) : '';
 				$title    = ! empty( $ship_item->title ) ? apply_filters( 'open_shop_translate_single_string', $ship_item->title, '' ) : '';
 				$subtitle    = ! empty( $ship_item->subtitle ) ? apply_filters( 'open_shop_translate_single_string', $ship_item->subtitle, '' ) : '';
 					?>

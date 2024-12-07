@@ -109,6 +109,7 @@
                                       data: {
                                         action :'open_mart_cat_filter_ajax',
                                         'data_cat_slug':data_term_id,
+                                        'nonce':openmart.opmrtnonce,
                                        },
                                 dataType: 'html'
                               }).done( function( response ){
@@ -267,6 +268,7 @@
                                       data: {
                                         action :'open_mart_cat_filter_ajax',
                                         'data_cat_slug':data_term_id,
+                                        'nonce':openmart.opmrtnonce,
                                        },
                                 dataType: 'html'
                               }).done( function( response ){

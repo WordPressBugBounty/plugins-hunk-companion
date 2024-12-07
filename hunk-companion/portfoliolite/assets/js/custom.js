@@ -170,7 +170,7 @@ thPortfolioLoadmore: function(){
                  var $lfb_page = jquery('.' + $cateSlug).attr('lfb-page');
                  var $total_post = jquery('.' + $cateSlug).attr('totalpost');
                  var $data_max_pages = jquery('.' + $cateSlug).attr('data-max-pages');
-                 var $plf_data = "post_page=" + $lfb_page + "&cate_slug=" + $cateSlug + "&action=portfolioline_portfolio_ajax";
+                 var $plf_data = "post_page=" + $lfb_page + "&cate_slug=" + $cateSlug + "&action=portfolioline_portfolio_ajax" + "&nonce=" + frontendajax.portnonce;
                  jquery.ajax({
                      url: frontendajax.ajaxurl,
                      type: 'POST',

@@ -3,7 +3,7 @@
  Plugin Name: Hunk Companion
  Plugin URI: https://themehunk.com/hunk-companion/
  Description: Hunk companion plugin is an essential plugin to add features of Front page sections in your site. An easy to use plugin with ThemeHunk WordPress themes.
- Version: 1.8.8
+ Version: 1.8.9
  Author: ThemeHunk
  Text Domain: hunk-companion
  Author URI: https://themehunk.com/
@@ -36,8 +36,7 @@ function hunk_companion_load_plugin(){
 
 $theme = hunk_companion_text_domain(); 
 	if(in_array("almaira-shop", $theme)){
-		require_once( HUNK_COMPANION_DIR_PATH . '/import/import.php' );
-
+	require_once( HUNK_COMPANION_DIR_PATH . '/import/import.php' );
 	require_once HUNK_COMPANION_DIR_PATH .'almaira-shop/almaira-shop-admin/init.php';
 	require_once HUNK_COMPANION_DIR_PATH .'almaira-shop/demo/import-data.php';
 	add_action( 'wp_enqueue_scripts', 'hunk_companion_almaira_shop_scripts' );
@@ -116,7 +115,7 @@ function hunk_companion_open_shop_scripts()
 	wp_enqueue_script('owl.carousel-js', HUNK_COMPANION_PLUGIN_DIR_URL . 'gogolite/js/gogo-js/owl.carousel.js', array('jquery'), '', false);
 	wp_enqueue_script('jssor.slider-js', HUNK_COMPANION_PLUGIN_DIR_URL . 'open-shop/assets/js/jssor.slider.min.js', array('jquery'), '', false);
 	wp_enqueue_script('thunk-open-shop-custom-js', HUNK_COMPANION_PLUGIN_DIR_URL . 'open-shop/assets/js/custom.js', array('jquery'), '', true);
-	wp_enqueue_script('thunk-open-shop-woo-js', HUNK_COMPANION_PLUGIN_DIR_URL . 'open-shop/open-shop-admin/woo/js/woocommerce.js', array('jquery'), '', true);
+	wp_enqueue_script('thunk-open-shop-woo-js', HUNK_COMPANION_PLUGIN_DIR_URL . 'open-shop/open-shop-admin/woo/js/woocommerce.js', array('jquery'), '1.0.0', true);
 	$openshoplocalize = array(
 		'open_shop_top_slider_optn' => get_theme_mod('open_shop_top_slider_optn', false),
 		'open_shop_top_slider_speed' => get_theme_mod('open_shop_top_slider_speed', 1000),
@@ -131,14 +130,12 @@ function hunk_companion_open_shop_scripts()
 		'open_shop_single_row_prdct_slide' => get_theme_mod('open_shop_single_row_prdct_slide', false),
 		//product-list
 		'open_shop_single_row_prdct_list' => get_theme_mod('open_shop_single_row_prdct_list', false),
-
 		//cat-tab-list-filter
 		'open_shop_single_row_slide_cat_tb_lst' => get_theme_mod('open_shop_single_row_slide_cat_tb_lst', false),
-
 		//rtl
 		'open_shop_rtl' => get_theme_mod('open_shop_rtl', false),
-
-
+		'opnonce'         => wp_create_nonce( 'openshop_nonce' ),
+		
 	);
 
 	wp_localize_script('thunk-open-shop-woo-js', 'openshop',  $localize);
@@ -175,7 +172,7 @@ function hunk_companion_top_store_scripts()
 		'top_store_category_slider_optn' => get_theme_mod('top_store_category_slider_optn', false),
 		'top_store_product_list_slide_optn' => get_theme_mod('top_store_product_list_slide_optn', false),
 		'top_store_brand_slider_optn' => get_theme_mod('top_store_brand_slider_optn', false),
-
+        'nonce'         => wp_create_nonce( 'topstore_nonce' ),
 
 	);
 
@@ -201,8 +198,11 @@ function hunk_companion_portfoliolite_scripts()
 	wp_enqueue_script('portfoliolite-skrollr', HUNK_COMPANION_PLUGIN_DIR_URL . 'portfoliolite/assets/js/skrollr.js', array('jquery'), '', true);
 	wp_enqueue_script('portfoliolite-wow', HUNK_COMPANION_PLUGIN_DIR_URL . 'portfoliolite/assets/js/wow.js', array('jquery'), '', true);
 
-	wp_enqueue_script('portfoliolite-custom-js', HUNK_COMPANION_PLUGIN_DIR_URL . 'portfoliolite/assets/js/custom.js', array('jquery'), '', true);
-	wp_localize_script('portfoliolite-custom-js', 'frontendajax', array('ajaxurl' => admin_url('admin-ajax.php')));
+	wp_enqueue_script('portfoliolite-custom-js', HUNK_COMPANION_PLUGIN_DIR_URL . 'portfoliolite/assets/js/custom.js', array('jquery'), '1.0.0', true);
+	wp_localize_script('portfoliolite-custom-js', 'frontendajax', array(
+		'ajaxurl' => admin_url('admin-ajax.php'),
+		'portnonce'         => wp_create_nonce( 'portfoliolite_nonce' ),
+	));
 }
 
 function hunk_companion_portfoliolite_customizer_scripts()
@@ -218,7 +218,7 @@ function hunk_companion_open_mart_scripts()
 	wp_enqueue_script('jssor.slider-js', HUNK_COMPANION_PLUGIN_DIR_URL . 'open-shop/assets/js/jssor.slider.min.js', array('jquery'), '', false);
 	wp_enqueue_script('thunk-open-mart-sticky-js', HUNK_COMPANION_PLUGIN_DIR_URL . 'open-mart/assets/js/sticky-sidebar.js', array('jquery'), '', true);
 	wp_enqueue_script('thunk-open-mart-custom-js', HUNK_COMPANION_PLUGIN_DIR_URL . 'open-mart/assets/js/custom.js', array('jquery'), '', true);
-	wp_enqueue_script('thunk-open-mart-woo-js', HUNK_COMPANION_PLUGIN_DIR_URL . 'open-mart/open-mart-admin/woo/js/woocommerce.js', array('jquery'), '', true);
+	wp_enqueue_script('thunk-open-mart-woo-js', HUNK_COMPANION_PLUGIN_DIR_URL . 'open-mart/open-mart-admin/woo/js/woocommerce.js', array('jquery'), '1.0.0', true);
 	$openmartlocalize = array(
 		'open_mart_top_slider_optn' => get_theme_mod('open_mart_top_slider_optn', false),
 		'open_mart_move_to_top_optn' => get_theme_mod('open_mart_move_to_top', false),
@@ -249,6 +249,7 @@ function hunk_companion_open_mart_scripts()
 		'open_mart_vt_banner_atply' => get_theme_mod('open_mart_vt_banner_atply', false),
 		//category-filter
 		'open_mart_cat_item_no'	=>	get_theme_mod('open_mart_cat_item_no', 10),
+		'opmrtnonce'         => wp_create_nonce( 'openmart_nonce' ),
 	);
 
 	wp_localize_script('thunk-open-mart-woo-js', 'openmart',  $localize);
@@ -258,7 +259,6 @@ function hunk_companion_thsm_admin_scripts(){
         wp_localize_script('th-shop-mania-admin-load', 'hunk_companion_import',  
             array(
             'plugin'                   => 'hunk-companion'
-            
            )
          );
     }

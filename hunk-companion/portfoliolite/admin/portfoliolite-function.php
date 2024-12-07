@@ -117,6 +117,16 @@ foreach ($cats as $cat){
  return $return;
 }
 function portfolioline_portfolio_ajax(){
+
+    if ( ! current_user_can( 'administrator' ) ) {
+  
+        wp_die( - 1, 403 );
+        
+    } 
+
+    check_ajax_referer('portfoliolite_nonce','nonce');
+
+
           $layout = get_theme_mod('dynamic_grid','standard-layout');
           $cat_slug = esc_attr($_POST['cate_slug']);
            $perpage_post = get_theme_mod('our_port_default_images',8);
@@ -159,7 +169,7 @@ function portfolioline_portfolio_ajax(){
                   </figcaption>
                 </figure>
               </div>
-            </li>
+            </li> 
            <?php endwhile; }
 wp_reset_postdata();
 die();

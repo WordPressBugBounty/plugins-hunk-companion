@@ -80,7 +80,7 @@ if (!function_exists('elemento_addons_wishlist_wpc')) {
     {
         if (intval($productId) && shortcode_exists('yith_wcwl_add_to_wishlist')) {
             $html = '<div class="elemento-wishlist">';
-            $html .= do_shortcode('[yith_wcwl_add_to_wishlist product_id="' . $productId . '" already_in_wishslist_text="<span>already added</span>"]');
+            $html .= do_shortcode('[yith_wcwl_add_to_wishlist product_id="' . esc_attr($productId). '" already_in_wishslist_text="<span>already added</span>"]');
             $html .= '</div>';
             return $html;
         }
@@ -91,7 +91,7 @@ if (!function_exists('elemento_addons_compare')) {
     function elemento_addons_compare($productId)
     {
         if (intval($productId) && (shortcode_exists('th_compare') || shortcode_exists('tpcp_compare'))) {
-            $html = '<button class="th-product-compare-btn button" data-th-product-id="' . $productId . '">';
+            $html = '<button class="th-product-compare-btn button" data-th-product-id="' .esc_attr($productId) . '">';
             $html .= '<span class="th-icon th-icon-repeat"></span>';
             $html .= '<span class="text">' . __('Compare', 'hunk-companion') . '</span>';
             $html .= '</button>';

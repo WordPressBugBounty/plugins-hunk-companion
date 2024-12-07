@@ -74,6 +74,7 @@
                                       data: {
                                         action :'top_store_cat_filter_ajax',
                                         'data_cat_slug':data_term_id,
+                                        'nonce':topstore.nonce
                                        },
                                 dataType: 'html'
                               }).done( function( response ){

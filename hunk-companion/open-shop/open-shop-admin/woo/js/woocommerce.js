@@ -77,7 +77,8 @@
                                       data: {
                                         action :'open_shop_cat_filter_ajax',
                                         'data_cat_slug':data_term_id,
-                                       },
+                                        'nonce':openshop.opnonce
+                                       }, 
                                 dataType: 'html'
                               }).done( function( response ){
                                 if ( response ){

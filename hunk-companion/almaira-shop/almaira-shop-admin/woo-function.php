@@ -73,7 +73,7 @@ function almaira_shop_category_product_loop($category_product,$args){
                        $category_product['rating'] = $rating_count;
                        $sale = get_post_meta( $pid, '_sale_price', true);
                     if( $sale) {
-                        $sale = '<span class="onsale">'._e('Sale','hunk-companion').'</span>';
+                        $sale = '<span class="onsale">'.__('Sale','hunk-companion').'</span>';
                     }
                
                   $category_product['sale'] = $sale;
@@ -103,7 +103,7 @@ function almaira_shop_category_product_loop($category_product,$args){
                 wp_reset_postdata();
               return $cate_product;
                 else:
-              echo '<p class="not_found">'.__('Sorry, The post you are looking is unavailable!','almaira-shop').'</p>';
+              echo '<p class="not_found">'.__('Sorry, The post you are looking is unavailable!','hunk-companion').'</p>';
               endif;
               wp_reset_query();
 }
@@ -212,7 +212,7 @@ function almaira_shop_product_loadmore_prd_section(){
     if ( $product->have_posts() ){
      if($posts_per_page < $product->found_posts){
     echo'<div class="thunk-load-more-wrap">
-           <button id="prd-sect-loadmore" class="thunk-pr-ldmore thunk-button" data-paged="'.esc_attr($paged).'" data-max-pages="'. esc_attr($product->max_num_pages).'"><span>'.esc_html__( 'Load More', 'almaira-shop' ).'</span></button>
+           <button id="prd-sect-loadmore" class="thunk-pr-ldmore thunk-button" data-paged="'.esc_attr($paged).'" data-max-pages="'. esc_attr($product->max_num_pages).'"><span>'.esc_html__( 'Load More', 'hunk-companion' ).'</span></button>
          </div>';
         }
     }
@@ -274,7 +274,7 @@ function almaira_shop_sort_filter_product_show(){
         wc_get_template_part( 'content', 'product' );
       endwhile;
     } else {
-      echo __( 'No products found','almaira-shop' );
+      echo __( 'No products found','hunk-companion' );
     }
     wp_reset_postdata();
   }
@@ -295,7 +295,7 @@ function almaira_shop_product_loadmore(){
     if ( $product->have_posts() ){
      if($posts_per_page < $product->found_posts){
     echo'<div class="thunk-load-more-wrap">
-           <button id="sortby-load-more" class="thunk-load-more thunk-button" data-paged="'.esc_attr($paged).'" data-max-pages="'. esc_attr($product->max_num_pages).'"><span>'.esc_html__( 'Load More', 'almaira-shop' ).'</span></button>
+           <button id="sortby-load-more" class="thunk-load-more thunk-button" data-paged="'.esc_attr($paged).'" data-max-pages="'. esc_attr($product->max_num_pages).'"><span>'.esc_html__( 'Load More', 'hunk-companion' ).'</span></button>
          </div>';
         }
     }
@@ -309,6 +309,14 @@ add_action('wp_ajax_almaira_shop_sort_filter_ajax', 'almaira_shop_sort_filter_aj
 add_action('wp_ajax_nopriv_almaira_shop_sort_filter_ajax', 'almaira_shop_sort_filter_ajax');
 //new aproch to set filter
 function almaira_shop_sort_filter_ajax(){
+
+  if ( ! current_user_can( 'administrator' ) ) {
+  
+    wp_die( - 1, 403 );
+    
+  } 
+  check_ajax_referer('almaira_nonce','nonce');
+
      $posts_per_page = get_theme_mod('almaira_shop_prd_shw','10');
      $term_id = $_POST['cat_slug'];   
      $radio = $_POST['radio_slug'];
@@ -402,11 +410,11 @@ function almaira_shop_sort_filter_ajax(){
     endwhile;
     if($posts_per_page < $product->found_posts){
     echo'<div class="thunk-load-more-wrap">
-           <button id="sortby-load-more" class="thunk-load-more thunk-button" data-paged="'.esc_attr($paged).'" data-max-pages="'. esc_attr($product->max_num_pages).'"><span>'.esc_html__( 'Load More', 'almaira-shop' ).'</span></button>
+           <button id="sortby-load-more" class="thunk-load-more thunk-button" data-paged="'.esc_attr($paged).'" data-max-pages="'. esc_attr($product->max_num_pages).'"><span>'.esc_html__( 'Load More', 'hunk-companion' ).'</span></button>
          </div>';
        }
     }else{
-      echo __( 'No products found','almaira-shop' );
+      echo __( 'No products found','hunk-companion' );
     }
     exit;
     wp_reset_postdata();
@@ -417,6 +425,14 @@ function almaira_shop_sort_filter_ajax(){
 add_action('wp_ajax_almaira_shop_product_section_filter_product_ajax', 'almaira_shop_product_section_filter_product_ajax');
 add_action('wp_ajax_nopriv_almaira_shop_product_section_filter_product_ajax', 'almaira_shop_product_section_filter_product_ajax');
 function almaira_shop_product_section_filter_product_ajax(){
+
+  if ( ! current_user_can( 'administrator' ) ) {
+  
+    wp_die( - 1, 403 );
+    
+  } 
+  check_ajax_referer('almaira_nonce','nonce');
+  
    if( taxonomy_exists( 'product_cat' ) ){
       $perpage  = get_theme_mod('almaira_shop_cate_prd_shw',8);
       if ( empty($_POST["paged"]) ){
