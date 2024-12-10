@@ -29,10 +29,10 @@ class HUNK_COMPANION_SITES_APP{
           'methods' => 'POST',
           'callback' => array( $this, 'tp_install' ),
           'permission_callback' => function () {
-    // Check if the user is logged in
-    if ( ! is_user_logged_in() ) {
-        return new WP_REST_Response( 'Unauthorized: User not logged in', 401 );
-    }
+          // Check if the user is logged in
+          if ( ! is_user_logged_in() ) {
+              return false;
+          }
 
     // Debug: Log the user role and capabilities to see what they have
     $current_user = wp_get_current_user();
@@ -42,7 +42,7 @@ class HUNK_COMPANION_SITES_APP{
 
     // Ensure the user has the 'install_plugins' capability
     if ( ! current_user_can( 'install_plugins' ) ) {
-        return new WP_REST_Response( 'Unauthorized: Insufficient capabilities', 401 );
+        return false;
     }
 
       // Get the nonce from the request header
@@ -50,7 +50,7 @@ class HUNK_COMPANION_SITES_APP{
 
             // Verify the nonce
             if ( ! wp_verify_nonce( $nonce, 'hc_import_nonce' ) ) {
-                return new WP_REST_Response( 'Unauthorized: Invalid nonce', 401 );
+                return false;
             }
 
     return true; // Permission granted
@@ -66,14 +66,14 @@ class HUNK_COMPANION_SITES_APP{
           'permission_callback' => function () {
     // Check if the user is logged in
     if ( ! is_user_logged_in() ) {
-        return new WP_REST_Response( 'Unauthorized: User not logged in', 401 );
+        return false;
     }
 
     // Debug: Log the user role and capabilities to see what they have
 
     // Ensure the user has the 'install_plugins' capability
     if ( ! current_user_can( 'install_plugins' ) ) {
-        return new WP_REST_Response( 'Unauthorized: Insufficient capabilities', 401 );
+        return false;
     }
 
             // Get the nonce from the request header 
