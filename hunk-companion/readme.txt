@@ -1,9 +1,9 @@
 ====== Hunk Companion========
 Contributors: themehunk
 Author URI: : https://www.themehunk.com/
-Tags: themehunk, customizer, gogo, Testimonial, Team, service
+Tags: themehunk, customizer, Testimonial, Team, service
 Tested up to: 6.7
-Stable tag: 1.9.0
+Stable tag: 1.9.1
 License: GPLv3 License URI: https://www.gnu.org/licenses/gpl-3.0.en.html
 
 Adds customizer settings and controls to the Gogo Theme.
@@ -58,6 +58,9 @@ Yes this plugin is specially make for ThemeHunk themes like Gogo. You can instal
 2. screenshot-2.png
 
 == Changelog ==
+
+= 1.9.1 =
+* Fixed : Limit a Tags.
 
 = 1.9.0 =
 * Fixed : Importer Security issue fixed.
