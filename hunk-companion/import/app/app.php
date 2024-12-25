@@ -28,68 +28,28 @@ class HUNK_COMPANION_SITES_APP{
         register_rest_route( 'hc/v1', 'themehunk-import', array(
           'methods' => 'POST',
           'callback' => array( $this, 'tp_install' ),
-          'permission_callback' => function () {
+          'permission_callback' => function ($request) {
           // Check if the user is logged in
           if ( ! is_user_logged_in() ) {
-              return false;
+              return  wp_send_json_error(false);
           }
 
-    // Debug: Log the user role and capabilities to see what they have
-    $current_user = wp_get_current_user();
-    // error_log( 'Current user: ' . $current_user->user_login );
-    // error_log( 'User roles: ' . implode( ', ', $current_user->roles ) );
-    // error_log( 'User capabilities: ' . print_r( $current_user->allcaps, true ) );
+          $current_user = wp_get_current_user();
 
-    // Ensure the user has the 'install_plugins' capability
-    if ( ! current_user_can( 'install_plugins' ) ) {
-        return false;
-    }
+                  if ( ! current_user_can( 'install_plugins' ) ) {
+                    return  wp_send_json_error(false);
+                }
+              
+                $nonce = $request->get_header('X-WP-Nonce');
+                // Verify the nonce
+                if ( ! wp_verify_nonce( $nonce, 'hc_import_nonce' ) ) {
+                return  wp_send_json_error(false);
+               }
 
-      // Get the nonce from the request header
-            $nonce = $request->get_header('X-WP-Nonce');
+               wp_send_json_success(true);
 
-            // Verify the nonce
-            if ( ! wp_verify_nonce( $nonce, 'hc_import_nonce' ) ) {
-                return false;
-            }
-
-    return true; // Permission granted
-},
-
-      ) );
-
-
-        register_rest_route( 'ai/v1', 'ai-site-import', array(
-          'methods' => 'POST',
-          'callback' =>  array( $this, 'data_import' ),
-          'login_user_id' => get_current_user_id(),
-          'permission_callback' => function () {
-    // Check if the user is logged in
-    if ( ! is_user_logged_in() ) {
-        return false;
-    }
-
-    // Debug: Log the user role and capabilities to see what they have
-
-    // Ensure the user has the 'install_plugins' capability
-    if ( ! current_user_can( 'install_plugins' ) ) {
-        return false;
-    }
-
-            // Get the nonce from the request header 
-            // $nonce = $request->get_header('X-WP-Nonce');
-
-            // // Verify the nonce
-            // if ( ! wp_verify_nonce( $nonce, 'hc_import_nonce' ) ) {
-            //     return new WP_REST_Response( 'Unauthorized: Invalid nonce', 401 );
-            // }
-
-          return true; // Permission granted
-},
-
-      ) );
-
-
+            },
+          ) );
     }
 
 
