@@ -12,8 +12,7 @@ class HUNK_COMPANION_SITES_APP{
    * @since 1.0.0
    */
   public function __construct() {
-    add_action( 'rest_api_init', array( $this, 'register_routes' ) );
-
+    add_action( 'wp_ajax_hunk_companion_import_process', array( $this, 'import_process') );
     add_action( 'wp_ajax_hunk_companion_handler_data', array( $this, 'import_data') );
     add_action( 'wp_ajax_hunk_companion_import_xml', array( $this, 'import_xml') ); 
     add_action( 'wp_ajax_hunk_companion_import_cutomizer', array( $this, 'init_cutomizer') );
@@ -22,38 +21,24 @@ class HUNK_COMPANION_SITES_APP{
     add_action( 'wp_ajax_hunk_companion_sites_core', array( $this, 'init_site_url' ) );
 
   }
-
-    public function register_routes() {
-
-        register_rest_route( 'hc/v1', 'themehunk-import', array(
-          'methods' => 'POST',
-          'callback' => array( $this, 'tp_install' ),
-          'permission_callback' => function ($request) {
-          // Check if the user is logged in
-          if ( ! is_user_logged_in() ) {
-              return  wp_send_json_error(false);
-          }
-
-          $current_user = wp_get_current_user();
-
-                  if ( ! current_user_can( 'install_plugins' ) ) {
-                    return  wp_send_json_error(false);
-                }
-              
-                $nonce = $request->get_header('X-WP-Nonce');
-                // Verify the nonce
-                if ( ! wp_verify_nonce( $nonce, 'hc_import_nonce' ) ) {
-                return  wp_send_json_error(false);
-               }
-
-               wp_send_json_success(true);
-
-            },
-          ) );
+    public function import_process(){
+      if ( ! isset( $_POST['vsecurity'] ) || ! wp_verify_nonce( $_POST['vsecurity'], 'hc_import_nonce' ) ) {
+        wp_send_json_error( array( 'message' => 'Invalid nonce.' ) );
     }
+  
+    if(isset( $_POST['data'] ) && current_user_can('manage_options')){
+      $params = json_decode( wp_unslash( $_POST['data'] ),true);
+      new HUNK_COMPANION_SITES_BUILDER_SETUP($params['data']);
+  
+       wp_send_json_success( array('status'=> true));
+  
+    }
+  }
 
 
-  public function tp_install(WP_REST_Request $request){
+
+
+  public function tp_install1(WP_REST_Request $request){
       $request = $request->get_params();
       $params  = $request['params'];
       new HUNK_COMPANION_SITES_BUILDER_SETUP($params);
