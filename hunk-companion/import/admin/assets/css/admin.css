@@ -457,6 +457,14 @@ header {
   .aisb-container-main-tmpl .asib-tmpl-footer .aisb-pro img {
     width: 18px;
 }
+
+.asib-tmpl-footer .freetag{
+  background: #0caf46;
+  color: #ffff;
+  padding: 2px 8px;
+  border-radius: 3px;
+
+}
            
   .asib-tmpl-footer .aisb-pro {
     text-align: center;
@@ -1127,6 +1135,9 @@ input[type=text]:focus{
 .success-btn {
   display: -webkit-inline-box;
 }
+
+
+
 
 /*** Responsive Css **/
 
