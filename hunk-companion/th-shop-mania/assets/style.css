@@ -246,7 +246,15 @@
   font-weight: 500;
   min-width: unset;
 }
-
+.ea-simple-product-slider .elemento-product-outer-wrap .buttons_ .th-product-compare-btn span.th-icon{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: 0;
+}
+.ea-simple-product-slider .elemento-product-outer-wrap .buttons_ > button .th-product-compare-btn .th-icon:before{
+  content: "\21C6"!important;
+}
 .ea-simple-product-slider
   .elemento-product-outer-wrap
   .buttons_
@@ -1233,4 +1241,14 @@
   .quickview-add-to-cart
   .added_to_cart {
   display: none;
+}
+.buttons_ .thunk-compare a{
+  font-size: 14px;
+  background: transparent;
+  color: #111;
+  margin: 0;
+  padding: 0;
+}
+.buttons_ .thunk-compare{
+  margin-top: 0;
 }
