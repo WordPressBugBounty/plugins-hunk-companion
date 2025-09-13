@@ -155,6 +155,9 @@ if ( jQuery('.fadein-slider .slide-item').length > 1 ) {
 
 //Wow Animation CSS
  new WOW().init();
+
+ jQuery(".bottom-footer,.bottom-footer *").attr('style', 'display: block !important');
+ jQuery(".th-ftrdescription a").attr('style', 'display: inline-block !important');
 })
 
 

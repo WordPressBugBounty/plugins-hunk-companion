@@ -25,7 +25,7 @@ else{
 <div class="thunk-slide thunk-cat-slide owl-carousel <?php echo esc_attr($cat_heading); ?>">
 <?php   
   if( taxonomy_exists( 'product_cat' ) ){
-      $term_id = get_theme_mod('open_mart_category_slide_list'); 
+      $term_id = get_theme_mod('open_mart_category_slide_list',''); 
       // category filter  
       $args = array(
             

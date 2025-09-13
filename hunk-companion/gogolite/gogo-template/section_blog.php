@@ -11,6 +11,11 @@ else{
 	 $if_slidercheck = 'no-slider';
 }
 global $blog;
+if (!function_exists('th_post_title')) {
+function th_post_title(){ ?>
+    <a href="<?php the_permalink(); ?>"><h4><?php the_title(); ?></h4></a>
+<?php }
+}
 ?>
 <section id="<?php  echo esc_attr(get_theme_mod('gogo_blog_id','blog')); ?>" class="thunk-blog cd-section">
 	<div class="container">
@@ -78,7 +83,7 @@ global $blog;
 				<?php gogo_blog_get_post_meta();?>
 							</div><!--........post-meta END........-->
 							<div class="post-title">
-						<a href="<?php the_permalink(); ?>"><h4><?php the_title(); ?></h4></a>
+						<?php echo th_post_title(); ?>
 							</div><!-- ........post-title END........ -->
 								<div class="description"><?php hunk_companion_section_the_excerpt(); ?></div>
 						</div><!--........post-content END........-->
@@ -96,3 +101,4 @@ global $blog;
 	</div><!--....container END.........-->
 </section>
 <?php }  
+

@@ -104,6 +104,7 @@ if(hunk_companion_mobile_user_agent_switch()==true){?>
 	<?php }
    }
 }//hunk_companion_ribbon_bg_video END 
+if (!function_exists('hunk_companion_features_content')) {
 function hunk_companion_features_content( $gogo_features_content_id, $default ) {
 //passing the seeting ID and Default Values
 $number_of_columns = get_theme_mod('gogo_service_columns', '3');
@@ -144,6 +145,7 @@ $anchor_onclick = true;
 			}// End if().
 		
 	endif;	
+}
 }
 //hunk_companion_features_content END 
 function hunk_companion_pricing_content( $gogo_pricing_content_id, $default ) {

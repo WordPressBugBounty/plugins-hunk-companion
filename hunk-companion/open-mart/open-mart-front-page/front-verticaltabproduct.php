@@ -25,7 +25,7 @@ if(get_theme_mod('open_mart_disable_vt_cat_sec',false) == true){
   </div>
 <?php }  ?>
 <!-- tab head start -->
-<?php  $term_id = get_theme_mod('open_mart_vt_category_tab_list',0); ?> 
+<?php  $term_id = get_theme_mod('open_mart_vt_category_tab_list',''); ?> 
     <div class="desktop-view-tab-head">
       <?php open_mart_vertical_category_tab_list($term_id); ?>
     </div>

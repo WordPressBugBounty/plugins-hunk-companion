@@ -152,7 +152,10 @@ function customizer_repeater_refresh_general_control_values() {
 					var color      = jQuery( this ).find( 'input.customizer-repeater-color-control' ).val();
 					var color2     = jQuery( this ).find( 'input.customizer-repeater-color2-control' ).val();
 					var image_url  = jQuery( this ).find( '.custom-media-url' ).val();
+					console.log(image_url,'image_url');
 					var logo_image_url  = jQuery( this ).find( '.custom-logo-media-url' ).val();
+					console.log(logo_image_url,'custom-logo-media-url');
+
 					var choice     = jQuery( this ).find( '.customizer-repeater-image-choice' ).val();
 					var title      = jQuery( this ).find( '.customizer-repeater-title-control' ).val();
 					var price     = jQuery( this ).find( '.customizer-repeater-price-control' ).val();
