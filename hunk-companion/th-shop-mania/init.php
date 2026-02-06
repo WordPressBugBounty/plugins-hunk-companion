@@ -82,9 +82,7 @@ if (!function_exists('elemento_addons_wishlist_wpc')) {
           $html = '<div class="elemento-wishlist">';
           $html .= do_shortcode('[thwl_add_to_wishlist 
                       product_id="' . esc_attr($productId) . '" 
-                      add_icon=" " 
                       add_text="' . esc_attr__('Wishlist', 'th-shop-mania') . '" 
-                      add_browse_icon=" "
                       browse_text="' . esc_attr__('Added', 'th-shop-mania') . '"
                       theme_style="yes"
                       custom_class="th-wishlist-integrated"

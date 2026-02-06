@@ -30,16 +30,16 @@ $product_list.='<li class="featured-isotope cd-item featured-list '.$productArr[
       if ( true == get_theme_mod( 'almaira_shop_woo_quickview_enable','true' ) ){
       $product_list.='<div class="thunk-quik">
                    <div class="thunk-quickview">
-                     <span class="quik-view"><a href="#" class="alm-quick-view-text" data-product_id="'.$productArr['pid'].'"><i class="fa fa-search"></i></a>
+                     <span class="quik-view"><a href="#" class="alm-quick-view-text" data-product_id="'.$productArr['pid'].'"><i class="th-icon th-icon-search"></i></a>
                      </span>
                    </div>';
-            if(class_exists( 'YITH_WCWL' )):
+            
                     $product_list.='<div class="thunk-wishlist">
                    <span class="thunk-wishlist-inner">
-                   '.almaira_shop_whish_list().'
+                   '.almaira_shop_whish_list($productArr['pid']).'
                   </span>     
                </div>';
-             endif;
+             
                $product_list.= almaira_shop_add_to_compare_fltr($productArr['pid']).'
       </div>';
      }
