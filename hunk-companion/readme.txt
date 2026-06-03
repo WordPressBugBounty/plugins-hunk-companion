@@ -3,7 +3,7 @@ Contributors: themehunk
 Author URI: : https://www.themehunk.com/
 Tags: themehunk, customizer, Testimonial, Team, service
 Tested up to: 7.0
-Stable tag: 2.0.3
+Stable tag: 2.0.4
 License: GPLv3 License URI: https://www.gnu.org/licenses/gpl-3.0.en.html
 
 Adds customizer settings and controls to the Gogo Theme.
@@ -59,8 +59,12 @@ Yes this plugin is specially make for ThemeHunk themes like Gogo. You can instal
 
 == Changelog ==
 
+= 2.0.4 =
+Top Store : top-store-pro.json updated.
+Open shop : openshop-pro.json updated.
+
 = 2.0.3 =
-TH Shop Mania : Plugins.json updated.
+TH Shop Mania : Plugins.json updated & version updated.
 
 = 2.0.2 =
 TH Shop Mania : TH Store One Added in th shop mania json.
