@@ -198,9 +198,9 @@ if (!class_exists('Th_Simple_Post_filter')) {
 
             $productHtml = '<div class="elemento-product-simple-inner-wrap">'; //inner rap
             // quick view 
-            if (function_exists('th_elemento_addon_quickView_enable')) {
-                $productHtml .= '<a href="#" data-product="' . $productId . '" class="elemento-addons-quickview-simple">' . __('Quick View','hunk-companion') . '</a>';
-            }
+            
+                $productHtml .= '<a href="#" data-product_id="' . $productId . '" class="opn-quick-view-text elemento-addons-quickview-simple">' . __('Quick View','hunk-companion') . '</a>';
+            
             $productHtml .= $ps_sale;
             $productHtml .= '<a class="img_" href="' . get_permalink($productId) . '">
                                     ' . $product->get_image() . '

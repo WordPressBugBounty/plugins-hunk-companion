@@ -225,16 +225,7 @@
         ".elemento-addons-simple-post .elemento-post-link:not(.disable)",
         elemento.postPagination
       );
-      $(document).on(
-        "click",
-        ".ea-simple-product-slider .elemento-addons-quickview-simple",
-        elemento.quickviewModel
-      );
-      $(document).on(
-        "click",
-        ".elemento-quickview-close",
-        elemento.quickviewModelClose
-      );
+     
       $(document).on(
         "click",
         ".ea-simple-product-slider .elemento_quick_view_model .quickview-add-to-cart .minus_,.ea-simple-product-slider .elemento_quick_view_model .quickview-add-to-cart .plus_",
