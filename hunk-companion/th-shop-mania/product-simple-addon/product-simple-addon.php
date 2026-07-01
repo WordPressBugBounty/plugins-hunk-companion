@@ -36,6 +36,7 @@ class elementoProductSimple extends Widget_Base
         $this->titleStyle();
         $this->priceStyle();
         $this->product_sale_style();
+        $this->product_quickview_style();
         if (function_exists('th_elemento_addon_quickView_enable')) {
             $this->product_quick_view_style();
         }
@@ -1053,6 +1054,62 @@ class elementoProductSimple extends Widget_Base
         );
         $this->end_controls_section();
     }
+
+    protected function product_quickview_style()
+    {
+        $this->start_controls_section(
+            'quickview_style',
+            [
+                'label' => __('Quickview Text', 'elemento-addons'),
+                'tab'   => Controls_Manager::TAB_STYLE,
+            ]
+        );
+        $this->add_group_control(
+            \Elementor\Group_Control_Typography::get_type(),
+            [
+                'name' => 'quickview_tag_typography',
+                
+                'selector' => '{{WRAPPER}} .elemento-product-outer-wrap  .elemento-addons-quickview-simple',
+                // typo 
+                'fields_options' => [
+                    'font_size' => [
+                        'default' => [
+                            'unit' => 'px',
+                            'size' => '14',
+                        ],
+                    ]
+                ],
+                // typo 
+            ]
+        );
+        $this->add_control(
+            'quickview_bg_color',
+            [
+                'label'     => __('Background Color', 'elemento-addons'),
+                'type'      => Controls_Manager::COLOR,
+                "default"   => "#20c9ae",
+                
+                'selectors' => [
+                    '{{WRAPPER}} .elemento-product-outer-wrap  .elemento-addons-quickview-simple' => 'background-color: {{VALUE}};',
+                ],
+            ]
+        );
+        $this->add_control(
+            'quickview_color',
+            [
+                'label'     => __('Color', 'elemento-addons'),
+                'type'      => Controls_Manager::COLOR,
+                "default"   => "white",
+               
+                'selectors' => [
+                    '{{WRAPPER}} .elemento-product-outer-wrap  .elemento-addons-quickview-simple' => 'color: {{VALUE}};',
+                ],
+            ]
+        );
+     
+        $this->end_controls_section();
+    }
+
     // php render 
     protected function render()
     {
