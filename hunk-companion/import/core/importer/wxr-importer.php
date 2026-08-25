@@ -42,7 +42,7 @@ class HUNK_COMPAION_WXR_IMPORTER {
 	private function __construct() {
 
 		if ( ! class_exists( 'WP_Importer' ) ) {
-			defined( 'WP_LOAD_IMPORTERS' ) || define( 'WP_LOAD_IMPORTERS', true );
+			// defined( 'WP_LOAD_IMPORTERS' ) || define( 'WP_LOAD_IMPORTERS', true );
 			require_once  ABSPATH . '/wp-admin/includes/class-wp-importer.php';
 		}
 

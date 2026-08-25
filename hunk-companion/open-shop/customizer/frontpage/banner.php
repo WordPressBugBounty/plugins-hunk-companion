@@ -1,10 +1,11 @@
 <?php 
+if ( ! defined( 'ABSPATH' ) ) exit;
 $wp_customize->add_setting( 'open_shop_disable_banner_sec', array(
                 'default'               => false,
                 'sanitize_callback'     => 'open_shop_sanitize_checkbox',
             ) );
 $wp_customize->add_control( new WP_Customize_Control( $wp_customize, 'open_shop_disable_banner_sec', array(
-                'label'                 => esc_html__('Disable Section (Pro)', 'open-shop'),
+                'label'                 => esc_html__('Disable Section (Pro)', 'hunk-companion'),
                 'type'                  => 'checkbox',
                 'section'               => 'open_shop_banner',
                 'settings'              => 'open_shop_disable_banner_sec',
@@ -20,7 +21,7 @@ if(class_exists('Open_Shop_WP_Customize_Control_Radio_Image')){
 $wp_customize->add_control(
             new Open_Shop_WP_Customize_Control_Radio_Image(
                 $wp_customize, 'open_shop_banner_layout', array(
-                    'label'    => esc_html__( 'Layout', 'open-shop' ),
+                    'label'    => esc_html__( 'Layout', 'hunk-companion' ),
                     'section'  => 'open_shop_banner',
                     'choices'  => array(
                         'bnr-one'   => array(
@@ -51,7 +52,7 @@ $wp_customize->add_setting('open_shop_bnr_1_img', array(
         'sanitize_callback' => 'open_shop_sanitize_upload',
     ));
 $wp_customize->add_control( new WP_Customize_Image_Control($wp_customize, 'open_shop_bnr_1_img', array(
-        'label'          => __('Image 1', 'open-shop'),
+        'label'          => __('Image 1', 'hunk-companion'),
         'section'        => 'open_shop_banner',
         'settings'       => 'open_shop_bnr_1_img',
  )));
@@ -63,7 +64,7 @@ $wp_customize->add_setting('open_shop_bnr_1_url', array(
         'sanitize_callback' => 'open_shop_sanitize_text',
 ));
 $wp_customize->add_control( 'open_shop_bnr_1_url', array(
-        'label'    => __('url', 'open-shop'),
+        'label'    => __('url', 'hunk-companion'),
         'section'  => 'open_shop_banner',
          'type'    => 'text',
 ));
@@ -74,7 +75,7 @@ $wp_customize->add_setting('open_shop_bnr_2_img', array(
         'sanitize_callback' => 'open_shop_sanitize_upload',
     ));
 $wp_customize->add_control( new WP_Customize_Image_Control($wp_customize, 'open_shop_bnr_2_img', array(
-        'label'          => __('Image 2', 'open-shop'),
+        'label'          => __('Image 2', 'hunk-companion'),
         'section'        => 'open_shop_banner',
         'settings'       => 'open_shop_bnr_2_img',
  )));
@@ -86,7 +87,7 @@ $wp_customize->add_setting('open_shop_bnr_2_url', array(
         'sanitize_callback' => 'open_shop_sanitize_text',
 ));
 $wp_customize->add_control( 'open_shop_bnr_2_url', array(
-        'label'    => __('url', 'open-shop'),
+        'label'    => __('url', 'hunk-companion'),
         'section'  => 'open_shop_banner',
          'type'    => 'text',
 ));
@@ -98,7 +99,7 @@ $wp_customize->add_setting('open_shop_bnr_3_img', array(
         'sanitize_callback' => 'open_shop_sanitize_upload',
     ));
 $wp_customize->add_control( new WP_Customize_Image_Control($wp_customize, 'open_shop_bnr_3_img', array(
-        'label'          => __('Image 3', 'open-shop'),
+        'label'          => __('Image 3', 'hunk-companion'),
         'section'        => 'open_shop_banner',
         'settings'       => 'open_shop_bnr_3_img',
  )));
@@ -110,7 +111,7 @@ $wp_customize->add_setting('open_shop_bnr_3_url', array(
         'sanitize_callback' => 'open_shop_sanitize_text',
 ));
 $wp_customize->add_control( 'open_shop_bnr_3_url', array(
-        'label'    => __('url', 'open-shop'),
+        'label'    => __('url', 'hunk-companion'),
         'section'  => 'open_shop_banner',
          'type'    => 'text',
 ));
@@ -123,7 +124,7 @@ $wp_customize->add_setting('open_shop_bnr_4_img', array(
         'sanitize_callback' => 'open_shop_sanitize_upload',
     ));
 $wp_customize->add_control( new WP_Customize_Image_Control($wp_customize, 'open_shop_bnr_4_img', array(
-        'label'          => __('Image 4', 'open-shop'),
+        'label'          => __('Image 4', 'hunk-companion'),
         'section'        => 'open_shop_banner',
         'settings'       => 'open_shop_bnr_4_img',
  )));
@@ -133,7 +134,7 @@ $wp_customize->add_setting('open_shop_bnr_4_url', array(
         'sanitize_callback' => 'open_shop_sanitize_text',
 ));
 $wp_customize->add_control( 'open_shop_bnr_4_url', array(
-        'label'    => __('url', 'open-shop'),
+        'label'    => __('url', 'hunk-companion'),
         'section'  => 'open_shop_banner',
          'type'    => 'text',
 ));
@@ -145,7 +146,7 @@ $wp_customize->add_setting('open_shop_bnr_5_img', array(
         'sanitize_callback' => 'open_shop_sanitize_upload',
     ));
 $wp_customize->add_control( new WP_Customize_Image_Control($wp_customize, 'open_shop_bnr_5_img', array(
-        'label'          => __('Image 5', 'open-shop'),
+        'label'          => __('Image 5', 'hunk-companion'),
         'section'        => 'open_shop_banner',
         'settings'       => 'open_shop_bnr_5_img',
  )));
@@ -155,7 +156,7 @@ $wp_customize->add_setting('open_shop_bnr_5_url', array(
         'sanitize_callback' => 'open_shop_sanitize_text',
 ));
 $wp_customize->add_control( 'open_shop_bnr_5_url', array(
-        'label'    => __('url', 'open-shop'),
+        'label'    => __('url', 'hunk-companion'),
         'section'  => 'open_shop_banner',
          'type'    => 'text',
 ));
@@ -168,6 +169,6 @@ $wp_customize->add_control(new Open_Shop_Misc_Control( $wp_customize, 'open_shop
         'section'     => 'open_shop_banner',
         'type'        => 'doc-link',
         'url'         => 'https://themehunk.com/docs/open-shop/#banner-section',
-        'description' => esc_html__( 'To know more go with this', 'open-shop' ),
+        'description' => esc_html__( 'To know more go with this', 'hunk-companion' ),
         'priority'   =>100,
     )));

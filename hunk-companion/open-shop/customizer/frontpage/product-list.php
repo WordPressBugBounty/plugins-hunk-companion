@@ -1,23 +1,24 @@
 <?php
+if ( ! defined( 'ABSPATH' ) ) exit;
 $wp_customize->add_setting( 'open_shop_disable_product_list_sec', array(
                 'default'               => false,
                 'sanitize_callback'     => 'open_shop_sanitize_checkbox',
             ) );
 $wp_customize->add_control( new WP_Customize_Control( $wp_customize, 'open_shop_disable_product_list_sec', array(
-                'label'                 => esc_html__('Disable Section (Pro)', 'open-shop'),
+                'label'                 => esc_html__('Disable Section (Pro)', 'hunk-companion'),
                 'type'                  => 'checkbox',
                 'section'               => 'open_shop_product_slide_list',
                 'settings'              => 'open_shop_disable_product_list_sec',
             ) ) );
 // section heading
 $wp_customize->add_setting('open_shop_product_list_heading', array(
-	    'default' => __('Product List','open-shop'),
+	    'default' => __('Product List','hunk-companion'),
         'capability'        => 'edit_theme_options',
         'sanitize_callback' => 'open_shop_sanitize_text',
         'transport'         => 'postMessage',
 ));
 $wp_customize->add_control( 'open_shop_product_list_heading', array(
-        'label'    => __('Section Heading', 'open-shop'),
+        'label'    => __('Section Heading', 'hunk-companion'),
         'section'  => 'open_shop_product_slide_list',
          'type'       => 'text',
 ));
@@ -27,7 +28,7 @@ $wp_customize->add_control( 'open_shop_product_list_heading', array(
 	'sanitize_callback' => 'open_shop_sanitize_select',
 	) );
 	$wp_customize->add_control( 'open_shop_product_list_cata', array(
-	'label'   => __('Select Category','open-shop'),
+	'label'   => __('Select Category','hunk-companion'),
 	'section' => 'open_shop_product_slide_list',
 	'type' => 'select',
 	'choices' =>open_shop_product_category_list(array('taxonomy' =>'product_cat'),true),
@@ -39,7 +40,7 @@ $wp_customize->add_setting( 'open_shop_single_row_prdct_list', array(
                 'sanitize_callback'     => 'open_shop_sanitize_checkbox',
             ) );
 $wp_customize->add_control( new WP_Customize_Control( $wp_customize, 'open_shop_single_row_prdct_list', array(
-                'label'                 => esc_html__('Enable Single Row Slide (Pro)', 'open-shop'),
+                'label'                 => esc_html__('Enable Single Row Slide (Pro)', 'hunk-companion'),
                 'type'                  => 'checkbox',
                 'section'               => 'open_shop_product_slide_list',
                 'settings'              => 'open_shop_single_row_prdct_list',
@@ -53,6 +54,6 @@ $wp_customize->add_control( new WP_Customize_Control( $wp_customize, 'open_shop_
         'section'    => 'open_shop_product_slide_list',
         'type'      => 'doc-link',
         'url'       => 'https://themehunk.com/docs/open-shop/#product-list',
-        'description' => esc_html__( 'To know more go with this', 'open-shop' ),
+        'description' => esc_html__( 'To know more go with this', 'hunk-companion' ),
         'priority'   =>100,
     )));

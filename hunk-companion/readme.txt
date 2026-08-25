@@ -2,9 +2,10 @@
 Contributors: themehunk
 Author URI: : https://www.themehunk.com/
 Tags: themehunk, customizer, Testimonial, Team, service
-Tested up to: 7.0
-Stable tag: 2.0.6
-License: GPLv3 License URI: https://www.gnu.org/licenses/gpl-3.0.en.html
+Tested up to: 7.1
+Stable tag: 2.0.7
+License: GPLv3 or later
+License URL: https://www.gnu.org/licenses/gpl-3.0.en.html
 
 Adds customizer settings and controls to the Gogo Theme.
 
@@ -58,6 +59,13 @@ Yes this plugin is specially make for ThemeHunk themes like Gogo. You can instal
 2. screenshot-2.png
 
 == Changelog ==
+
+= 2.0.7 =
+TH Shop Mania : B2b demo added.
+TH Shop Mania : Mania Ecommerce demo added.
+TH Shop Mania : Cosmetic Mania thumbnail updated.
+Update: Security isssues resolved.
+
 
 = 2.0.6 =
 TH Shop Mania : Elemento Addon quick view color controls added.

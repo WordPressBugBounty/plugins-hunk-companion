@@ -1,4 +1,5 @@
 <?php
+if ( ! defined( 'ABSPATH' ) ) exit;
 /**
  * SortBy Section For Frontpage
  *
@@ -24,26 +25,26 @@ if ( !wp_is_mobile() ) {
       <aside class="filter-sidebar">
         <div class="sidebar-box">
           <div class="sidebar-wrapper"> 
-            <h2 class="sortby-heading heading"><?php _e('Sort By','hunk-companion');?></h2>
+            <h2 class="sortby-heading heading"><?php  esc_htmlesc_html_e('Sort By','hunk-companion');?></h2>
   <!-- radio filter  -->
   <div class="sort-adv-filter">
-  <label class="sort-radio"><?php _e('New Arrival','hunk-companion');?>
+  <label class="sort-radio"><?php esc_html_e('New Arrival','hunk-companion');?>
   <input type="radio" checked="checked" name="radio" value="recent">
   <span class="checkmark"></span>
   </label>
-  <label class="sort-radio"><?php _e('Featured','hunk-companion');?>
+  <label class="sort-radio"><?php esc_html_e('Featured','hunk-companion');?>
   <input type="radio" name="radio" value="featured">
   <span class="checkmark"></span>
   </label>
-  <label class="sort-radio"><?php _e('On Sale','hunk-companion');?>
+  <label class="sort-radio"><?php esc_html_e('On Sale','hunk-companion');?>
   <input type="radio" name="radio" value="onsale">
   <span class="checkmark"></span>
   </label>
-  <label class="sort-radio"><?php _e('Low To High','hunk-companion');?>
+  <label class="sort-radio"><?php esc_html_e('Low To High','hunk-companion');?>
   <input type="radio"  name="radio" value="low-to-high">
   <span class="checkmark-p"></span>
   </label>
-  <label class="sort-radio"><?php _e('High To Low','hunk-companion');?>
+  <label class="sort-radio"><?php esc_html_e('High To Low','hunk-companion');?>
   <input type="radio" name="radio" value="high-to-low">
   <span class="checkmark-p"></span>
   </label>
@@ -51,7 +52,7 @@ if ( !wp_is_mobile() ) {
 <!-- radio filter  -->
 <div class="sort-border"></div>
 <!-- checkbox -->
-<h2 class="sortby-heading heading"><?php _e('Categories','hunk-companion');?></h2>
+<h2 class="sortby-heading heading"><?php esc_html_e('Categories','hunk-companion');?></h2>
             <ul class="check-filter-list">
               <?php almaira_shop_sort_category_products(); ?>
             </ul>
@@ -94,11 +95,11 @@ if ( wp_is_mobile() ) {
 <div class="filter-check-responsive">
 <button id="sort-adv-btn" class="sort-adv-filter-btn">
  <i class="fa fa-sort-amount-desc" aria-hidden="true"></i>
- <?php esc_html_e('Sort By','almaira'); ?>
+ <?php esc_htmlesc_html_e('Sort By','hunk-companion'); ?>
 </button>
 <span class="th-bor-span"></span>
 <button id="check-filterlist-btn" class="check-filter-list-btn">
-  <?php esc_html_e('Categories','almaira'); ?>
+  <?php esc_htmlesc_html_e('Categories','hunk-companion'); ?>
 </button>
 </div> <!-- filter-check-responsive -->
 
@@ -106,26 +107,26 @@ if ( wp_is_mobile() ) {
            <!-- radio filter 2  -->
   <div class="sort-adv-filter-wrapper" id="sort-adv-filter-id">
     <div class="th-sortby-overlay">
-    <h6><?php esc_html_e('SORT BY','hunk-companion')?></h6>
+    <h6><?php esc_htmlesc_html_e('SORT BY','hunk-companion')?></h6>
     <a href="" id="sort-adv-close">&#10006</a>
   <div class="sort-adv-filter">
-  <label class="sort-radio"><?php _e('New Arrival','hunk-companion');?>
+  <label class="sort-radio"><?php esc_html_e('New Arrival','hunk-companion');?>
   <input type="radio" checked="checked" name="radio" value="recent">
   <span class="checkmark"></span>
   </label>
-  <label class="sort-radio"><?php _e('Featured','hunk-companion');?>
+  <label class="sort-radio"><?php esc_html_e('Featured','hunk-companion');?>
   <input type="radio" name="radio" value="featured">
   <span class="checkmark"></span>
   </label>
-  <label class="sort-radio"><?php _e('On Sale','hunk-companion');?>
+  <label class="sort-radio"><?php esc_html_e('On Sale','hunk-companion');?>
   <input type="radio" name="radio" value="onsale">
   <span class="checkmark"></span>
   </label>
-  <label class="sort-radio"><?php _e('Low To High','hunk-companion');?>
+  <label class="sort-radio"><?php esc_html_e('Low To High','hunk-companion');?>
   <input type="radio"  name="radio" value="low-to-high">
   <span class="checkmark-p"></span>
   </label>
-  <label class="sort-radio"><?php _e('High To Low','hunk-companion');?>
+  <label class="sort-radio"><?php esc_html_e('High To Low','hunk-companion');?>
   <input type="radio" name="radio" value="high-to-low">
   <span class="checkmark-p"></span>
   </label>
@@ -135,7 +136,7 @@ if ( wp_is_mobile() ) {
             <!-- checkbox 2-->
   <div class="check-filter-list-wrapper" id="check-filter-id">
     <div class="th-check-filter-overlay">
-    <h6><?php esc_html_e('Categories','hunk-companion')?></h6>
+    <h6><?php esc_htmlesc_html_e('Categories','hunk-companion')?></h6>
     <a href="" id="check-filter-close">&#10006</a>
   <ul class="check-filter-list">
               <?php almaira_shop_sort_category_products(); ?>

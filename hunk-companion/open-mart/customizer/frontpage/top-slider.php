@@ -4,7 +4,7 @@ $wp_customize->add_setting( 'open_mart_disable_top_slider_sec', array(
                 'sanitize_callback'     => 'open_mart_sanitize_checkbox',
             ) );
 $wp_customize->add_control( new WP_Customize_Control( $wp_customize, 'open_mart_disable_top_slider_sec', array(
-                'label'                 => esc_html__('Disable Section', 'open-mart'),
+                'label'                 => esc_html__('Disable Section', 'hunk-companion'),
                 'type'                  => 'checkbox',
                 'section'               => 'open_mart_top_slider_section',
                 'settings'              => 'open_mart_disable_top_slider_sec',
@@ -21,7 +21,7 @@ if(class_exists('open_mart_WP_Customize_Control_Radio_Image')){
 $wp_customize->add_control(
             new open_mart_WP_Customize_Control_Radio_Image(
                 $wp_customize, 'open_mart_top_slide_layout', array(
-                    'label'    => esc_html__( 'Slider Layout', 'open-mart' ),
+                    'label'    => esc_html__( 'Slider Layout', 'hunk-companion' ),
                     'section'  => 'open_mart_top_slider_section',
                     'choices'  => array(
                         'slide-layout-1'   => array(
@@ -58,10 +58,10 @@ $wp_customize->add_control(
             $wp_customize->add_control(
                 new open_mart_Repeater(
                     $wp_customize, 'open_mart_top_slide_lay1_content', array(
-                        'label'                                => esc_html__( 'Slide Content', 'open-mart' ),
+                        'label'                                => esc_html__( 'Slide Content', 'hunk-companion' ),
                         'section'                              => 'open_mart_top_slider_section',
-                        'add_field_label'                      => esc_html__( 'Add new Slide', 'open-mart' ),
-                        'item_name'                            => esc_html__( 'Slide', 'open-mart' ),
+                        'add_field_label'                      => esc_html__( 'Add new Slide', 'hunk-companion' ),
+                        'item_name'                            => esc_html__( 'Slide', 'hunk-companion' ),
                         
                         'customizer_repeater_title_control'    => true,   
                         'customizer_repeater_subtitle_control'    => true, 
@@ -117,7 +117,7 @@ $wp_customize->add_control(
             $wp_customize,
             'open_mart_top_slide_lay1_background_image',
             array(
-                'label'     => esc_html__( 'Background Image', 'open-mart' ),
+                'label'     => esc_html__( 'Background Image', 'hunk-companion' ),
                 'section'   => 'open_mart_top_slider_section',
                 'settings'    => array(
                     'image_url' => 'open_mart_top_slide_lay1_background_image_url',
@@ -142,10 +142,10 @@ $wp_customize->add_control(
             $wp_customize->add_control(
                 new open_mart_Repeater(
                     $wp_customize, 'open_mart_top_slide_lay5_content', array(
-                        'label'                                => esc_html__( 'Slide Content', 'open-mart' ),
+                        'label'                                => esc_html__( 'Slide Content', 'hunk-companion' ),
                         'section'                              => 'open_mart_top_slider_section',
-                        'add_field_label'                      => esc_html__( 'Add new Slide', 'open-mart' ),
-                        'item_name'                            => esc_html__( 'Slide', 'open-mart' ),
+                        'add_field_label'                      => esc_html__( 'Add new Slide', 'hunk-companion' ),
+                        'item_name'                            => esc_html__( 'Slide', 'hunk-companion' ),
                         
                        'customizer_repeater_title_control'    => true,   
                         'customizer_repeater_subtitle_control'    => true, 
@@ -172,10 +172,10 @@ $wp_customize->add_control(
             $wp_customize->add_control(
                 new open_mart_Repeater(
                     $wp_customize, 'open_mart_top_slide_lay2_content', array(
-                        'label'                                => esc_html__( 'Slide Content', 'open-mart' ),
+                        'label'                                => esc_html__( 'Slide Content', 'hunk-companion' ),
                         'section'                              => 'open_mart_top_slider_section',
-                        'add_field_label'                      => esc_html__( 'Add new Slide', 'open-mart' ),
-                        'item_name'                            => esc_html__( 'Slide', 'open-mart' ),
+                        'add_field_label'                      => esc_html__( 'Add new Slide', 'hunk-companion' ),
+                        'item_name'                            => esc_html__( 'Slide', 'hunk-companion' ),
                         
                         'customizer_repeater_title_control'    => true,   
                         'customizer_repeater_subtitle_control'    => true, 
@@ -203,10 +203,10 @@ $wp_customize->add_control(
             $wp_customize->add_control(
                 new open_mart_Repeater(
                     $wp_customize, 'open_mart_top_slide_lay3_content', array(
-                        'label'                                => esc_html__( 'Slide Content', 'open-mart' ),
+                        'label'                                => esc_html__( 'Slide Content', 'hunk-companion' ),
                         'section'                              => 'open_mart_top_slider_section',
-                        'add_field_label'                      => esc_html__( 'Add new Slide', 'open-mart' ),
-                        'item_name'                            => esc_html__( 'Slide', 'open-mart' ),
+                        'add_field_label'                      => esc_html__( 'Add new Slide', 'hunk-companion' ),
+                        'item_name'                            => esc_html__( 'Slide', 'hunk-companion' ),
                         
                         'customizer_repeater_title_control'    => true,   
                         'customizer_repeater_subtitle_control'    => true, 
@@ -234,10 +234,10 @@ $wp_customize->add_control(
             $wp_customize->add_control(
                 new open_mart_Repeater(
                     $wp_customize, 'open_mart_top_slide_lay4_content', array(
-                        'label'                                => esc_html__( 'Slide Content', 'open-mart' ),
+                        'label'                                => esc_html__( 'Slide Content', 'hunk-companion' ),
                         'section'                              => 'open_mart_top_slider_section',
-                        'add_field_label'                      => esc_html__( 'Add new Slide', 'open-mart' ),
-                        'item_name'                            => esc_html__( 'Slide', 'open-mart' ),
+                        'add_field_label'                      => esc_html__( 'Add new Slide', 'hunk-companion' ),
+                        'item_name'                            => esc_html__( 'Slide', 'hunk-companion' ),
                         
                         'customizer_repeater_title_control'    => true,   
                         'customizer_repeater_subtitle_control'    => true, 
@@ -259,7 +259,7 @@ $wp_customize->add_control(
     'sanitize_callback' => 'open_mart_sanitize_checkbox',
   ) );
   $wp_customize->add_control( new open_mart_Toggle_Control( $wp_customize, 'open_mart_top_slider_optn', array(
-    'label'       => esc_html__( 'Slide Auto Play', 'open-mart' ),
+    'label'       => esc_html__( 'Slide Auto Play', 'hunk-companion' ),
     'section'     => 'open_mart_top_slider_section',
     'type'        => 'toggle',
     'settings'    => 'open_mart_top_slider_optn',
@@ -271,8 +271,8 @@ $wp_customize->add_setting('open_mart_slider_speed', array(
         'sanitize_callback' => 'open_mart_sanitize_number',
 ));
 $wp_customize->add_control( 'open_mart_slider_speed', array(
-        'label'    => __('Speed', 'open-mart'),
-        'description' =>__('Interval (in milliseconds) to go for next slide since the previous stopped if the slider is auto playing, default value is 3000','open-mart'),
+        'label'    => __('Speed', 'hunk-companion'),
+        'description' =>__('Interval (in milliseconds) to go for next slide since the previous stopped if the slider is auto playing, default value is 3000','hunk-companion'),
         'section'  => 'open_mart_top_slider_section',
          'type'        => 'number',
 ));
@@ -283,7 +283,7 @@ $wp_customize->add_setting('open_mart_lay2_adimg', array(
         'sanitize_callback' => 'open_mart_sanitize_upload',
     ));
 $wp_customize->add_control( new WP_Customize_Image_Control($wp_customize, 'open_mart_lay2_adimg', array(
-        'label'          => __('Image 1', 'open-mart'),
+        'label'          => __('Image 1', 'hunk-companion'),
         'section'        => 'open_mart_top_slider_section',
         'settings'       => 'open_mart_lay2_adimg',
  )));
@@ -293,7 +293,7 @@ $wp_customize->add_setting('open_mart_lay2_url', array(
         'sanitize_callback' => 'open_mart_sanitize_text',
 ));
 $wp_customize->add_control( 'open_mart_lay2_url', array(
-        'label'    => __('url', 'open-mart'),
+        'label'    => __('url', 'hunk-companion'),
         'section'  => 'open_mart_top_slider_section',
          'type'    => 'text',
 ));
@@ -305,7 +305,7 @@ $wp_customize->add_setting('open_mart_lay3_adimg', array(
         'sanitize_callback' => 'open_mart_sanitize_upload',
     ));
 $wp_customize->add_control( new WP_Customize_Image_Control($wp_customize, 'open_mart_lay3_adimg', array(
-        'label'          => __('Image 1', 'open-mart'),
+        'label'          => __('Image 1', 'hunk-companion'),
         'section'        => 'open_mart_top_slider_section',
         'settings'       => 'open_mart_lay3_adimg',
  )));
@@ -315,7 +315,7 @@ $wp_customize->add_setting('open_mart_lay3_url', array(
         'sanitize_callback' => 'open_mart_sanitize_text',
 ));
 $wp_customize->add_control( 'open_mart_lay3_url', array(
-        'label'    => __('url', 'open-mart'),
+        'label'    => __('url', 'hunk-companion'),
         'section'  => 'open_mart_top_slider_section',
          'type'    => 'text',
 ));
@@ -325,7 +325,7 @@ $wp_customize->add_setting('open_mart_lay3_adimg2', array(
         'sanitize_callback' => 'open_mart_sanitize_upload',
     ));
 $wp_customize->add_control( new WP_Customize_Image_Control($wp_customize, 'open_mart_lay3_adimg2', array(
-        'label'          => __('Image 2', 'open-mart'),
+        'label'          => __('Image 2', 'hunk-companion'),
         'section'        => 'open_mart_top_slider_section',
         'settings'       => 'open_mart_lay3_adimg2',
  )));
@@ -335,7 +335,7 @@ $wp_customize->add_setting('open_mart_lay3_2url', array(
         'sanitize_callback' => 'open_mart_sanitize_text',
 ));
 $wp_customize->add_control( 'open_mart_lay3_2url', array(
-        'label'    => __('url', 'open-mart'),
+        'label'    => __('url', 'hunk-companion'),
         'section'  => 'open_mart_top_slider_section',
          'type'    => 'text',
 ));
@@ -346,7 +346,7 @@ $wp_customize->add_setting('open_mart_lay3_adimg3', array(
         'sanitize_callback' => 'open_mart_sanitize_upload',
     ));
 $wp_customize->add_control( new WP_Customize_Image_Control($wp_customize, 'open_mart_lay3_adimg3', array(
-        'label'          => __('Image 3', 'open-mart'),
+        'label'          => __('Image 3', 'hunk-companion'),
         'section'        => 'open_mart_top_slider_section',
         'settings'       => 'open_mart_lay3_adimg3',
  )));
@@ -356,7 +356,7 @@ $wp_customize->add_setting('open_mart_lay3_3url', array(
         'sanitize_callback' => 'open_mart_sanitize_text',
 ));
 $wp_customize->add_control( 'open_mart_lay3_3url', array(
-        'label'    => __('url', 'open-mart'),
+        'label'    => __('url', 'hunk-companion'),
         'section'  => 'open_mart_top_slider_section',
          'type'    => 'text',
 ));
@@ -368,7 +368,7 @@ $wp_customize->add_setting('open_mart_lay4_adimg1', array(
         'sanitize_callback' => 'open_mart_sanitize_upload',
     ));
 $wp_customize->add_control( new WP_Customize_Image_Control($wp_customize, 'open_mart_lay4_adimg1', array(
-        'label'          => __('Image 1', 'open-mart'),
+        'label'          => __('Image 1', 'hunk-companion'),
         'section'        => 'open_mart_top_slider_section',
         'settings'       => 'open_mart_lay4_adimg1',
  )));
@@ -378,7 +378,7 @@ $wp_customize->add_setting('open_mart_lay4_url1', array(
         'sanitize_callback' => 'open_mart_sanitize_text',
 ));
 $wp_customize->add_control( 'open_mart_lay4_url1', array(
-        'label'    => __('url', 'open-mart'),
+        'label'    => __('url', 'hunk-companion'),
         'section'  => 'open_mart_top_slider_section',
          'type'    => 'text',
 ));
@@ -389,7 +389,7 @@ $wp_customize->add_setting('open_mart_lay4_adimg2', array(
         'sanitize_callback' => 'open_mart_sanitize_upload',
     ));
 $wp_customize->add_control( new WP_Customize_Image_Control($wp_customize, 'open_mart_lay4_adimg2', array(
-        'label'          => __('Image 2', 'open-mart'),
+        'label'          => __('Image 2', 'hunk-companion'),
         'section'        => 'open_mart_top_slider_section',
         'settings'       => 'open_mart_lay4_adimg2',
  )));
@@ -399,7 +399,7 @@ $wp_customize->add_setting('open_mart_lay4_url2', array(
         'sanitize_callback' => 'open_mart_sanitize_text',
 ));
 $wp_customize->add_control( 'open_mart_lay4_url2', array(
-        'label'    => __('url', 'open-mart'),
+        'label'    => __('url', 'hunk-companion'),
         'section'  => 'open_mart_top_slider_section',
          'type'    => 'text',
 ));
@@ -413,6 +413,6 @@ $wp_customize->add_control(new open_mart_Misc_Control( $wp_customize, 'open_mart
         'section'    => 'open_mart_top_slider_section',
         'type'      => 'doc-link',
         'url'       => 'https://themehunk.com/docs/open-mart/#top-slider',
-        'description' => esc_html__( 'To know more go with this', 'open-mart' ),
+        'description' => esc_html__( 'To know more go with this', 'hunk-companion' ),
         'priority'   =>100,
     )));

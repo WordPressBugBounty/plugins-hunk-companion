@@ -14,20 +14,20 @@ $wp_customize->add_setting( 'open_mart_disable_product_slide_sec', array(
                 'sanitize_callback'     => 'open_mart_sanitize_checkbox',
             ) );
 $wp_customize->add_control( new WP_Customize_Control( $wp_customize, 'open_mart_disable_product_slide_sec', array(
-                'label'                 => esc_html__('Disable Section', 'open-mart'),
+                'label'                 => esc_html__('Disable Section', 'hunk-companion'),
                 'type'                  => 'checkbox',
                 'section'               => 'open_mart_product_slide_section',
                 'settings'              => 'open_mart_disable_product_slide_sec',
             ) ) );
 // section heading
 $wp_customize->add_setting('open_mart_product_slider_heading', array(
-	    'default' => __('Product Carousel','open-mart'),
+	    'default' => __('Product Carousel','hunk-companion'),
         'capability'        => 'edit_theme_options',
         'sanitize_callback' => 'open_mart_sanitize_text',
         'transport'         => 'postMessage',
 ));
 $wp_customize->add_control( 'open_mart_product_slider_heading', array(
-        'label'    => __('Section Heading', 'open-mart'),
+        'label'    => __('Section Heading', 'hunk-companion'),
         'section'  => 'open_mart_product_slide_section',
          'type'       => 'text',
 ));
@@ -38,7 +38,7 @@ $wp_customize->add_control( 'open_mart_product_slider_heading', array(
 	'sanitize_callback' => 'open_mart_sanitize_select',
 	) );
 	$wp_customize->add_control( 'open_mart_product_slider_cat', array(
-	'label'   => __('Select Category','open-mart'),
+	'label'   => __('Select Category','hunk-companion'),
 	'section' => 'open_mart_product_slide_section',
 	'type' => 'select',
 	'choices' => open_mart_product_category_list(array('taxonomy' =>'product_cat'),true),
@@ -51,13 +51,13 @@ $wp_customize->add_setting('open_mart_product_slide_optn', array(
     ));
 $wp_customize->add_control( 'open_mart_product_slide_optn', array(
         'settings' => 'open_mart_product_slide_optn',
-        'label'   => __('Choose Option','open-mart'),
+        'label'   => __('Choose Option','hunk-companion'),
         'section' => 'open_mart_product_slide_section',
         'type'    => 'select',
         'choices'    => array(
-        'recent'     => __('Recent','open-mart'),
-        'featured'   => __('Featured','open-mart'),
-        'random'     => __('Random','open-mart'),
+        'recent'     => __('Recent','hunk-companion'),
+        'featured'   => __('Featured','hunk-companion'),
+        'random'     => __('Random','hunk-companion'),
             
         ),
     ));
@@ -67,7 +67,7 @@ $wp_customize->add_setting( 'open_mart_single_row_prdct_slide', array(
                 'sanitize_callback'     => 'open_mart_sanitize_checkbox',
             ) );
 $wp_customize->add_control( new WP_Customize_Control( $wp_customize, 'open_mart_single_row_prdct_slide', array(
-                'label'                 => esc_html__('Enable Single Row Slide', 'open-mart'),
+                'label'                 => esc_html__('Enable Single Row Slide', 'hunk-companion'),
                 'type'                  => 'checkbox',
                 'section'               => 'open_mart_product_slide_section',
                 'settings'              => 'open_mart_single_row_prdct_slide',
@@ -80,7 +80,7 @@ $wp_customize->add_control( new WP_Customize_Control( $wp_customize, 'open_mart_
     'sanitize_callback' => 'open_mart_sanitize_checkbox',
   ) );
   $wp_customize->add_control( new open_mart_Toggle_Control( $wp_customize, 'open_mart_product_slider_optn', array(
-    'label'       => esc_html__( 'Slide Auto Play', 'open-mart' ),
+    'label'       => esc_html__( 'Slide Auto Play', 'hunk-companion' ),
     'section'     => 'open_mart_product_slide_section',
     'type'        => 'toggle',
     'settings'    => 'open_mart_product_slider_optn',
@@ -90,7 +90,7 @@ $wp_customize->add_setting( 'open_mart_product_slider_zero_padding', array(
                 'sanitize_callback'     => 'open_mart_sanitize_checkbox',
             ) );
 $wp_customize->add_control( new WP_Customize_Control( $wp_customize, 'open_mart_product_slider_zero_padding', array(
-                'label'                 => esc_html__('Disable Content Padding', 'open-mart'),
+                'label'                 => esc_html__('Disable Content Padding', 'hunk-companion'),
                 'type'                  => 'checkbox',
                 'section'               => 'open_mart_product_slide_section',
                 'settings'              => 'open_mart_product_slider_zero_padding',
@@ -104,6 +104,6 @@ $wp_customize->add_control(new open_mart_Misc_Control( $wp_customize, 'open_mart
         'section'    => 'open_mart_product_slide_section',
         'type'      => 'doc-link',
         'url'       => 'https://themehunk.com/docs/open-mart/#product-carousel',
-        'description' => esc_html__( 'To know more go with this', 'open-mart' ),
+        'description' => esc_html__( 'To know more go with this', 'hunk-companion' ),
         'priority'   =>100,
     )));

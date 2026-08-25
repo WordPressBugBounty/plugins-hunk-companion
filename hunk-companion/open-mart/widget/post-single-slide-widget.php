@@ -10,7 +10,7 @@ class open_mart_slide_post extends WP_Widget {
     function __construct() {
         $widget_ops = array('classname' => 'open-mart-slide-post',
             'description' => 'Display post along with description');
-        parent::__construct('themehunk-customizer-section-four', __('Open Mart : Post Slide Widget','open-mart'), $widget_ops);
+        parent::__construct('themehunk-customizer-section-four', __('Open Mart : Post Slide Widget','hunk-companion'), $widget_ops);
     }
 
     function widget($args, $instance) {
@@ -18,7 +18,7 @@ class open_mart_slide_post extends WP_Widget {
         // widget content
         echo $before_widget;
         $query = array();
-        $title = isset($instance['title'])?$instance['title']:__('writing your description','open-mart');
+        $title = isset($instance['title'])?$instance['title']:__('writing your description','hunk-companion');
         $query['cate']  = isset($instance['cate']) ? absint($instance['cate']) : 0;
         $query['count']  = isset($instance['count']) ? absint($instance['count']) : 3;
         $query['orderby'] = isset($instance['orderby']) ?$instance['orderby'] : 'post_date';
@@ -85,9 +85,9 @@ jQuery('#'+wdgetid+'.owl-carousel').owlCarousel({
 
     function update($new_instance, $old_instance) {
         $instance = $old_instance;
-        $instance['title'] = strip_tags( $new_instance['title'] );
+        $instance['title'] = wp_strip_all_tags( $new_instance['title'] );
         $instance["cate"] = absint($new_instance["cate"]);
-        $instance['count'] = strip_tags( $new_instance['count'] );
+        $instance['count'] = wp_strip_all_tags( $new_instance['count'] );
        
        
         $instance["orderby"] = $new_instance["orderby"];
@@ -97,7 +97,7 @@ jQuery('#'+wdgetid+'.owl-carousel').owlCarousel({
 
     function form($instance) {
             $widgetInput = New OpenMartWidgetHtml();
-        $title = isset($instance['title']) ? esc_attr($instance['title']) : __('Latest News','open-mart');
+        $title = isset($instance['title']) ? esc_attr($instance['title']) : __('Latest News','hunk-companion');
         $cate = isset($instance['cate']) ? absint($instance['cate']) : 0;
         $count = isset($instance['count']) ? absint($instance['count']) : 3;
        
@@ -116,32 +116,32 @@ $foption .= '<option value="'.$term_id.'" '.$selected1.'>'.$cat->name.'</option>
         <div class="clearfix"></div>
         
     <p>
-    <label for="<?php echo $this->get_field_id('title'); ?>"><?php _e('Latest News Title','open-mart'); ?></label>
+    <label for="<?php echo $this->get_field_id('title'); ?>"><?php _e('Latest News Title','hunk-companion'); ?></label>
     <input name="<?php echo $this->get_field_name('title'); ?>" id="<?php echo $this->get_field_id('title'); ?>"  class="widefat" value="<?php echo $title; ?>" >
     </p>
-     <p><label for="<?php echo $this->get_field_id('count'); ?>"><?php _e('Add Number of Post Show','open-mart'); ?></label>
+     <p><label for="<?php echo $this->get_field_id('count'); ?>"><?php _e('Add Number of Post Show','hunk-companion'); ?></label>
             <input id="<?php echo $this->get_field_id('count'); ?>" name="<?php echo $this->get_field_name('count'); ?>" type="text" value="<?php echo $count; ?>" size="3" /></p>
         <p>
     <p>
-    <label for="<?php echo $this->get_field_id('cate'); ?>"><?php _e('Select Specific Option To Display Post','open-mart'); ?></label>
+    <label for="<?php echo $this->get_field_id('cate'); ?>"><?php _e('Select Specific Option To Display Post','hunk-companion'); ?></label>
         <select name="<?php echo $this->get_field_name('cate'); ?>" ><?php echo $foption; ?></select>
     </p>
     <?php 
       $arr2 = array('id'=>'orderby',
-          'label'=> __('Show Post Orderby ','open-mart'),
+          'label'=> __('Show Post Orderby ','hunk-companion'),
           'default' => 'post_date',
-          'option' => array('post_date'=>__('Recent Posts','open-mart'),
-                            'rand'=>__('Random Post','open-mart'),
-                            'comment_count' =>__('Popular Posts','open-mart'))
+          'option' => array('post_date'=>__('Recent Posts','hunk-companion'),
+                            'rand'=>__('Random Post','hunk-companion'),
+                            'comment_count' =>__('Popular Posts','hunk-companion'))
           );
         $widgetInput->selectBox($this,$instance,$arr2);
         ?>
 
             <?php 
         $arr1 = array('id'=>'exclude',
-         'h5'=> __('Unique Post Option','open-mart'),
-          'label'=> __('(Post displaying in this section will be excluded from all bottom sections. You can use this option to stop repeated post)','open-mart'),
-          'span' => __('Check here to display unique post','open-mart')
+         'h5'=> __('Unique Post Option','hunk-companion'),
+          'label'=> __('(Post displaying in this section will be excluded from all bottom sections. You can use this option to stop repeated post)','hunk-companion'),
+          'span' => __('Check here to display unique post','hunk-companion')
           );
          $widgetInput->radioBox($this,$instance,$arr1);?>
         <?php

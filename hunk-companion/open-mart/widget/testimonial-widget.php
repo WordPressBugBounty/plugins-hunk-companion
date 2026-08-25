@@ -19,7 +19,7 @@ class OpenMart_testimonial extends WP_Widget {
     function __construct() {
         $widget_ops = array('classname' => 'th-testimonial',
             'description' => 'Displays Testimonial');
-        parent::__construct('th-testimonial-widget', __('Open Mart : Testimonial Widget','open-mart'), $widget_ops);
+        parent::__construct('th-testimonial-widget', __('Open Mart : Testimonial Widget','hunk-companion'), $widget_ops);
     }
 
     function widget($args, $instance) {
@@ -116,14 +116,14 @@ jQuery('#'+wdgetid+'.owl-carousel').owlCarousel({
         $instance = $old_instance;
         $instance['widgettitle'] = $new_instance['widgettitle'];
         $instance['text1'] = $new_instance['text1'];
-        $instance['title1'] = strip_tags( $new_instance['title1'] );
-        $instance['author_img_uri1'] = strip_tags( $new_instance['author_img_uri1'] );
+        $instance['title1'] = wp_strip_all_tags( $new_instance['title1'] );
+        $instance['author_img_uri1'] = wp_strip_all_tags( $new_instance['author_img_uri1'] );
         $instance['text2'] = $new_instance['text2'];
-        $instance['title2'] = strip_tags( $new_instance['title2'] );
-        $instance['author_img_uri2'] = strip_tags( $new_instance['author_img_uri2'] );
+        $instance['title2'] = wp_strip_all_tags( $new_instance['title2'] );
+        $instance['author_img_uri2'] = wp_strip_all_tags( $new_instance['author_img_uri2'] );
         $instance['text3'] = $new_instance['text3'];
-        $instance['title3'] = strip_tags( $new_instance['title3'] );
-        $instance['author_img_uri3'] = strip_tags( $new_instance['author_img_uri3'] );
+        $instance['title3'] = wp_strip_all_tags( $new_instance['title3'] );
+        $instance['author_img_uri3'] = wp_strip_all_tags( $new_instance['author_img_uri3'] );
         
         return $instance;
     }
@@ -160,17 +160,17 @@ jQuery('#'+wdgetid+'.owl-carousel').owlCarousel({
     ?>
 <div class="clearfix"></div>
     <p> 
-        <label for="<?php echo $this->get_field_id('widgettitle'); ?>"><?php _e('Widget Title','open-mart'); ?></label> 
+        <label for="<?php echo $this->get_field_id('widgettitle'); ?>"><?php _e('Widget Title','hunk-companion'); ?></label> 
         <input type="text" class="widefat" name="<?php echo $this->get_field_name('widgettitle'); ?>" id="<?php echo $this->get_field_id('widgettitle'); ?>" value="<?php  echo $widgettitle; ?>" style="margin-top:5px;">
      </p>
 
     <p>
-        <label for="<?php echo $this->get_field_id('title1'); ?>"><?php _e('Title','open-mart'); ?></label>
+        <label for="<?php echo $this->get_field_id('title1'); ?>"><?php _e('Title','hunk-companion'); ?></label>
         <input type="text" class="widefat" name="<?php echo $this->get_field_name('title1'); ?>" id="<?php echo $this->get_field_id('title1'); ?>" value="<?php  if(isset($instance["title1"])){ echo $instance['title1']; } ?>" style="margin-top:5px;">
     </p>
     
     <p>
-        <label for="<?php echo $this->get_field_id('author_img_uri1'); ?>"><?php _e('Image','open-mart'); ?></label>
+        <label for="<?php echo $this->get_field_id('author_img_uri1'); ?>"><?php _e('Image','hunk-companion'); ?></label>
         <?php
             if ( isset($instance['author_img_uri1']) && $instance['author_img_uri1'] != '' ) :
                 echo '<img id="'.$this->get_field_id('author_img_uri1').'" class="custom_media_image" src="' . $instance['author_img_uri1'] . '" style="margin:0;padding:0;max-width:100px;float:left;display:inline-block" /><br />';
@@ -180,7 +180,7 @@ jQuery('#'+wdgetid+'.owl-carousel').owlCarousel({
         <input type="button" class="button button-primary custom_media_button" id="<?php echo $this->get_field_id('author_img_uri1'); ?>" name="<?php echo $this->get_field_name('author_img_uri1'); ?>" value="Upload Image" style="margin-top:5px;" />
     </p>
     <p>
-        <label for="<?php echo $this->get_field_id('text1'); ?>"><?php _e('Description','open-mart'); ?></label>
+        <label for="<?php echo $this->get_field_id('text1'); ?>"><?php _e('Description','hunk-companion'); ?></label>
         <textarea  name="<?php echo $this->get_field_name('text1'); ?>" id="<?php echo $this->get_field_id('text1'); ?>"  class="widefat" >
         <?php if(isset($instance["text1"])){ echo $instance['text1']; } ?></textarea>
     </p>
@@ -188,12 +188,12 @@ jQuery('#'+wdgetid+'.owl-carousel').owlCarousel({
 
 
     <p>
-        <label for="<?php echo $this->get_field_id('title2'); ?>"><?php _e('Title','open-mart'); ?></label>
+        <label for="<?php echo $this->get_field_id('title2'); ?>"><?php _e('Title','hunk-companion'); ?></label>
         <input type="text" class="widefat" name="<?php echo $this->get_field_name('title2'); ?>" id="<?php echo $this->get_field_id('title2'); ?>" value="<?php  if(isset($instance["title2"])){ echo $instance['title2']; } ?>" style="margin-top:5px;">
     </p>
     
 <p>
-        <label for="<?php echo $this->get_field_id('author_img_uri2'); ?>"><?php _e('Image','open-mart'); ?></label>
+        <label for="<?php echo $this->get_field_id('author_img_uri2'); ?>"><?php _e('Image','hunk-companion'); ?></label>
         <?php
             if ( isset($instance['author_img_uri2']) && $instance['author_img_uri2'] != '' ) :
                 echo '<img id="'.$this->get_field_id('author_img_uri2').'" class="custom_media_image" src="' . $instance['author_img_uri2'] . '" style="margin:0;padding:0;max-width:100px;float:left;display:inline-block" /><br />';
@@ -203,7 +203,7 @@ jQuery('#'+wdgetid+'.owl-carousel').owlCarousel({
         <input type="button" class="button button-primary custom_media_button" id="<?php echo $this->get_field_id('author_img_uri2'); ?>" name="<?php echo $this->get_field_name('author_img_uri2'); ?>" value="Upload Image" style="margin-top:5px;" />
     </p>
     <p>
-        <label for="<?php echo $this->get_field_id('text2'); ?>"><?php _e('Description','open-mart'); ?></label>
+        <label for="<?php echo $this->get_field_id('text2'); ?>"><?php _e('Description','hunk-companion'); ?></label>
         <textarea  name="<?php echo $this->get_field_name('text2'); ?>" id="<?php echo $this->get_field_id('text2'); ?>"  class="widefat" >
         <?php if(isset($instance["text2"])){ echo $instance['text2']; } ?></textarea>
     </p>
@@ -212,12 +212,12 @@ jQuery('#'+wdgetid+'.owl-carousel').owlCarousel({
 
 
     <p>
-        <label for="<?php echo $this->get_field_id('title3'); ?>"><?php _e('Title','open-mart'); ?></label>
+        <label for="<?php echo $this->get_field_id('title3'); ?>"><?php _e('Title','hunk-companion'); ?></label>
         <input type="text" class="widefat" name="<?php echo $this->get_field_name('title3'); ?>" id="<?php echo $this->get_field_id('title3'); ?>" value="<?php  if(isset($instance["title3"])){ echo $instance['title3']; } ?>" style="margin-top:5px;">
     </p>
     
     <p>
-        <label for="<?php echo $this->get_field_id('author_img_uri3'); ?>"><?php _e('Image','open-mart'); ?></label>
+        <label for="<?php echo $this->get_field_id('author_img_uri3'); ?>"><?php _e('Image','hunk-companion'); ?></label>
         <?php
             if ( isset($instance['author_img_uri3']) && $instance['author_img_uri3'] != '' ) :
                 echo '<img id="'.$this->get_field_id('author_img_uri3').'" class="custom_media_image" src="' . $instance['author_img_uri3'] . '" style="margin:0;padding:0;max-width:100px;float:left;display:inline-block" /><br />';
@@ -227,7 +227,7 @@ jQuery('#'+wdgetid+'.owl-carousel').owlCarousel({
         <input type="button" class="button button-primary custom_media_button" id="<?php echo $this->get_field_id('author_img_uri3'); ?>" name="<?php echo $this->get_field_name('author_img_uri3'); ?>" value="Upload Image" style="margin-top:5px;" />
     </p>
     <p>
-        <label for="<?php echo $this->get_field_id('text3'); ?>"><?php _e('Description','open-mart'); ?></label>
+        <label for="<?php echo $this->get_field_id('text3'); ?>"><?php _e('Description','hunk-companion'); ?></label>
         <textarea  name="<?php echo $this->get_field_name('text3'); ?>" id="<?php echo $this->get_field_id('text3'); ?>"  class="widefat" >
         <?php if(isset($instance["text3"])){ echo $instance['text3']; } ?></textarea>
     </p>

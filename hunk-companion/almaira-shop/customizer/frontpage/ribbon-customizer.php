@@ -1,4 +1,5 @@
 <?php
+if ( ! defined( 'ABSPATH' ) ) exit;
 /**
  * Ribbon Section Customizer Settings
  *
@@ -41,7 +42,7 @@ $wp_customize->add_setting( 'almaira_shop_ribbon_background_image_url', array(
             $wp_customize,
             'almaira_shop_ribbon_background_image',
             array(
-                'label'     => esc_html__( 'Background Image', 'almaira-shop' ),
+                'label'     => esc_html__( 'Background Image', 'hunk-companion' ),
                 'section'   => 'almaira_shop_ribbon_section',
                 'priority'   => 1,
                 'settings'    => array(
@@ -132,6 +133,6 @@ $wp_customize->add_control(new Almaira_Shop_Misc_Control( $wp_customize, 'almair
         'section'     => 'almaira_shop_ribbon_section',
         'type'      => 'doc-link',
         'url'       => 'https://themehunk.com/docs/almaira-shop-theme/#ribbon-setting',
-        'description' => esc_html__( 'To know more go with this', 'almaira-shop' ),
+        'description' => esc_html__( 'To know more go with this', 'hunk-companion' ),
         'priority'   =>30,
     )));

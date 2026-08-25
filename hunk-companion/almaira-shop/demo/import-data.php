@@ -6,31 +6,31 @@ function almaira_import_files(){
   return apply_filters(
     'almaira_demo_site', array(
     array(
-        'import_file_name' => esc_html__('Almaira Shop Light Scheme','almaira-shop'),
+        'import_file_name' => esc_html__('Almaira Shop Light Scheme','hunk-companion'),
         'import_file_url'=> HUNK_COMPANION_PLUGIN_DIR_URL .'almaira-shop/demo/import-file/light/blog.xml',
         'import_customizer_file_url'=> HUNK_COMPANION_PLUGIN_DIR_URL .'almaira-shop/demo/import-file/light/customizer.dat',
         'import_widget_file_url'=>HUNK_COMPANION_PLUGIN_DIR_URL .'almaira-shop/demo/import-file/light/widgets.wie',
         'import_preview_image_url'=> esc_url(HUNK_COMPANION_PLUGIN_DIR_URL . 'almaira-shop/demo/images/almaira-light.png' ),
         'preview_url'=> esc_url('https://wpthemes.themehunk.com/almaira-shop-light-scheme/'),
-        'import_notice' => __( 'Before importing the demo data, Install & Activate the recommended plugins.', 'almaira-shop' ),
+        'import_notice' => __( 'Before importing the demo data, Install & Activate the recommended plugins.', 'hunk-companion' ),
     ),
      array(
-          'import_file_name'           => esc_html__('Almaira Shop Dark Scheme','almaira-shop'),
+          'import_file_name'           => esc_html__('Almaira Shop Dark Scheme','hunk-companion'),
           'import_file_url'            => HUNK_COMPANION_PLUGIN_DIR_URL .'almaira-shop/demo/import-file/dark/blog.xml',
           'import_customizer_file_url' =>HUNK_COMPANION_PLUGIN_DIR_URL .'almaira-shop/demo/import-file/dark/customizer.dat',
           'import_widget_file_url'=>HUNK_COMPANION_PLUGIN_DIR_URL .'almaira-shop/demo/import-file/dark/widgets.wie',
           'import_preview_image_url'=>  esc_url( HUNK_COMPANION_PLUGIN_DIR_URL . 'almaira-shop/demo/images/almaira-dark.png' ),
           'preview_url'=> esc_url('https://wpthemes.themehunk.com/almaira-shop-dark-scheme/'),
-          'import_notice'=> __( 'Before importing the demo data, Install & Activate the recommended plugins.', 'almaira-shop' ),
+          'import_notice'=> __( 'Before importing the demo data, Install & Activate the recommended plugins.', 'hunk-companion' ),
         ),
      array(
-          'import_file_name'=> esc_html__('Almaira Shop Boxed Layout','almaira-shop'),
+          'import_file_name'=> esc_html__('Almaira Shop Boxed Layout','hunk-companion'),
           'import_file_url'=>HUNK_COMPANION_PLUGIN_DIR_URL .'almaira-shop/demo/import-file/boxed/blog.xml',
           'import_customizer_file_url'=> HUNK_COMPANION_PLUGIN_DIR_URL .'almaira-shop/demo/import-file/boxed/customizer.dat',
           'import_widget_file_url' => HUNK_COMPANION_PLUGIN_DIR_URL .'almaira-shop/demo/import-file/boxed/widgets.wie',
           'import_preview_image_url'=>  esc_url( HUNK_COMPANION_PLUGIN_DIR_URL . 'almaira-shop/demo/images/almaira-boxed.png' ),
             'preview_url' => esc_url('https://wpthemes.themehunk.com/almaira-shop-boxed/'),
-           'import_notice' => __( 'Before importing the demo data, Install & Activate the recommended plugins.', 'almaira-shop' ),
+           'import_notice' => __( 'Before importing the demo data, Install & Activate the recommended plugins.', 'hunk-companion' ),
         ),
      )
   );

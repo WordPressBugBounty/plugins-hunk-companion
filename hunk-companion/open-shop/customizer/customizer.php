@@ -26,7 +26,7 @@ require HUNK_COMPANION_DIR_PATH . '/open-shop/customizer/frontpage/higlight.php'
     $wp_customize->add_control('open_shop_prd_shw_no', array(
             'type'        => 'number',
             'section'     => 'open-shop-woo-shop',
-            'label'       => __('No. of product to show in Front Page', 'open-shop' ),
+            'label'       => __('No. of product to show in Front Page', 'hunk-companion' ),
             'input_attrs' => array(
                 'min'  => 10,
                 'step' => 1,
@@ -48,7 +48,7 @@ $wp_customize->add_control(new Open_Shop_Misc_Control( $wp_customize, 'openshop-
         'section'     => 'open-shop-bottom-footer',
         'type'        => 'pro-link',
         'url'         => 'https://themehunk.com/product/open-shop-pro/',
-        'label' => esc_html__( 'Get Pro', 'open-shop' ),
+        'label' => esc_html__( 'Get Pro', 'hunk-companion' ),
         'priority'   =>100,
     )));
 

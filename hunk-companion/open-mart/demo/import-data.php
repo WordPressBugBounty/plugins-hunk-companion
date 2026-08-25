@@ -6,22 +6,22 @@ function open_mart_import_files(){
   return apply_filters(
     'open_mart_demo_site', array(
     array(
-        'import_file_name' => esc_html__('Open Mart Default','open-mart'),
+        'import_file_name' => esc_html__('Open Mart Default','hunk-companion'),
         'import_file_url'=> esc_url('https://themehunk.com/wp-content/uploads/sites-demo/openmart-lite/default/blogs.xml'),
         'import_customizer_file_url'=> esc_url('https://themehunk.com/wp-content/uploads/sites-demo/openmart-lite/default/customizer.dat'),
         'import_widget_file_url'=> esc_url('https://themehunk.com/wp-content/uploads/sites-demo/openmart-lite/default/widgets.wie'),
         'import_preview_image_url'=> esc_url('https://themehunk.com/wp-content/uploads/sites-demo/openmart-lite/default/thumb.png'),
         'preview_url'=> esc_url('https://wpthemes.themehunk.com/openmart-lite/'),
-        'import_notice' => __( 'Before importing the demo data, Install & Activate the recommended plugins.', 'open-mart' ),
+        'import_notice' => __( 'Before importing the demo data, Install & Activate the recommended plugins.', 'hunk-companion' ),
        ),
     array(
-        'import_file_name' => esc_html__('Grocery Mart Default','open-mart'),
+        'import_file_name' => esc_html__('Grocery Mart Default','hunk-companion'),
         'import_file_url'=> esc_url('https://themehunk.com/wp-content/uploads/sites-demo/openmart-lite/grocerymart/blogs.xml'),
         'import_customizer_file_url'=> esc_url('https://themehunk.com/wp-content/uploads/sites-demo/openmart-lite/grocerymart/customizer.dat'),
         'import_widget_file_url'=> esc_url('https://themehunk.com/wp-content/uploads/sites-demo/openmart-lite/grocerymart/widgets.wie'),
         'import_preview_image_url'=> esc_url('https://themehunk.com/wp-content/uploads/sites-demo/openmart-lite/grocerymart/thumb.png'),
         'preview_url'=> esc_url('https://wpthemes.themehunk.com/grocerymart/'),
-        'import_notice' => __( 'Before importing the demo data, Install & Activate the recommended plugins.', 'open-mart' ),
+        'import_notice' => __( 'Before importing the demo data, Install & Activate the recommended plugins.', 'hunk-companion' ),
        ),
      )
   );

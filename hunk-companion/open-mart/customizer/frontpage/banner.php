@@ -1,10 +1,11 @@
 <?php 
+if ( ! defined( 'ABSPATH' ) ) exit;
 $wp_customize->add_setting( 'open_mart_disable_banner_sec', array(
                 'default'               => false,
                 'sanitize_callback'     => 'open_mart_sanitize_checkbox',
             ) );
 $wp_customize->add_control( new WP_Customize_Control( $wp_customize, 'open_mart_disable_banner_sec', array(
-                'label'                 => esc_html__('Disable Section', 'open-mart'),
+                'label'                 => esc_html__('Disable Section', 'hunk-companion'),
                 'type'                  => 'checkbox',
                 'section'               => 'open_mart_banner',
                 'settings'              => 'open_mart_disable_banner_sec',
@@ -20,7 +21,7 @@ if(class_exists('open_mart_WP_Customize_Control_Radio_Image')){
 $wp_customize->add_control(
             new open_mart_WP_Customize_Control_Radio_Image(
                 $wp_customize, 'open_mart_banner_layout', array(
-                    'label'    => esc_html__( 'Layout', 'open-mart' ),
+                    'label'    => esc_html__( 'Layout', 'hunk-companion' ),
                     'section'  => 'open_mart_banner',
                     'choices'  => array(
                         'bnr-one'   => array(
@@ -58,7 +59,7 @@ $wp_customize->add_setting('open_mart_bnr_1_img', array(
         'sanitize_callback' => 'open_mart_sanitize_upload',
     ));
 $wp_customize->add_control( new WP_Customize_Image_Control($wp_customize, 'open_mart_bnr_1_img', array(
-        'label'          => __('Image 1', 'open-mart'),
+        'label'          => __('Image 1', 'hunk-companion'),
         'section'        => 'open_mart_banner',
         'settings'       => 'open_mart_bnr_1_img',
  )));
@@ -70,7 +71,7 @@ $wp_customize->add_setting('open_mart_bnr_1_url', array(
         'sanitize_callback' => 'open_mart_sanitize_text',
 ));
 $wp_customize->add_control( 'open_mart_bnr_1_url', array(
-        'label'    => __('url', 'open-mart'),
+        'label'    => __('url', 'hunk-companion'),
         'section'  => 'open_mart_banner',
          'type'    => 'text',
 ));
@@ -81,7 +82,7 @@ $wp_customize->add_setting('open_mart_bnr_2_img', array(
         'sanitize_callback' => 'open_mart_sanitize_upload',
     ));
 $wp_customize->add_control( new WP_Customize_Image_Control($wp_customize, 'open_mart_bnr_2_img', array(
-        'label'          => __('Image 2', 'open-mart'),
+        'label'          => __('Image 2', 'hunk-companion'),
         'section'        => 'open_mart_banner',
         'settings'       => 'open_mart_bnr_2_img',
  )));
@@ -93,7 +94,7 @@ $wp_customize->add_setting('open_mart_bnr_2_url', array(
         'sanitize_callback' => 'open_mart_sanitize_text',
 ));
 $wp_customize->add_control( 'open_mart_bnr_2_url', array(
-        'label'    => __('url', 'open-mart'),
+        'label'    => __('url', 'hunk-companion'),
         'section'  => 'open_mart_banner',
          'type'    => 'text',
 ));
@@ -105,7 +106,7 @@ $wp_customize->add_setting('open_mart_bnr_3_img', array(
         'sanitize_callback' => 'open_mart_sanitize_upload',
     ));
 $wp_customize->add_control( new WP_Customize_Image_Control($wp_customize, 'open_mart_bnr_3_img', array(
-        'label'          => __('Image 3', 'open-mart'),
+        'label'          => __('Image 3', 'hunk-companion'),
         'section'        => 'open_mart_banner',
         'settings'       => 'open_mart_bnr_3_img',
  )));
@@ -117,7 +118,7 @@ $wp_customize->add_setting('open_mart_bnr_3_url', array(
         'sanitize_callback' => 'open_mart_sanitize_text',
 ));
 $wp_customize->add_control( 'open_mart_bnr_3_url', array(
-        'label'    => __('url', 'open-mart'),
+        'label'    => __('url', 'hunk-companion'),
         'section'  => 'open_mart_banner',
          'type'    => 'text',
 ));
@@ -130,7 +131,7 @@ $wp_customize->add_setting('open_mart_bnr_4_img', array(
         'sanitize_callback' => 'open_mart_sanitize_upload',
     ));
 $wp_customize->add_control( new WP_Customize_Image_Control($wp_customize, 'open_mart_bnr_4_img', array(
-        'label'          => __('Image 4', 'open-mart'),
+        'label'          => __('Image 4', 'hunk-companion'),
         'section'        => 'open_mart_banner',
         'settings'       => 'open_mart_bnr_4_img',
  )));
@@ -140,7 +141,7 @@ $wp_customize->add_setting('open_mart_bnr_4_url', array(
         'sanitize_callback' => 'open_mart_sanitize_text',
 ));
 $wp_customize->add_control( 'open_mart_bnr_4_url', array(
-        'label'    => __('url', 'open-mart'),
+        'label'    => __('url', 'hunk-companion'),
         'section'  => 'open_mart_banner',
          'type'    => 'text',
 ));
@@ -152,7 +153,7 @@ $wp_customize->add_setting('open_mart_bnr_5_img', array(
         'sanitize_callback' => 'open_mart_sanitize_upload',
     ));
 $wp_customize->add_control( new WP_Customize_Image_Control($wp_customize, 'open_mart_bnr_5_img', array(
-        'label'          => __('Image 5', 'open-mart'),
+        'label'          => __('Image 5', 'hunk-companion'),
         'section'        => 'open_mart_banner',
         'settings'       => 'open_mart_bnr_5_img',
  )));
@@ -162,7 +163,7 @@ $wp_customize->add_setting('open_mart_bnr_5_url', array(
         'sanitize_callback' => 'open_mart_sanitize_text',
 ));
 $wp_customize->add_control( 'open_mart_bnr_5_url', array(
-        'label'    => __('url', 'open-mart'),
+        'label'    => __('url', 'hunk-companion'),
         'section'  => 'open_mart_banner',
          'type'    => 'text',
 ));
@@ -175,6 +176,6 @@ $wp_customize->add_control(new open_mart_Misc_Control( $wp_customize, 'open_mart
         'section'     => 'open_mart_banner',
         'type'        => 'doc-link',
         'url'         => 'https://themehunk.com/docs/open-mart/#banner-section',
-        'description' => esc_html__( 'To know more go with this', 'open-mart' ),
+        'description' => esc_html__( 'To know more go with this', 'hunk-companion' ),
         'priority'   =>100,
     )));

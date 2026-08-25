@@ -1,4 +1,5 @@
 <?php 
+if ( ! defined( 'ABSPATH' ) ) exit;
 add_filter( 'pt-ocdi/disable_pt_branding', '__return_true' );
 add_filter( 'pt-ocdi/regenerate_thumbnails_in_content_import', '__return_false' );
 

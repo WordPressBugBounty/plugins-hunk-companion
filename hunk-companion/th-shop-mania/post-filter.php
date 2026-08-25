@@ -19,7 +19,7 @@ if (!class_exists('Th_Simple_Post_filter')) {
                 $returnArray = [];
                 $returnArray['all'] = __('All', 'elemento-addons');
                 foreach ($all_categories as $cateValue) {
-                    $returnArray[$cateValue->slug] = __($cateValue->name, 'hunk-companion');
+                    $returnArray[$cateValue->slug] = $cateValue->name;
                 }
             }
             return $returnArray;

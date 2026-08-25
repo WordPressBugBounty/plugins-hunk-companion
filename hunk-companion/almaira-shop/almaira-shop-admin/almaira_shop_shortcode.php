@@ -51,7 +51,7 @@ function almaira_shop_contact_page_shortcode(){
       echo esc_html( get_theme_mod( 'almaira_shop_contact_heading'));
                 }
                 else{
-    esc_html_e( 'Dont Hesitate To Contact Us' , 'almaira-shop' );        
+    esc_html_e( 'Dont Hesitate To Contact Us' , 'hunk-companion' );        
                 }
                 ?>
                 </h2>
@@ -76,7 +76,7 @@ function almaira_shop_contact_page_shortcode(){
       echo esc_html( get_theme_mod( 'almaira_shop_contact_smallheading'));
                 }
                 else{
-    esc_html_e( 'CONTACT INFORMATION' , 'almaira-shop' );       
+    esc_html_e( 'CONTACT INFORMATION' , 'hunk-companion' );       
                 }
                 ?>
             </h6>
@@ -86,7 +86,7 @@ function almaira_shop_contact_page_shortcode(){
       echo esc_html( get_theme_mod( 'almaira_shop_contact_address1'));
                 }
                 else{
-    esc_html_e( '959, Sant  Bhms 066, India' , 'almaira-shop' );        
+    esc_html_e( '959, Sant  Bhms 066, India' , 'hunk-companion' );        
                 }
                 ?>
             </p>
@@ -96,7 +96,7 @@ function almaira_shop_contact_page_shortcode(){
       echo esc_html( get_theme_mod( 'almaira_shop_contact_address2'));
                 }
                 else{
-    esc_html_e( '212-938-3621, 917-204-2105' , 'almaira-shop' );        
+    esc_html_e( '212-938-3621, 917-204-2105' , 'hunk-companion' );        
                 }
                 ?>
             </p>
@@ -106,7 +106,7 @@ function almaira_shop_contact_page_shortcode(){
       echo esc_html( get_theme_mod( 'almaira_shop_contact_support'));
                 }
                 else{
-    esc_html_e( 'support@domain.com' , 'almaira-shop' );        
+    esc_html_e( 'support@domain.com' , 'hunk-companion' );        
                 }
                 ?>
             </p>
@@ -116,7 +116,7 @@ function almaira_shop_contact_page_shortcode(){
       echo esc_html( get_theme_mod( 'almaira_shop_contact_hours'));
                 }
                 else{
-    esc_html_e( 'Everyday 9:00-17:00' , 'almaira-shop' );       
+    esc_html_e( 'Everyday 9:00-17:00' , 'hunk-companion' );       
                 }
                 ?>
             </p>

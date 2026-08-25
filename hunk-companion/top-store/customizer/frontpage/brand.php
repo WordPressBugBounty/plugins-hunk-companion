@@ -1,4 +1,5 @@
 <?php
+if ( ! defined( 'ABSPATH' ) ) exit;
 $wp_customize->add_setting( 'top_store_disable_brand_sec', array(
                 'default'               => false,
                 'sanitize_callback'     => 'top_store_sanitize_checkbox',

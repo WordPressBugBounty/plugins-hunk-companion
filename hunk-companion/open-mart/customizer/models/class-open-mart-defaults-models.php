@@ -67,38 +67,38 @@ public function get_brand_default() {
 				array(
 					array(
 						'icon_value' => 'fa-cog',
-						'title'      => esc_html__( 'Best Offers', 'open-mart' ),
-						'subtitle'   => esc_html__( 'On all order over ', 'open-mart' ),
+						'title'      => esc_html__( 'Best Offers', 'hunk-companion' ),
+						'subtitle'   => esc_html__( 'On all order over ', 'hunk-companion' ),
 						
 					),
 					array(
 						'icon_value' => 'fa-cog',
-						'title'      => esc_html__( 'Risk Free', 'open-mart' ),
-						'subtitle'   => esc_html__( 'On all order over ', 'open-mart' ),
+						'title'      => esc_html__( 'Risk Free', 'hunk-companion' ),
+						'subtitle'   => esc_html__( 'On all order over ', 'hunk-companion' ),
 						
 					),
 					array(
 						'icon_value' => 'fa-cog',
-						'title'      => esc_html__( 'Stock In ', 'open-mart' ),
-						'subtitle'   => esc_html__( 'On all order over ', 'open-mart' ),
+						'title'      => esc_html__( 'Stock In ', 'hunk-companion' ),
+						'subtitle'   => esc_html__( 'On all order over ', 'hunk-companion' ),
 						
 					),
 					array(
 						'icon_value' => 'fa-cog',
-						'title'      => esc_html__( 'Free Shiping', 'open-mart' ),
-						'subtitle'   => esc_html__( 'On all order over ', 'open-mart' ),
+						'title'      => esc_html__( 'Free Shiping', 'hunk-companion' ),
+						'subtitle'   => esc_html__( 'On all order over ', 'hunk-companion' ),
 						
 					),
 					array(
 						'icon_value' => 'fa-cog',
-						'title'      => esc_html__( 'Best Offers', 'open-mart' ),
-						'subtitle'   => esc_html__( 'On all order over ', 'open-mart' ),
+						'title'      => esc_html__( 'Best Offers', 'hunk-companion' ),
+						'subtitle'   => esc_html__( 'On all order over ', 'hunk-companion' ),
 						
 					),
 					array(
 						'icon_value' => 'fa-cog',
-						'title'      => esc_html__( 'Best Offers', 'open-mart' ),
-						'subtitle'   => esc_html__( 'On all order over ', 'open-mart' ),
+						'title'      => esc_html__( 'Best Offers', 'hunk-companion' ),
+						'subtitle'   => esc_html__( 'On all order over ', 'hunk-companion' ),
 						
 					),
 				)
@@ -112,51 +112,51 @@ public function get_brand_default() {
 			'openmart_faq_default_content', json_encode(
 				array( 
 					array(
-						'title'     => esc_html__( 'What do you want to know', 'open-mart' ),
+						'title'     => esc_html__( 'What do you want to know', 'hunk-companion' ),
 						
-						'text'      => esc_html__( 'Nulla et sodales nisl. Nam auctor quis odio eu congue. Lorem ipsum dolor sit amet, consectetur adipiscing elit.', 'open-mart' ),
+						'text'      => esc_html__( 'Nulla et sodales nisl. Nam auctor quis odio eu congue. Lorem ipsum dolor sit amet, consectetur adipiscing elit.', 'hunk-companion' ),
 					),
 
 					array(
-						'title'     => esc_html__( 'What do you want to know', 'open-mart' ),
+						'title'     => esc_html__( 'What do you want to know', 'hunk-companion' ),
 						
-						'text'      => esc_html__( 'Nulla et sodales nisl. Nam auctor quis odio eu congue. Lorem ipsum dolor sit amet, consectetur adipiscing elit.', 'open-mart' ),
+						'text'      => esc_html__( 'Nulla et sodales nisl. Nam auctor quis odio eu congue. Lorem ipsum dolor sit amet, consectetur adipiscing elit.', 'hunk-companion' ),
 					),
 					
 					array(
-						'title'     => esc_html__( 'What do you want to know', 'open-mart' ),
+						'title'     => esc_html__( 'What do you want to know', 'hunk-companion' ),
 						
-						'text'      => esc_html__( 'Nulla et sodales nisl. Nam auctor quis odio eu congue. Lorem ipsum dolor sit amet, consectetur adipiscing elit.', 'open-mart' ),
+						'text'      => esc_html__( 'Nulla et sodales nisl. Nam auctor quis odio eu congue. Lorem ipsum dolor sit amet, consectetur adipiscing elit.', 'hunk-companion' ),
 					),
 
 					array(
-						'title'     => esc_html__( 'What do you want to know', 'open-mart' ),
+						'title'     => esc_html__( 'What do you want to know', 'hunk-companion' ),
 						
-						'text'      => esc_html__( 'Nulla et sodales nisl. Nam auctor quis odio eu congue. Lorem ipsum dolor sit amet, consectetur adipiscing elit.', 'open-mart' ),
+						'text'      => esc_html__( 'Nulla et sodales nisl. Nam auctor quis odio eu congue. Lorem ipsum dolor sit amet, consectetur adipiscing elit.', 'hunk-companion' ),
 					),
 
 					array(
-						'title'     => esc_html__( 'What do you want to know', 'open-mart' ),
+						'title'     => esc_html__( 'What do you want to know', 'hunk-companion' ),
 						
-						'text'      => esc_html__( 'Nulla et sodales nisl. Nam auctor quis odio eu congue. Lorem ipsum dolor sit amet, consectetur adipiscing elit.', 'open-mart' ),
+						'text'      => esc_html__( 'Nulla et sodales nisl. Nam auctor quis odio eu congue. Lorem ipsum dolor sit amet, consectetur adipiscing elit.', 'hunk-companion' ),
 					),
 
 					array(
-						'title'     => esc_html__( 'What do you want to know', 'open-mart' ),
+						'title'     => esc_html__( 'What do you want to know', 'hunk-companion' ),
 						
-						'text'      => esc_html__( 'Nulla et sodales nisl. Nam auctor quis odio eu congue. Lorem ipsum dolor sit amet, consectetur adipiscing elit.', 'open-mart' ),
+						'text'      => esc_html__( 'Nulla et sodales nisl. Nam auctor quis odio eu congue. Lorem ipsum dolor sit amet, consectetur adipiscing elit.', 'hunk-companion' ),
 					),
 
 					array(
-						'title'     => esc_html__( 'What do you want to know', 'open-mart' ),
+						'title'     => esc_html__( 'What do you want to know', 'hunk-companion' ),
 						
-						'text'      => esc_html__( 'Nulla et sodales nisl. Nam auctor quis odio eu congue. Lorem ipsum dolor sit amet, consectetur adipiscing elit.', 'open-mart' ),
+						'text'      => esc_html__( 'Nulla et sodales nisl. Nam auctor quis odio eu congue. Lorem ipsum dolor sit amet, consectetur adipiscing elit.', 'hunk-companion' ),
 					),
 
 					array(
-						'title'     => esc_html__( 'What do you want to know', 'open-mart' ),
+						'title'     => esc_html__( 'What do you want to know', 'hunk-companion' ),
 						
-						'text'      => esc_html__( 'Nulla et sodales nisl. Nam auctor quis odio eu congue. Lorem ipsum dolor sit amet, consectetur adipiscing elit.', 'open-mart' ),
+						'text'      => esc_html__( 'Nulla et sodales nisl. Nam auctor quis odio eu congue. Lorem ipsum dolor sit amet, consectetur adipiscing elit.', 'hunk-companion' ),
 					),
 
 				)
@@ -175,25 +175,25 @@ public function get_brand_default() {
 				array(
 					array(
 						'icon_value' => 'fa-diamond',
-						'title'      => esc_html__( 'Development', 'open-mart' ),
+						'title'      => esc_html__( 'Development', 'hunk-companion' ),
 						'text'       => esc_html__( 'Nam varius mauris eget sodales tempus. Quisque sollicitudin consectetur accumsan. Ut imperdiet mi velit, ut congue justo sagittis eget',
-							'open-mart' ),
+							'hunk-companion' ),
 						'link'       => '#',
 						'color'      => '#ff214f',
 					),
 					array(
 						'icon_value' => 'fa-heart',
-						'title'      => esc_html__( 'Design', 'open-mart' ),
+						'title'      => esc_html__( 'Design', 'hunk-companion' ),
 						'text'       => esc_html__( 'Nam varius mauris eget sodales tempus. Quisque sollicitudin consectetur accumsan. Ut imperdiet mi velit, ut congue justo sagittis eget',
-							'open-mart' ),
+							'hunk-companion' ),
 						'link'       => '#',
 						'color'      => '#00bcd4',
 					),
 					array(
 						'icon_value' => 'fa-globe',
-						'title'      => esc_html__( 'Seo', 'open-mart' ),
+						'title'      => esc_html__( 'Seo', 'hunk-companion' ),
 						'text'       => esc_html__( 'Nam varius mauris eget sodales tempus. Quisque sollicitudin consectetur accumsan. Ut imperdiet mi velit, ut congue justo sagittis eget',
-							'open-mart' ),
+							'hunk-companion' ),
 						'link'       => '#',
 						'color'      => '#4caf50',
 					),
@@ -213,25 +213,25 @@ public function get_testimonials_default() {
 				array(
 					array(
 						'image_url' =>	'',
-						'subtitle'  => esc_html__( 'Business Owner', 'open-mart' ),
-						'text'      => esc_html__( '"Nunc eu elementum libero. Etiam egestas leo eget urna ultrices, in finibus eros gravida. Donec scelerisque pulvinar dapibus. Nam pretium risus sed metus ultrices blandit. Pellentesque rhoncus est non nunc ultricies accumsan. Nullam gravida turpis et lacinia cursus. Fusce iaculis mattis consectetur."', 'open-mart' ),
+						'subtitle'  => esc_html__( 'Business Owner', 'hunk-companion' ),
+						'text'      => esc_html__( '"Nunc eu elementum libero. Etiam egestas leo eget urna ultrices, in finibus eros gravida. Donec scelerisque pulvinar dapibus. Nam pretium risus sed metus ultrices blandit. Pellentesque rhoncus est non nunc ultricies accumsan. Nullam gravida turpis et lacinia cursus. Fusce iaculis mattis consectetur."', 'hunk-companion' ),
 						'link'		=>	'#',
 						'id'        => 'customizer_repeater_56d7ea7f40d56',
 					),
 					array(
 						'image_url' =>	'',
-						'title'     => esc_html__( 'Nataliya', 'open-mart' ),
-						'subtitle'  => esc_html__( 'Artist', 'open-mart' ),
-						'text'      => esc_html__( '"Nunc eu elementum libero. Etiam egestas leo eget urna ultrices, in finibus eros gravida. Donec scelerisque pulvinar dapibus. Nam pretium risus sed metus ultrices blandit. Pellentesque rhoncus est non nunc ultricies accumsan. Nullam gravida turpis et lacinia cursus. Fusce iaculis mattis consectetur."', 'open-mart' ),
+						'title'     => esc_html__( 'Nataliya', 'hunk-companion' ),
+						'subtitle'  => esc_html__( 'Artist', 'hunk-companion' ),
+						'text'      => esc_html__( '"Nunc eu elementum libero. Etiam egestas leo eget urna ultrices, in finibus eros gravida. Donec scelerisque pulvinar dapibus. Nam pretium risus sed metus ultrices blandit. Pellentesque rhoncus est non nunc ultricies accumsan. Nullam gravida turpis et lacinia cursus. Fusce iaculis mattis consectetur."', 'hunk-companion' ),
 						'link'		=>	'#',
 						'id'        => 'customizer_repeater_56d7ea7f40d66',
 					),
 
 					array(
 						'image_url' =>	'',
-						'title'     => esc_html__( 'Ramedrin', 'open-mart' ),
-						'subtitle'  => esc_html__( 'Business Owner', 'open-mart' ),
-						'text'      => esc_html__( '"Nunc eu elementum libero. Etiam egestas leo eget urna ultrices, in finibus eros gravida. Donec scelerisque pulvinar dapibus. Nam pretium risus sed metus ultrices blandit. Pellentesque rhoncus est non nunc ultricies accumsan. Nullam gravida turpis et lacinia cursus. Fusce iaculis mattis consectetur."', 'open-mart' ),
+						'title'     => esc_html__( 'Ramedrin', 'hunk-companion' ),
+						'subtitle'  => esc_html__( 'Business Owner', 'hunk-companion' ),
+						'text'      => esc_html__( '"Nunc eu elementum libero. Etiam egestas leo eget urna ultrices, in finibus eros gravida. Donec scelerisque pulvinar dapibus. Nam pretium risus sed metus ultrices blandit. Pellentesque rhoncus est non nunc ultricies accumsan. Nullam gravida turpis et lacinia cursus. Fusce iaculis mattis consectetur."', 'hunk-companion' ),
 						'link'		=>	'#',
 						'id'        => 'customizer_repeater_56d7ea7f40d56',
 					),
@@ -252,19 +252,19 @@ public function get_counter_default() {
 					array(
 						
 						'title'       => 'Tea Consumed',
-						'number' => esc_html__( '1008', 'open-mart' ),
+						'number' => esc_html__( '1008', 'hunk-companion' ),
 					),
 					array(
 						'title'       => 'Projects Completed',
-						'number' => esc_html__( '1008', 'open-mart' ),
+						'number' => esc_html__( '1008', 'hunk-companion' ),
 					),
 					array(
 						'title'       => 'Hours Spent',
-						'number' => esc_html__( '1008', 'open-mart' ),
+						'number' => esc_html__( '1008', 'hunk-companion' ),
 					),
 					array(
 						'title'       => 'Awards Recieved',
-						'number' => esc_html__( '1008', 'open-mart' ),
+						'number' => esc_html__( '1008', 'hunk-companion' ),
 					),
 				)
 			)

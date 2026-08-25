@@ -304,8 +304,6 @@ foreach ($cats as $cat){
  $return .= '</div>';
  return $return;
 }
-add_action('wp_ajax_nopriv_hunk_companion_portfolio_ajax', 'hunk_companion_portfolio_ajax'); // load more
-add_action('wp_ajax_hunk_companion_portfolio_ajax', 'hunk_companion_portfolio_ajax');
 
 function hunk_companion_social_content( $gogo_social_content_id, $default ) {
 //passing the seeting ID and Default Values

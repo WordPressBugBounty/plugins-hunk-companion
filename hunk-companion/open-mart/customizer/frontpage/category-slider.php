@@ -4,7 +4,7 @@ $wp_customize->add_setting( 'open_mart_disable_category_slide_sec', array(
                 'sanitize_callback'     => 'open_mart_sanitize_checkbox',
             ) );
 $wp_customize->add_control( new WP_Customize_Control( $wp_customize, 'open_mart_disable_category_slide_sec', array(
-                'label'                 => esc_html__('Disable Section', 'open-mart'),
+                'label'                 => esc_html__('Disable Section', 'hunk-companion'),
                 'type'                  => 'checkbox',
                 'section'               => 'open_mart_cat_slide_section',
                 'settings'              => 'open_mart_disable_category_slide_sec',
@@ -12,13 +12,13 @@ $wp_customize->add_control( new WP_Customize_Control( $wp_customize, 'open_mart_
 
 // section heading
 $wp_customize->add_setting('open_mart_cat_slider_heading', array(
-	    'default' => __('Category Slider','open-mart'),
+	    'default' => __('Category Slider','hunk-companion'),
         'capability'        => 'edit_theme_options',
         'sanitize_callback' => 'open_mart_sanitize_text',
         'transport'         => 'postMessage',
 ));
 $wp_customize->add_control( 'open_mart_cat_slider_heading', array(
-        'label'    => __('Section Heading', 'open-mart'),
+        'label'    => __('Section Heading', 'hunk-companion'),
         'section'  => 'open_mart_cat_slide_section',
          'type'       => 'text',
 ));
@@ -35,7 +35,7 @@ if(class_exists('open_mart_WP_Customize_Control_Radio_Image')){
 $wp_customize->add_control(
             new open_mart_WP_Customize_Control_Radio_Image(
                 $wp_customize, 'open_mart_cat_slide_layout', array(
-                    'label'    => esc_html__( 'Category Layout', 'open-mart' ),
+                    'label'    => esc_html__( 'Category Layout', 'hunk-companion' ),
                     'section'  => 'open_mart_cat_slide_section',
                     'choices'  => array(
                         'cat-layout-1'   => array(
@@ -62,7 +62,7 @@ $wp_customize->add_setting('open_mart_cat_item_no', array(
     $wp_customize->add_control('open_mart_cat_item_no', array(
             'type'        => 'number',
             'section'     => 'open_mart_cat_slide_section',
-            'label'       => __( 'No. of Column to show', 'open-mart' ),
+            'label'       => __( 'No. of Column to show', 'hunk-companion' ),
             'input_attrs' => array(
                 'min'  => 0,
                 'step' => 1,
@@ -79,7 +79,7 @@ $wp_customize->add_setting('open_mart_cat_item_no', array(
     $wp_customize->add_control(new open_mart_Customize_Control_Checkbox_Multiple(
             $wp_customize,'open_mart_category_slide_list', array(
         'settings'=> 'open_mart_category_slide_list',
-        'label'   => __( 'Choose Categories To Show', 'open-mart' ),
+        'label'   => __( 'Choose Categories To Show', 'hunk-companion' ),
         'section' => 'open_mart_cat_slide_section',
         'choices' => open_mart_get_category_list(array('taxonomy' =>'product_cat'),false),
         ) 
@@ -93,7 +93,7 @@ $wp_customize->add_setting('open_mart_cat_item_no', array(
     'sanitize_callback' => 'open_mart_sanitize_checkbox',
   ) );
   $wp_customize->add_control( new open_mart_Toggle_Control( $wp_customize, 'open_mart_category_slider_optn', array(
-    'label'       => esc_html__( 'Slide Auto Play', 'open-mart' ),
+    'label'       => esc_html__( 'Slide Auto Play', 'hunk-companion' ),
     'section'     => 'open_mart_cat_slide_section',
     'type'        => 'toggle',
     'settings'    => 'open_mart_category_slider_optn',
@@ -107,6 +107,6 @@ $wp_customize->add_control(new open_mart_Misc_Control( $wp_customize, 'open_mart
         'section'    => 'open_mart_cat_slide_section',
         'type'      => 'doc-link',
         'url'       => 'https://themehunk.com/docs/open-mart/#woo-category',
-        'description' => esc_html__( 'To know more go with this', 'open-mart' ),
+        'description' => esc_html__( 'To know more go with this', 'hunk-companion' ),
         'priority'   =>100,
     )));

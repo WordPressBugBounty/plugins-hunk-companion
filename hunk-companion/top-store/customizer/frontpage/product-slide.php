@@ -1,4 +1,5 @@
 <?php 
+if ( ! defined( 'ABSPATH' ) ) exit;
 function top_store_product_category_list($arr='',$all=true){
     $cats = array();
     if($all == true){

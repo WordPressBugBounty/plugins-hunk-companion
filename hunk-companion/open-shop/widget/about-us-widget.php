@@ -20,7 +20,7 @@ class THunk_aboutme extends WP_Widget {
     function __construct() {
         $widget_ops = array('classname' => 'th-about-me',
             'description' => 'Display member image with description, link and font awesome icons');
-        parent::__construct('th-about-me-widget', __('Open Shop : About Us widget','open-shop'), $widget_ops);
+        parent::__construct('th-about-me-widget', __('Open Shop : About Us widget','hunk-companion'), $widget_ops);
     }
 
     function widget($args, $instance) {
@@ -70,8 +70,8 @@ class THunk_aboutme extends WP_Widget {
     function update($new_instance, $old_instance) {
         $instance = $old_instance;
         $instance['text'] = $new_instance['text'];
-        $instance['title'] = strip_tags( $new_instance['title'] );
-        $instance['author_img_uri'] = strip_tags( $new_instance['author_img_uri'] );
+        $instance['title'] = wp_strip_all_tags( $new_instance['title'] );
+        $instance['author_img_uri'] = wp_strip_all_tags( $new_instance['author_img_uri'] );
         $instance['readlink'] = $new_instance['readlink'];
         $instance['readtxt'] = $new_instance['readtxt'];
         $instance['icon1'] = $new_instance['icon1'];
@@ -122,12 +122,12 @@ class THunk_aboutme extends WP_Widget {
     ?>
 <div class="clearfix"></div>
 <p>
-        <label for="<?php echo $this->get_field_id('title'); ?>"><?php _e('Title','open-shop'); ?></label></p><P>
+        <label for="<?php echo $this->get_field_id('title'); ?>"><?php _e('Title','hunk-companion'); ?></label></p><P>
         <input type="text" class="widefat" name="<?php echo $this->get_field_name('title'); ?>" id="<?php echo $this->get_field_id('title'); ?>" value="<?php  if(isset($instance["title"])){ echo $instance['title']; } ?>" style="margin-top:5px;">
     </p>
     
     <p>
-        <label for="<?php echo $this->get_field_id('author_img_uri'); ?>"><?php _e('Member Image','open-shop'); ?></label></p><P>
+        <label for="<?php echo $this->get_field_id('author_img_uri'); ?>"><?php _e('Member Image','hunk-companion'); ?></label></p><P>
         <?php
             if ( isset($instance['author_img_uri']) && $instance['author_img_uri'] != '' ) :
                 echo '<img class="custom_media_image" src="' . $instance['author_img_uri'] . '" style="margin:0;padding:0;max-width:100px;float:left;display:inline-block" /><br />';
@@ -137,46 +137,46 @@ class THunk_aboutme extends WP_Widget {
         <input type="button" class="button button-primary custom_media_button" id="custom_media_button" name="<?php echo $this->get_field_name('author_img_uri'); ?>" value="Upload Image" style="margin-top:5px;" />
     </p>
     <p>
-        <label for="<?php echo $this->get_field_id('text'); ?>"><?php _e('About Me Description','open-shop'); ?></label></p><P>
+        <label for="<?php echo $this->get_field_id('text'); ?>"><?php _e('About Me Description','hunk-companion'); ?></label></p><P>
         <textarea  name="<?php echo $this->get_field_name('text'); ?>" id="<?php echo $this->get_field_id('text'); ?>"  class="widefat" >
         <?php if(isset($instance["text"])){ echo $instance['text']; } ?></textarea>
     </p>
 
     <p>
-        <label for="<?php echo $this->get_field_id('readtxt'); ?>"><?php _e('Read More Text','open-shop'); ?></label></p><P>
+        <label for="<?php echo $this->get_field_id('readtxt'); ?>"><?php _e('Read More Text','hunk-companion'); ?></label></p><P>
         <input type="text" class="widefat" name="<?php echo $this->get_field_name('readtxt'); ?>" id="<?php echo $this->get_field_id('readtxt'); ?>" value="<?php  if(isset($instance["readtxt"])){ echo $instance['readtxt']; } ?>" style="margin-top:5px;">
     </p>
     <p>
-        <label for="<?php echo $this->get_field_id('readlink'); ?>"><?php _e('Link','open-shop'); ?></label></p><P>
+        <label for="<?php echo $this->get_field_id('readlink'); ?>"><?php _e('Link','hunk-companion'); ?></label></p><P>
         <input type="text" class="widefat" name="<?php echo $this->get_field_name('readlink'); ?>" id="<?php echo $this->get_field_id('readlink'); ?>" value="<?php  if(isset($instance["readlink"])){ echo $instance['readlink']; } ?>" style="margin-top:5px;">
     </p>
     
    <br/><P>
-        <label style="padding-bottom: 5px; padding-top:0px;font-size: 12px;font-style: italic;"><?php _e('Go to this link for <a target="_blank" href="//fontawesome.io/icons/">Fontawesome icons</a> and copy the class of icon that you need & paste it below.','open-shop'); ?></label></p>
+        <label style="padding-bottom: 5px; padding-top:0px;font-size: 12px;font-style: italic;"><?php _e('Go to this link for <a target="_blank" href="//fontawesome.io/icons/">Fontawesome icons</a> and copy the class of icon that you need & paste it below.','hunk-companion'); ?></label></p>
         <P>
-        <label for="<?php echo $this->get_field_id('icon1'); ?>"><?php _e('Fontawesome Social Icon-1','open-shop'); ?></label>
+        <label for="<?php echo $this->get_field_id('icon1'); ?>"><?php _e('Fontawesome Social Icon-1','hunk-companion'); ?></label>
        </p>
         <P>
         <input type="text" class="widefat" name="<?php echo $this->get_field_name('icon1'); ?>" id="<?php echo $this->get_field_id('icon1'); ?>" value="<?php  if(isset($instance["icon1"])){ echo $instance['icon1']; } ?>" style="margin-top:5px;"></p><P>
-        <label for="<?php echo $this->get_field_id('icon1'); ?>"><?php _e('Social Icon Link','open-shop'); ?></label></p><P>
+        <label for="<?php echo $this->get_field_id('icon1'); ?>"><?php _e('Social Icon Link','hunk-companion'); ?></label></p><P>
         <input type="text" class="widefat" name="<?php echo $this->get_field_name('linkicon1'); ?>" id="<?php echo $this->get_field_id('linkicon1'); ?>" value="<?php  if(isset($instance["linkicon1"])){ echo $instance['linkicon1']; } ?>" style="margin-top:5px;">
     </p>
     <p>
-        <label for="<?php echo $this->get_field_id('icon2'); ?>"><?php _e('Fontawesome Social Icon-2','open-shop'); ?></label></p><P>
+        <label for="<?php echo $this->get_field_id('icon2'); ?>"><?php _e('Fontawesome Social Icon-2','hunk-companion'); ?></label></p><P>
         <input type="text" class="widefat" name="<?php echo $this->get_field_name('icon2'); ?>" id="<?php echo $this->get_field_id('icon2'); ?>" value="<?php  if(isset($instance["icon2"])){ echo $instance['icon2']; } ?>" style="margin-top:5px;"></p><P>
-        <label for="<?php echo $this->get_field_id('icon2'); ?>"><?php _e('Social Icon Link','open-shop'); ?></label></p><P>
+        <label for="<?php echo $this->get_field_id('icon2'); ?>"><?php _e('Social Icon Link','hunk-companion'); ?></label></p><P>
         <input type="text" class="widefat" name="<?php echo $this->get_field_name('linkicon2'); ?>" id="<?php echo $this->get_field_id('linkicon2'); ?>" value="<?php  if(isset($instance["linkicon2"])){ echo $instance['linkicon2']; } ?>" style="margin-top:5px;">
     </p>
     <p>
-        <label for="<?php echo $this->get_field_id('icon3'); ?>"><?php _e('Fontawesome Social Icon-3','open-shop'); ?></label></p><P>
+        <label for="<?php echo $this->get_field_id('icon3'); ?>"><?php _e('Fontawesome Social Icon-3','hunk-companion'); ?></label></p><P>
         <input type="text" class="widefat" name="<?php echo $this->get_field_name('icon3'); ?>" id="<?php echo $this->get_field_id('icon3'); ?>" value="<?php  if(isset($instance["icon3"])){ echo $instance['icon3']; } ?>" style="margin-top:5px;"></p><P>
-         <label for="<?php echo $this->get_field_id('icon3'); ?>"><?php _e('Social Icon Link','open-shop'); ?></label></p><P>
+         <label for="<?php echo $this->get_field_id('icon3'); ?>"><?php _e('Social Icon Link','hunk-companion'); ?></label></p><P>
         <input type="text" class="widefat" name="<?php echo $this->get_field_name('linkicon3'); ?>" id="<?php echo $this->get_field_id('linkicon3'); ?>" value="<?php  if(isset($instance["linkicon3"])){ echo $instance['linkicon3']; } ?>" style="margin-top:5px;">
     </p>
     <p>
-        <label for="<?php echo $this->get_field_id('icon4'); ?>"><?php _e('Fontawesome Social Icon-4','open-shop'); ?></label></p><P>
+        <label for="<?php echo $this->get_field_id('icon4'); ?>"><?php _e('Fontawesome Social Icon-4','hunk-companion'); ?></label></p><P>
         <input type="text" class="widefat" name="<?php echo $this->get_field_name('icon4'); ?>" id="<?php echo $this->get_field_id('icon4'); ?>" value="<?php  if(isset($instance["icon4"])){ echo $instance['icon4']; } ?>" style="margin-top:5px;"></p><P>
-        <label for="<?php echo $this->get_field_id('icon4'); ?>"><?php _e('Social Icon Link-4','open-shop'); ?></label></p><P>
+        <label for="<?php echo $this->get_field_id('icon4'); ?>"><?php _e('Social Icon Link-4','hunk-companion'); ?></label></p><P>
         <input type="text" class="widefat" name="<?php echo $this->get_field_name('linkicon4'); ?>" id="<?php echo $this->get_field_id('linkicon4'); ?>" value="<?php  if(isset($instance["linkicon4"])){ echo $instance['linkicon4']; } ?>" style="margin-top:5px;">
     </p>
 

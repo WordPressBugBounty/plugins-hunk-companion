@@ -159,7 +159,7 @@ public function get_team_default() {
 						'title'     => esc_html__( 'Gabriel', 'hunk-companion' ),					
 						'subtitle'  => esc_html__( 'Developer', 'hunk-companion' ),
 						'text'      => esc_html__( 'Lorem Ipsum is simply dummy text of the printing and typesetting industry.', 'hunk-companion' ),
-						'image_url' => HUNK_COMPANION_PLUGIN_DIR_URL . 'gogolite/images/team 1.jpg',
+						'image_url' => HUNK_COMPANION_PLUGIN_DIR_URL . 'gogolite/images/team-1.jpg',
 						'link'       => '#',
 						'social_repeater' => json_encode(
 							array(
@@ -190,7 +190,7 @@ public function get_team_default() {
 						'title'     => esc_html__( 'Maurics', 'hunk-companion' ),					
 						'subtitle'  => esc_html__( 'Marketer', 'hunk-companion' ),
 						'text'      => esc_html__( 'Lorem Ipsum is simply dummy text of the printing and typesetting industry.', 'hunk-companion' ),
-						'image_url' => HUNK_COMPANION_PLUGIN_DIR_URL . 'gogolite/images/team 2.jpg',
+						'image_url' => HUNK_COMPANION_PLUGIN_DIR_URL . 'gogolite/images/team-2.jpg',
 						'link'       => '#',
 						'social_repeater' => json_encode(
 							array(
@@ -222,7 +222,7 @@ public function get_team_default() {
 						'title'     => esc_html__( 'Ramedrin', 'hunk-companion' ),					
 						'subtitle'  => esc_html__( 'Designer', 'hunk-companion' ),
 						'text'      => esc_html__( 'Lorem Ipsum is simply dummy text of the printing and typesetting industry.', 'hunk-companion' ),
-						'image_url' => HUNK_COMPANION_PLUGIN_DIR_URL . 'gogolite/images/team 3.jpeg',
+						'image_url' => HUNK_COMPANION_PLUGIN_DIR_URL . 'gogolite/images/team-3.jpeg',
 						'link'       => '#',
 						'social_repeater' => json_encode(
 							array(

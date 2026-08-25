@@ -27,6 +27,7 @@
           let data_ = {
             action: "elemento_simple_post",
             post_data: stringiFy,
+            nonce: elemento_simple_url.nonce,
           };
           $.ajax({
             method: "POST",
@@ -35,13 +36,13 @@
             success: function (response) {
               if (response.success) {
                 let keepContainer = container_.find(
-                  ".elemento-post-layout-listGrid"
+                  ".elemento-post-layout-listGrid",
                 );
                 let keepJson = JSON.stringify(response.data.settings);
                 keepContainer.attr("data-setting", keepJson);
                 keepContainer.html(response.data.posthtml);
                 $(".elemento-addons-pagination").replaceWith(
-                  response.data.pagination
+                  response.data.pagination,
                 );
               }
             },
@@ -122,7 +123,6 @@
       let htmlBody = $("body");
       // add div over lay in body
 
-
       if (productId) {
         // console.log('elemento_simple_url.admin_ajax',elemento_simple_url.admin_ajax);
 
@@ -132,6 +132,7 @@
           data: {
             action: "elemento_quick_view_product_simple",
             product_id: productId,
+            nonce: elemento_simple_url.nonce,
           },
           // dataType: "JSON",
           success: function (data) {
@@ -142,7 +143,7 @@
             $(".elemento-quickview-wrapper").addClass("active");
             let container_ = $(".elemento_quick_view_model");
             let sliderWrapper = container_.find(
-              ".elemento-owl-slider-common-secript"
+              ".elemento-owl-slider-common-secript",
             );
             let getSlider = sliderWrapper.find(".elemento-owl-slider");
             if (getSlider.length) {
@@ -215,7 +216,7 @@
             container_.find(".owl-stage-outer").removeClass("stage-hovered");
           },
         },
-        ".ea-simple-product-slider .elemento-product-outer-wrap"
+        ".ea-simple-product-slider .elemento-product-outer-wrap",
       );
     },
 
@@ -223,13 +224,13 @@
       $(document).on(
         "click",
         ".elemento-addons-simple-post .elemento-post-link:not(.disable)",
-        elemento.postPagination
+        elemento.postPagination,
       );
-     
+
       $(document).on(
         "click",
         ".ea-simple-product-slider .elemento_quick_view_model .quickview-add-to-cart .minus_,.ea-simple-product-slider .elemento_quick_view_model .quickview-add-to-cart .plus_",
-        elemento.elemento_plusMinus_quantity
+        elemento.elemento_plusMinus_quantity,
       );
     },
   };

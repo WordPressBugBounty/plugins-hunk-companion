@@ -116,14 +116,14 @@ jQuery('#'+wdgetid+'.owl-carousel').owlCarousel({
         $instance = $old_instance;
         $instance['widgettitle'] = $new_instance['widgettitle'];
         $instance['text1'] = $new_instance['text1'];
-        $instance['title1'] = strip_tags( $new_instance['title1'] );
-        $instance['author_img_uri1'] = strip_tags( $new_instance['author_img_uri1'] );
+        $instance['title1'] = wp_strip_all_tags( $new_instance['title1'] );
+        $instance['author_img_uri1'] = wp_strip_all_tags( $new_instance['author_img_uri1'] );
         $instance['text2'] = $new_instance['text2'];
-        $instance['title2'] = strip_tags( $new_instance['title2'] );
-        $instance['author_img_uri2'] = strip_tags( $new_instance['author_img_uri2'] );
+        $instance['title2'] = wp_strip_all_tags( $new_instance['title2'] );
+        $instance['author_img_uri2'] = wp_strip_all_tags( $new_instance['author_img_uri2'] );
         $instance['text3'] = $new_instance['text3'];
-        $instance['title3'] = strip_tags( $new_instance['title3'] );
-        $instance['author_img_uri3'] = strip_tags( $new_instance['author_img_uri3'] );
+        $instance['title3'] = wp_strip_all_tags( $new_instance['title3'] );
+        $instance['author_img_uri3'] = wp_strip_all_tags( $new_instance['author_img_uri3'] );
         
         return $instance;
     }

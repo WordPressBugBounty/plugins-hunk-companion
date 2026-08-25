@@ -43,7 +43,7 @@ class portfolioline_testimonial extends WP_Widget {
     function update($new_instance, $old_instance) {
         $instance = $old_instance;
         $instance['authpic'] = $new_instance['authpic'];
-        $instance['title'] = strip_tags( $new_instance['title'] );
+        $instance['title'] = wp_strip_all_tags( $new_instance['title'] );
         $instance['text'] = $new_instance['text'];
         $instance['link'] = $new_instance['link'];
         $instance['companyname'] = $new_instance['companyname'];
@@ -53,7 +53,7 @@ class portfolioline_testimonial extends WP_Widget {
     function form($instance) {
          if( $instance) {
         $title = esc_attr($instance['title']);
-        $authpic = strip_tags($instance['authpic']);
+        $authpic = wp_strip_all_tags($instance['authpic']);
         $text = $instance['text'];
         $link = $instance['link'];
         $companyname = $instance['companyname'];

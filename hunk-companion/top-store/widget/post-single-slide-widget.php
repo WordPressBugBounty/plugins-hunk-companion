@@ -1,4 +1,5 @@
 <?php
+if ( ! defined( 'ABSPATH' ) ) exit;
 // register widget
 function top_store_post_slide_widget(){
 register_widget( 'top_store_slide_post' );
@@ -85,9 +86,9 @@ jQuery('#'+wdgetid+'.owl-carousel').owlCarousel({
 
     function update($new_instance, $old_instance) {
         $instance = $old_instance;
-        $instance['title'] = strip_tags( $new_instance['title'] );
+        $instance['title'] = wp_strip_all_tags( $new_instance['title'] );
         $instance["cate"] = absint($new_instance["cate"]);
-        $instance['count'] = strip_tags( $new_instance['count'] );
+        $instance['count'] = wp_strip_all_tags( $new_instance['count'] );
        
        
         $instance["orderby"] = $new_instance["orderby"];

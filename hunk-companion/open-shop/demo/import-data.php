@@ -1,4 +1,5 @@
 <?php 
+if ( ! defined( 'ABSPATH' ) ) exit;
 add_filter( 'pt-ocdi/disable_pt_branding', '__return_true' );
 add_filter( 'pt-ocdi/regenerate_thumbnails_in_content_import', '__return_false' );
 
@@ -6,31 +7,31 @@ function open_shop_import_files(){
   return apply_filters(
     'open_shop_demo_site', array(
     array(
-        'import_file_name' => esc_html__('Open Shop Default','open-shop'),
+        'import_file_name' => esc_html__('Open Shop Default','hunk-companion'),
         'import_file_url'=> esc_url('https://themehunk.com/wp-content/uploads/sites-demo/open-shop/default/blogs.xml'),
         'import_customizer_file_url'=> esc_url('https://themehunk.com/wp-content/uploads/sites-demo/open-shop/default/customizer.dat'),
         'import_widget_file_url'=> esc_url('https://themehunk.com/wp-content/uploads/sites-demo/open-shop/default/widgets.wie'),
         'import_preview_image_url'=> esc_url('https://themehunk.com/wp-content/uploads/sites-demo/open-shop/default/thumb.png'),
         'preview_url'=> esc_url('https://wpthemes.themehunk.com/open-shop/'),
-        'import_notice' => __( 'Before importing the demo data, Install & Activate the recommended plugins.', 'open-shop' ),
+        'import_notice' => __( 'Before importing the demo data, Install & Activate the recommended plugins.', 'hunk-companion' ),
     ),
     array(
-        'import_file_name' => esc_html__('Open Shop Dark','open-shop'),
+        'import_file_name' => esc_html__('Open Shop Dark','hunk-companion'),
         'import_file_url'=> esc_url('https://themehunk.com/wp-content/uploads/sites-demo/open-shop/dark/blogs.xml'),
         'import_customizer_file_url'=> esc_url('https://themehunk.com/wp-content/uploads/sites-demo/open-shop/dark/customizer.dat'),
         'import_widget_file_url'=> esc_url('https://themehunk.com/wp-content/uploads/sites-demo/open-shop/dark/widgets.wie'),
         'import_preview_image_url'=> esc_url('https://themehunk.com/wp-content/uploads/sites-demo/open-shop/dark/thumb.png'),
         'preview_url'=> esc_url('https://wpthemes.themehunk.com/open-shop-dark/'),
-        'import_notice' => __( 'Before importing the demo data, Install & Activate the recommended plugins.', 'open-shop' ),
+        'import_notice' => __( 'Before importing the demo data, Install & Activate the recommended plugins.', 'hunk-companion' ),
     ),
     array(
-        'import_file_name' => esc_html__('Open Shop Grocery','open-shop'),
+        'import_file_name' => esc_html__('Open Shop Grocery','hunk-companion'),
         'import_file_url'=> esc_url('https://themehunk.com/wp-content/uploads/sites-demo/open-shop/grocery/blogs.xml'),
         'import_customizer_file_url'=> esc_url('https://themehunk.com/wp-content/uploads/sites-demo/open-shop/grocery/customizer.dat'),
         'import_widget_file_url'=> esc_url('https://themehunk.com/wp-content/uploads/sites-demo/open-shop/grocery/widgets.wie'),
         'import_preview_image_url'=> esc_url('https://themehunk.com/wp-content/uploads/sites-demo/open-shop/grocery/thumb.png'),
         'preview_url'=> esc_url('https://wpthemes.themehunk.com/grocery-lite/'),
-        'import_notice' => __( 'Before importing the demo data, Install & Activate the recommended plugins.', 'open-shop' ),
+        'import_notice' => __( 'Before importing the demo data, Install & Activate the recommended plugins.', 'hunk-companion' ),
     ),
      
      )

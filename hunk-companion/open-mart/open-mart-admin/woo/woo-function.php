@@ -87,7 +87,7 @@ $taxquery = array(
       <?php }  ?>
    <?php endwhile;
     } else {
-      echo __( 'No products found','open-mart' );
+      echo __( 'No products found','hunk-companion' );
     }
     wp_reset_postdata();
 }
@@ -420,7 +420,7 @@ $taxquery = array(
                    <div class="thunk-quickview">
                                <span class="quik-view">
                                    <a href="#" class="opn-quick-view-text" data-product_id="<?php echo esc_attr($pid); ?>">
-                                      <span><?php _e('Quick View','open-mart');?></span>
+                                      <span><?php _e('Quick View','hunk-companion');?></span>
                                    </a>
                                 </span>
                     </div>
@@ -446,7 +446,7 @@ $taxquery = array(
         </div>
    <?php endwhile;
     } else {
-      echo __( 'No products found','open-mart' );
+      echo __( 'No products found','hunk-companion' );
     }
     wp_reset_postdata();
 }
@@ -498,7 +498,7 @@ function open_mart_product_filter_loop($args){
                    <div class="thunk-quickview">
                                <span class="quik-view">
                                    <a href="#" class="opn-quick-view-text" data-product_id="<?php echo esc_attr($pid); ?>">
-                                      <span><?php _e('Quick View','open-mart');?></span>
+                                      <span><?php _e('Quick View','hunk-companion');?></span>
                                    </a>
                                 </span>
                       </div>
@@ -523,7 +523,7 @@ function open_mart_product_filter_loop($args){
       </div>
    <?php endwhile;
     } else {
-      echo __( 'No products found','open-mart' );
+      echo __( 'No products found','hunk-companion' );
     }
     wp_reset_postdata();
 }
@@ -566,7 +566,7 @@ function open_mart_product_list_filter_loop($args){
     <?php }  ?>
    <?php endwhile;
     } else {
-      echo __( 'No products found','open-mart' );
+      echo __( 'No products found','hunk-companion' );
     }
     wp_reset_postdata();
 }
@@ -636,7 +636,7 @@ $args = array(
                    <div class="thunk-quickview">
                                <span class="quik-view">
                                    <a href="#" class="opn-quick-view-text" data-product_id="<?php echo esc_attr($pid); ?>">
-                                      <span><?php _e('Quick View','open-mart');?></span>
+                                      <span><?php _e('Quick View','hunk-companion');?></span>
                                    </a>
                                 </span>
                       </div>
@@ -785,7 +785,7 @@ function open_mart_post_query($query){
                        }else{ ?>
                   <p class='no-widget-text'>
           <a href='<?php echo esc_url( admin_url( 'widgets.php' ) ); ?>'>
-            <?php esc_html_e( 'Click here to assign a widget for this area.', 'open-mart' ); ?>
+            <?php esc_html_e( 'Click here to assign a widget for this area.', 'hunk-companion' ); ?>
           </a>
         </p>
                     <?php }

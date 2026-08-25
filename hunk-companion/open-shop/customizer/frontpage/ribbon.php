@@ -1,10 +1,11 @@
 <?php
+if ( ! defined( 'ABSPATH' ) ) exit;
 $wp_customize->add_setting( 'open_shop_disable_ribbon_sec', array(
                 'default'               => false,
                 'sanitize_callback'     => 'open_shop_sanitize_checkbox',
             ) );
 $wp_customize->add_control( new WP_Customize_Control( $wp_customize, 'open_shop_disable_ribbon_sec', array(
-                'label'                 => esc_html__('Disable Section (Pro)', 'open-shop'),
+                'label'                 => esc_html__('Disable Section (Pro)', 'hunk-companion'),
                 'type'                  => 'checkbox',
                  'priority'   => 1,
                 'section'               => 'open_shop_ribbon',
@@ -21,7 +22,7 @@ $wp_customize->add_setting('open_shop_ribbon_text', array(
         
   ));
 $wp_customize->add_control('open_shop_ribbon_text', array(
-        'label'    => __('Text', 'open-shop'),
+        'label'    => __('Text', 'hunk-companion'),
         'section'  => 'open_shop_ribbon',
         'settings' => 'open_shop_ribbon_text',
          'type'    => 'textarea',
@@ -35,7 +36,7 @@ $wp_customize->add_setting('open_shop_ribbon_btn_text', array(
         
   ));
 $wp_customize->add_control('open_shop_ribbon_btn_text', array(
-        'label'    => __('Button Text', 'open-shop'),
+        'label'    => __('Button Text', 'hunk-companion'),
         'section'  => 'open_shop_ribbon',
         'settings' => 'open_shop_ribbon_btn_text',
          'type'    => 'text',
@@ -48,7 +49,7 @@ $wp_customize->add_setting('open_shop_ribbon_btn_link', array(
         
   ));
 $wp_customize->add_control('open_shop_ribbon_btn_link', array(
-        'label'    => __('Button Link', 'open-shop'),
+        'label'    => __('Button Link', 'hunk-companion'),
         'section'  => 'open_shop_ribbon',
         'settings' => 'open_shop_ribbon_btn_link',
          'type'    => 'text',
@@ -63,6 +64,6 @@ $wp_customize->add_control(new Open_Shop_Misc_Control( $wp_customize, 'open_shop
         'section'     => 'open_shop_ribbon',
         'type'        => 'doc-link',
         'url'         => 'https://themehunk.com/docs/open-shop/#ribbon-section',
-        'description' => esc_html__( 'To know more go with this', 'open-shop' ),
+        'description' => esc_html__( 'To know more go with this', 'hunk-companion' ),
         'priority'   =>100,
     )));

@@ -305,120 +305,182 @@ function almaira_shop_product_loadmore(){
 /***************************/
 //sort product ajax filter
 /***************************/
-add_action('wp_ajax_almaira_shop_sort_filter_ajax', 'almaira_shop_sort_filter_ajax');
-add_action('wp_ajax_nopriv_almaira_shop_sort_filter_ajax', 'almaira_shop_sort_filter_ajax');
+add_action('wp_ajax_almaira_shop_sort_filter_ajax', 'almaira_shop_sort_filter_ajax_call');
+add_action('wp_ajax_nopriv_almaira_shop_sort_filter_ajax', 'almaira_shop_sort_filter_ajax_call');
 //new aproch to set filter
-function almaira_shop_sort_filter_ajax(){
+add_action( 'wp_ajax_almaira_shop_sort_filter_ajax', 'almaira_shop_sort_filter_ajax_call' );
+add_action( 'wp_ajax_nopriv_almaira_shop_sort_filter_ajax', 'almaira_shop_sort_filter_ajax_call' );
 
-  if ( ! current_user_can( 'administrator' ) ) {
-  
-    wp_die( - 1, 403 );
-    
-  } 
-  check_ajax_referer('almaira_nonce','nonce');
+function almaira_shop_sort_filter_ajax_call() {
 
-     $posts_per_page = get_theme_mod('almaira_shop_prd_shw','10');
-     $term_id = $_POST['cat_slug'];   
-     $radio = $_POST['radio_slug'];
-     if ( empty($_POST["paged"]) ){
-      $paged = ( get_query_var($_POST["paged"] ) ) ? get_query_var( $_POST["paged"] ) : 1; 
-      }else{
-        $paged = $_POST["paged"];
+  check_ajax_referer( 'almaira_nonce', 'nonce' );
+
+  $posts_per_page = absint(
+    get_theme_mod( 'almaira_shop_prd_shw', 10 )
+  );
+
+  if ( $posts_per_page < 1 ) {
+    $posts_per_page = 10;
+  }
+
+  // Pagination.
+  $paged = isset( $_POST['paged'] )
+    ? absint( wp_unslash( $_POST['paged'] ) )
+    : 1;
+
+  if ( $paged < 1 ) {
+    $paged = 1;
+  }
+
+  // Category IDs.
+  $term_ids = array();
+
+  if ( isset( $_POST['cat_slug'] ) ) {
+
+    $raw_term_ids = wp_unslash( $_POST['cat_slug'] );
+
+    if ( ! is_array( $raw_term_ids ) ) {
+      $raw_term_ids = array( $raw_term_ids );
+    }
+
+    $term_ids = array_filter(
+      array_map( 'absint', $raw_term_ids )
+    );
+  }
+
+  // Radio filter.
+  $radio = isset( $_POST['radio_slug'] )
+    ? sanitize_key( wp_unslash( $_POST['radio_slug'] ) )
+    : 'recent';
+
+  // Allowed filter values.
+  $allowed_radio_values = array(
+    'recent',
+    'featured',
+    'onsale',
+    'low-to-high',
+    'high-to-low',
+  );
+
+  if ( ! in_array( $radio, $allowed_radio_values, true ) ) {
+    $radio = 'recent';
+  }
+
+  // Base query.
+  $args = array(
+    'post_type'           => 'product',
+    'post_status'         => 'publish',
+    'posts_per_page'      => $posts_per_page,
+    'paged'               => $paged,
+    'ignore_sticky_posts' => true,
+  );
+
+  // Category filter.
+  if ( ! empty( $term_ids ) ) {
+
+    $args['tax_query'] = array(
+      array(
+        'taxonomy' => 'product_cat',
+        'field'    => 'term_id',
+        'terms'    => $term_ids,
+        'operator' => 'IN',
+      ),
+    );
+  }
+
+  // Sort and filter.
+  switch ( $radio ) {
+
+    case 'low-to-high':
+      $args['orderby']  = 'meta_value_num';
+      $args['meta_key'] = '_price';
+      $args['order']    = 'ASC';
+      break;
+
+    case 'high-to-low':
+      $args['orderby']  = 'meta_value_num';
+      $args['meta_key'] = '_price';
+      $args['order']    = 'DESC';
+      break;
+
+    case 'onsale':
+
+      $args['meta_query'] = array(
+        'relation' => 'OR',
+        array(
+          'key'     => '_sale_price',
+          'value'   => 0,
+          'compare' => '>',
+          'type'    => 'NUMERIC',
+        ),
+        array(
+          'key'     => '_min_variation_sale_price',
+          'value'   => 0,
+          'compare' => '>',
+          'type'    => 'NUMERIC',
+        ),
+      );
+      break;
+
+    case 'featured':
+
+      $featured_product_ids = array_filter(
+        array_map(
+          'absint',
+          wc_get_featured_product_ids()
+        )
+      );
+
+      if ( empty( $featured_product_ids ) ) {
+        $featured_product_ids = array( 0 );
       }
-     $meta_query = array(
-                    'relation' => 'OR',
-                    array( // Simple products type
-                        'key'           => '_sale_price',
-                        'value'         => 0,
-                        'compare'       => '>',
-                        'type'          => 'numeric'
-                    ),
-                    array( // Variable products type
-                        'key'           => '_min_variation_sale_price',
-                        'value'         => 0,
-                        'compare'       => '>',
-                        'type'          => 'numeric'
-                    )
-                );
-     $tax_query = array();
-     $tax_query [] = array(
-                  'tax_query' => array(
-                          array(
-                              'taxonomy' => 'product_cat',
-                              'field' => 'term_id',
-                              'terms' => $term_id
-                          )
-                   ),
-              );
-    if($radio=='low-to-high'){
-    $args = array(
-      'post_type' => 'product',
-      'post_status' => 'publish',
-      'posts_per_page' => $posts_per_page,
-      'tax_query' => $tax_query,
-      'orderby'   => 'meta_value_num',
-      'meta_key'  => '_price',
-      'order' => 'ASC',
-      'paged'     => $paged, 
-      );
-    }
-    elseif($radio=='high-to-low'){
-    $args = array(
-      'post_type' => 'product',
-      'post_status' => 'publish',
-      'posts_per_page' => $posts_per_page,
-      'tax_query' => $tax_query,
-      'orderby'   => 'meta_value_num',
-      'meta_key'  => '_price',
-      'order' => 'DESC',
-      'paged'     => $paged, 
-      );
-    }elseif($radio=='onsale'){
-      $args = array(
-      'post_type' => 'product',
-      'post_status' => 'publish',
-      'posts_per_page' => $posts_per_page,
-      'tax_query' => $tax_query,
-      'meta_query'=> $meta_query,
-      'paged'     => $paged, 
-    );
 
-    }elseif($radio=='featured'){
-      $args = array(
-      'post_type' => 'product',
-      'post_status' => 'publish',
-      'posts_per_page' => $posts_per_page,
-      'tax_query' => $tax_query,
-      'post__in'   => wc_get_featured_product_ids(),
-      'paged'     => $paged, 
-    );
-    }else{
-       $args = array(
-      'post_type' => 'product',
-      'post_status' => 'publish',
-      'posts_per_page' => $posts_per_page,
-      'tax_query' => $tax_query,
-      'paged'     => $paged, 
-      );
+      $args['post__in'] = $featured_product_ids;
+      break;
+
+    case 'recent':
+    default:
+      break;
+  }
+
+  $product = new WP_Query( $args );
+
+  if ( $product->have_posts() ) {
+
+    while ( $product->have_posts() ) {
+
+      $product->the_post();
+
+      wc_get_template_part( 'content', 'product' );
     }
 
-    $product = new WP_Query($args);
-    if ( $product->have_posts()){
-    while ( $product->have_posts() ) : $product->the_post();
-      
-    wc_get_template_part( 'content', 'product' );
-    endwhile;
-    if($posts_per_page < $product->found_posts){
-    echo'<div class="thunk-load-more-wrap">
-           <button id="sortby-load-more" class="thunk-load-more thunk-button" data-paged="'.esc_attr($paged).'" data-max-pages="'. esc_attr($product->max_num_pages).'"><span>'.esc_html__( 'Load More', 'hunk-companion' ).'</span></button>
-         </div>';
-       }
-    }else{
-      echo __( 'No products found','hunk-companion' );
+    if ( $paged < $product->max_num_pages ) {
+      ?>
+      <div class="thunk-load-more-wrap">
+        <button
+          id="sortby-load-more"
+          class="thunk-load-more thunk-button"
+          data-paged="<?php echo esc_attr( $paged ); ?>"
+          data-max-pages="<?php echo esc_attr( $product->max_num_pages ); ?>"
+          type="button"
+        >
+          <span>
+            <?php esc_html_e( 'Load More', 'hunk-companion' ); ?>
+          </span>
+        </button>
+      </div>
+      <?php
     }
-    exit;
-    wp_reset_postdata();
-  }   
+
+  } else {
+
+    echo esc_html__( 'No products found', 'hunk-companion' );
+  }
+
+  wp_reset_postdata();
+
+  wp_die();
+}
 /***************************/
 //category product section product ajax filter
 /***************************/

@@ -74,8 +74,8 @@ class TopStore_aboutme extends WP_Widget {
     function update($new_instance, $old_instance) {
         $instance = $old_instance;
         $instance['text'] = $new_instance['text'];
-        $instance['title'] = strip_tags( $new_instance['title'] );
-        $instance['author_img_uri'] = strip_tags( $new_instance['author_img_uri'] );
+        $instance['title'] = wp_strip_all_tags( $new_instance['title'] );
+        $instance['author_img_uri'] = wp_strip_all_tags( $new_instance['author_img_uri'] );
         $instance['readlink'] = $new_instance['readlink'];
         $instance['readtxt'] = $new_instance['readtxt'];
         $instance['icon1'] = $new_instance['icon1'];

@@ -1,4 +1,5 @@
 <?php
+if ( ! defined( 'ABSPATH' ) ) exit;
 class THunkWidgetHtml{
 	function radioBox($thi,$inst,$custarr){
 		$checked ='';

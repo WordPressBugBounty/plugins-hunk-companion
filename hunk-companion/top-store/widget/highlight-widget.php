@@ -1,4 +1,5 @@
 <?php
+if ( ! defined( 'ABSPATH' ) ) exit;
 /*
  *  Multi-Highlight Widget
  *
@@ -123,21 +124,21 @@ class top_store_highlights_column extends WP_Widget {
 
     function update($new_instance, $old_instance) {
         $instance = $old_instance;
-        $instance['widgettitle'] = strip_tags( $new_instance['widgettitle'] );
+        $instance['widgettitle'] = wp_strip_all_tags( $new_instance['widgettitle'] );
         $instance['fontaws1'] = $new_instance['fontaws1'];
-        $instance['title1'] = strip_tags( $new_instance['title1'] );
+        $instance['title1'] = wp_strip_all_tags( $new_instance['title1'] );
         $instance['text1'] = $new_instance['text1'];
         $instance['fontaws2'] = $new_instance['fontaws2'];
-        $instance['title2'] = strip_tags( $new_instance['title2'] );
+        $instance['title2'] = wp_strip_all_tags( $new_instance['title2'] );
         $instance['text2'] = $new_instance['text2'];
         $instance['fontaws3'] = $new_instance['fontaws3'];
-        $instance['title3'] = strip_tags( $new_instance['title3'] );
+        $instance['title3'] = wp_strip_all_tags( $new_instance['title3'] );
         $instance['text3'] = $new_instance['text3'];
         $instance['fontaws4'] = $new_instance['fontaws4'];
-        $instance['title4'] = strip_tags( $new_instance['title4'] );
+        $instance['title4'] = wp_strip_all_tags( $new_instance['title4'] );
         $instance['text4'] = $new_instance['text4'];
         $instance['fontaws5'] = $new_instance['fontaws5'];
-        $instance['title5'] = strip_tags( $new_instance['title5'] );
+        $instance['title5'] = wp_strip_all_tags( $new_instance['title5'] );
         $instance['text5'] = $new_instance['text5'];
         return $instance;
     }

@@ -4,7 +4,7 @@ $wp_customize->add_setting( 'open_mart_disable_highlight_sec', array(
                 'sanitize_callback'     => 'open_mart_sanitize_checkbox',
             ) );
 $wp_customize->add_control( new WP_Customize_Control( $wp_customize, 'open_mart_disable_highlight_sec', array(
-                'label'                 => esc_html__('Disable Section', 'open-mart'),
+                'label'                 => esc_html__('Disable Section', 'hunk-companion'),
                 'type'                  => 'checkbox',
                 'section'               => 'open_mart_highlight',
                 'settings'              => 'open_mart_disable_highlight_sec',
@@ -22,11 +22,11 @@ $wp_customize->add_control( new WP_Customize_Control( $wp_customize, 'open_mart_
             $wp_customize->add_control(
                 new open_mart_Repeater(
                     $wp_customize, 'open_mart_pro_highlight_content', array(
-                        'label'                                => esc_html__( 'Highlight Content', 'open-mart' ),
+                        'label'                                => esc_html__( 'Highlight Content', 'hunk-companion' ),
                         'section'                              => 'open_mart_highlight',
                         'priority'                             => 15,
-                        'add_field_label'                      => esc_html__( 'Add new Feature', 'open-mart' ),
-                        'item_name'                            => esc_html__( 'Feature', 'open-mart' ),
+                        'add_field_label'                      => esc_html__( 'Add new Feature', 'hunk-companion' ),
+                        'item_name'                            => esc_html__( 'Feature', 'hunk-companion' ),
                         
                         'customizer_repeater_title_control'    => true, 
                         'customizer_repeater_color_control'		=>	false, 
@@ -55,6 +55,6 @@ $wp_customize->add_control( new WP_Customize_Control( $wp_customize, 'open_mart_
         'section'     => 'open_mart_highlight',
         'type'        => 'doc-link',
         'url'         => 'https://themehunk.com/docs/open-mart/#highlight-section',
-        'description' => esc_html__( 'To know more go with this', 'open-mart' ),
+        'description' => esc_html__( 'To know more go with this', 'hunk-companion' ),
         'priority'   =>100,
     )));

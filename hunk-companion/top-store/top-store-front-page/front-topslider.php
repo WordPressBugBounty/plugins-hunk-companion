@@ -1,4 +1,5 @@
 <?php
+if ( ! defined( 'ABSPATH' ) ) exit;
 if(get_theme_mod('top_store_disable_top_slider_sec',false) == true){
     return;
   }

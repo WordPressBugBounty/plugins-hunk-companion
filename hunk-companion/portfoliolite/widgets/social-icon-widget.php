@@ -37,7 +37,7 @@ class portfolioline_social extends WP_Widget {
     }
     function update($new_instance, $old_instance) {
         $instance = $old_instance;
-        $instance['icon'] = strip_tags( $new_instance['icon'] );
+        $instance['icon'] = wp_strip_all_tags( $new_instance['icon'] );
         $instance['link'] = $new_instance['link'];
         $instance['clr'] = $new_instance['clr'];
         return $instance;

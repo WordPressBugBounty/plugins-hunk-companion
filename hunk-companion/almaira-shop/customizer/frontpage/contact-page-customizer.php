@@ -1,4 +1,5 @@
 <?php
+if ( ! defined( 'ABSPATH' ) ) exit;
 /**
  * Contact Page/Section Customizer Settings
  *
@@ -13,7 +14,7 @@ $wp_customize->add_setting('almaira_shop_contact_heading', array(
         'transport'         => 'postMessage',
 ));
     $wp_customize->add_control( 'almaira_shop_contact_heading', array(
-        'label'    => __('Big Heading', 'almaira'),
+        'label'    => __('Big Heading','hunk-companion'),
         'section'  => 'almaira_shop_contact_section',
          'type'       => 'text',
 ));
@@ -26,7 +27,7 @@ $wp_customize->add_setting('almaira_shop_contact_heading', array(
             ));
 
         $wp_customize->add_control('contact_shop_shortcode', array(
-            'label'    => __('Contact Us Shortcode', 'almaira'),
+            'label'    => __('Contact Us Shortcode','hunk-companion'),
             'description' =>__('To generate shortcode install Lead form builder plugin. Go to Apperance > Almaira theme option > Recommended plugins.  Insert Lead Form Builder Plugin Shortcode here.','almaira'),
             'section'  => 'almaira_shop_contact_section',
             'settings' => 'contact_shop_shortcode',
@@ -39,7 +40,7 @@ $wp_customize->add_setting('almaira_shop_contact_heading', array(
         'transport'         => 'postMessage',
     ));
     $wp_customize->add_control( 'almaira_shop_contact_smallheading', array(
-        'label'    => __('Small Heading', 'almaira'),
+        'label'    => __('Small Heading','hunk-companion'),
         'section'  => 'almaira_shop_contact_section',
          'type'       => 'text',
 ));
@@ -51,7 +52,7 @@ $wp_customize->add_setting('almaira_shop_contact_heading', array(
         'transport'         => 'postMessage',
 ));
     $wp_customize->add_control( 'almaira_shop_contact_address1', array(
-        'label'    => __('Address', 'almaira'),
+        'label'    => __('Address','hunk-companion'),
         'section'  => 'almaira_shop_contact_section',
          'type'       => 'textarea',
 ));
@@ -63,7 +64,7 @@ $wp_customize->add_setting('almaira_shop_contact_heading', array(
         'transport'         => 'postMessage',
 ));
     $wp_customize->add_control( 'almaira_shop_contact_address2', array(
-        'label'    => __('Mobile Number', 'almaira'),
+        'label'    => __('Mobile Number','hunk-companion'),
         'section'  => 'almaira_shop_contact_section',
          'type'       => 'textarea',
 ));
@@ -75,7 +76,7 @@ $wp_customize->add_setting('almaira_shop_contact_heading', array(
         'transport'         => 'postMessage',
 ));
     $wp_customize->add_control( 'almaira_shop_contact_support', array(
-        'label'    => __('Email', 'almaira'),
+        'label'    => __('Email','hunk-companion'),
         'section'  => 'almaira_shop_contact_section',
          'type'       => 'textarea',
 ));
@@ -88,7 +89,7 @@ $wp_customize->add_setting('almaira_shop_contact_heading', array(
         'transport'         => 'postMessage',
 ));
     $wp_customize->add_control( 'almaira_shop_contact_hours', array(
-        'label'    => __('Working Hours', 'almaira'),
+        'label'    => __('Working Hours','hunk-companion'),
         'section'  => 'almaira_shop_contact_section',
          'type'       => 'textarea',
 ));
@@ -117,6 +118,6 @@ $wp_customize->add_control(new Almaira_Shop_Misc_Control( $wp_customize, 'almair
         'section'     => 'almaira_shop_contact_section',
         'type'      => 'doc-link',
         'url'       => 'https://themehunk.com/docs/almaira-shop-theme/#contact-template',
-        'description' => esc_html__( 'To know more go with this', 'almaira-shop' ),
+        'description' => esc_html__( 'To know more go with this', 'hunk-companion' ),
         'priority'   =>30,
     )));

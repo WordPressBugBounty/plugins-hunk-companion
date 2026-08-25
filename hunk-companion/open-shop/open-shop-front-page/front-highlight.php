@@ -1,4 +1,5 @@
 <?php
+if ( ! defined( 'ABSPATH' ) ) exit;
 if(get_theme_mod('open_shop_disable_highlight_sec',false) == true){
     return;
   }

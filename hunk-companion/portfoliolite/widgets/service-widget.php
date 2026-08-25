@@ -79,7 +79,7 @@ class Portfolioline_services_column extends WP_Widget {
     function update($new_instance, $old_instance) {
         $instance = $old_instance;
         $instance['fontaws'] = $new_instance['fontaws'];
-        $instance['title'] = strip_tags( $new_instance['title'] );
+        $instance['title'] = wp_strip_all_tags( $new_instance['title'] );
         $instance['text'] = $new_instance['text'];
         $instance['link'] = $new_instance['link'];
         $instance['icon_clr'] = $new_instance['icon_clr'];

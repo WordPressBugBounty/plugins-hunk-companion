@@ -54,7 +54,7 @@ $args = open_shop_product_query($term_id,$prdct_optn);
         </div>
    <?php }
     } else {
-      echo __( 'No products found','open-shop' );
+      echo __( 'No products found','hunk-companion' );
     }
    wp_reset_query();
 }
@@ -190,7 +190,7 @@ $args = open_shop_product_query($term_id,$prdct_optn);
                    <div class="thunk-quickview">
                                <span class="quik-view">
                                    <a href="#" class="opn-quick-view-text" data-product_id="<?php echo esc_attr($pid); ?>">
-                                      <span><?php _e('Quick View','open-shop');?></span>
+                                      <span><?php _e('Quick View','hunk-companion');?></span>
                                    </a>
                                 </span>
                     </div>
@@ -224,7 +224,7 @@ $args = open_shop_product_query($term_id,$prdct_optn);
         </div>
    <?php }
     } else {
-      echo __( 'No products found','open-shop' );
+      echo __( 'No products found','hunk-companion' );
     }
     wp_reset_query();
 }
@@ -270,7 +270,7 @@ function open_shop_product_filter_loop($args){
                    <div class="thunk-quickview">
                                <span class="quik-view">
                                    <a href="#" class="opn-quick-view-text" data-product_id="<?php echo esc_attr($pid); ?>">
-                                      <span><?php _e('Quick View','open-shop');?></span>
+                                      <span><?php _e('Quick View','hunk-companion');?></span>
                                    </a>
                                 </span>
                     </div>
@@ -305,7 +305,7 @@ function open_shop_product_filter_loop($args){
         </div>
    <?php }
     } else {
-      echo __( 'No products found','open-shop' );
+      echo __( 'No products found','hunk-companion' );
     }
     wp_reset_query();
 }
@@ -339,7 +339,7 @@ function open_shop_product_list_filter_loop($args){
         </div>
    <?php }
     } else {
-      echo __( 'No products found','open-shop' );
+      echo __( 'No products found','hunk-companion' );
     }
    wp_reset_query();
 }

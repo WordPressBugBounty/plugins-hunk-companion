@@ -161,12 +161,12 @@ class open_mart_Repeater extends WP_Customize_Control {
 	public function __construct( $manager, $id, $args = array() ) {
 		parent::__construct( $manager, $id, $args );
 		/*Get options from customizer.php*/
-		$this->add_field_label = esc_html__( 'Add new field', 'open-mart' );
+		$this->add_field_label = esc_html__( 'Add new field', 'hunk-companion' );
 		if ( ! empty( $args['add_field_label'] ) ) {
 			$this->add_field_label = $args['add_field_label'];
 		}
 
-		$this->boxtitle = esc_html__( 'Customizer Repeater', 'open-mart' );
+		$this->boxtitle = esc_html__( 'Customizer Repeater', 'hunk-companion' );
 		if ( ! empty( $args['item_name'] ) ) {
 			$this->boxtitle = $args['item_name'];
 		} elseif ( ! empty( $this->label ) ) {
@@ -445,7 +445,7 @@ class open_mart_Repeater extends WP_Customize_Control {
 						if ( $this->customizer_repeater_color_control == true ) {
 							$this->input_control(
 								array(
-									'label'             => apply_filters( 'repeater_input_labels_filter', esc_html__( 'Color', 'open-mart' ), $this->id, 'customizer_repeater_color_control' ),
+									'label'             => apply_filters( 'repeater_input_labels_filter', esc_html__( 'Color', 'hunk-companion' ), $this->id, 'customizer_repeater_color_control' ),
 									'class'             => 'customizer-repeater-color-control',
 									'type'              => apply_filters( 'open_repeater_input_types_filter', 'color', $this->id, 'customizer_repeater_color_control' ),
 									'sanitize_callback' => 'sanitize_hex_color',
@@ -456,7 +456,7 @@ class open_mart_Repeater extends WP_Customize_Control {
 						if ( $this->customizer_repeater_color2_control == true ) {
 							$this->input_control(
 								array(
-									'label'             => apply_filters( 'repeater_input_labels_filter', esc_html__( 'Color', 'open-mart' ), $this->id, 'customizer_repeater_color2_control' ),
+									'label'             => apply_filters( 'repeater_input_labels_filter', esc_html__( 'Color', 'hunk-companion' ), $this->id, 'customizer_repeater_color2_control' ),
 									'class'             => 'customizer-repeater-color2-control',
 									'type'              => apply_filters( 'open_repeater_input_types_filter', 'color', $this->id, 'customizer_repeater_color2_control' ),
 									'sanitize_callback' => 'sanitize_hex_color',
@@ -466,7 +466,7 @@ class open_mart_Repeater extends WP_Customize_Control {
 						if ( $this->customizer_repeater_title_control == true ) {
 							$this->input_control(
 								array(
-									'label' => apply_filters( 'repeater_input_labels_filter', esc_html__( 'Title', 'open-mart' ), $this->id, 'customizer_repeater_title_control' ),
+									'label' => apply_filters( 'repeater_input_labels_filter', esc_html__( 'Title', 'hunk-companion' ), $this->id, 'customizer_repeater_title_control' ),
 									'class' => 'customizer-repeater-title-control',
 									'type'  => apply_filters( 'open_repeater_input_types_filter', '', $this->id, 'customizer_repeater_title_control' ),
 								), $title
@@ -477,7 +477,7 @@ class open_mart_Repeater extends WP_Customize_Control {
 						if ( $this->customizer_repeater_price_control == true ) {
 							$this->input_control(
 								array(
-									'label' => apply_filters( 'repeater_input_labels_filter', esc_html__( 'Price', 'open-mart' ), $this->id, 'customizer_repeater_price_control' ),
+									'label' => apply_filters( 'repeater_input_labels_filter', esc_html__( 'Price', 'hunk-companion' ), $this->id, 'customizer_repeater_price_control' ),
 									'class' => 'customizer-repeater-price-control',
 									'type'  => apply_filters( 'open_repeater_input_types_filter', '', $this->id, 'customizer_repeater_price_control' ),
 								), $price
@@ -488,7 +488,7 @@ class open_mart_Repeater extends WP_Customize_Control {
 						if ( $this->customizer_repeater_number_control == true ) {
 							$this->input_control(
 								array(
-									'label' => apply_filters( 'repeater_input_labels_filter', esc_html__( 'Number', 'open-mart' ), $this->id, 'customizer_repeater_number_control' ),
+									'label' => apply_filters( 'repeater_input_labels_filter', esc_html__( 'Number', 'hunk-companion' ), $this->id, 'customizer_repeater_number_control' ),
 									'class' => 'customizer-repeater-number-control',
 									'type'  => apply_filters( 'open_repeater_input_types_filter', '', $this->id, 'customizer_repeater_number_control' ),
 								), $number
@@ -498,7 +498,7 @@ class open_mart_Repeater extends WP_Customize_Control {
 						if ( $this->customizer_repeater_subtitle_control == true ) {
 							$this->input_control(
 								array(
-									'label' => apply_filters( 'repeater_input_labels_filter', esc_html__( 'Subtitle', 'open-mart' ), $this->id, 'customizer_repeater_subtitle_control' ),
+									'label' => apply_filters( 'repeater_input_labels_filter', esc_html__( 'Subtitle', 'hunk-companion' ), $this->id, 'customizer_repeater_subtitle_control' ),
 									'class' => 'customizer-repeater-subtitle-control',
 									'type'  => apply_filters( 'open_repeater_input_types_filter', '', $this->id, 'customizer_repeater_subtitle_control' ),
 								), $subtitle
@@ -507,7 +507,7 @@ class open_mart_Repeater extends WP_Customize_Control {
 						if ( $this->customizer_repeater_text_control == true ) {
 							$this->input_control(
 								array(
-									'label' => apply_filters( 'repeater_input_labels_filter', esc_html__( 'Text', 'open-mart' ), $this->id, 'customizer_repeater_text_control' ),
+									'label' => apply_filters( 'repeater_input_labels_filter', esc_html__( 'Text', 'hunk-companion' ), $this->id, 'customizer_repeater_text_control' ),
 									'class' => 'customizer-repeater-text-control',
 									'type'  => apply_filters( 'open_repeater_input_types_filter', 'textarea', $this->id, 'customizer_repeater_text_control' ),
 								), $text
@@ -516,7 +516,7 @@ class open_mart_Repeater extends WP_Customize_Control {
 						if ( $this->customizer_repeater_link_control ) {
 							$this->input_control(
 								array(
-									'label'             => apply_filters( 'repeater_input_labels_filter', esc_html__( 'Link', 'open-mart' ), $this->id, 'customizer_repeater_link_control' ),
+									'label'             => apply_filters( 'repeater_input_labels_filter', esc_html__( 'Link', 'hunk-companion' ), $this->id, 'customizer_repeater_link_control' ),
 									'class'             => 'customizer-repeater-link-control',
 									'sanitize_callback' => 'esc_url_raw',
 									'type'              => apply_filters( 'open_repeater_input_types_filter', '', $this->id, 'customizer_repeater_link_control' ),
@@ -526,7 +526,7 @@ class open_mart_Repeater extends WP_Customize_Control {
 						if ( $this->customizer_repeater_text2_control == true ) {
 							$this->input_control(
 								array(
-									'label' => apply_filters( 'repeater_input_labels_filter', esc_html__( 'Button Text', 'open-mart' ), $this->id, 'customizer_repeater_text2_control' ),
+									'label' => apply_filters( 'repeater_input_labels_filter', esc_html__( 'Button Text', 'hunk-companion' ), $this->id, 'customizer_repeater_text2_control' ),
 									'class' => 'customizer-repeater-text2-control',
 									'type'  => apply_filters( 'open_repeater_input_types_filter', 'textarea', $this->id, 'customizer_repeater_text2_control' ),
 								), $text2
@@ -535,7 +535,7 @@ class open_mart_Repeater extends WP_Customize_Control {
 						if ( $this->customizer_repeater_link2_control ) {
 							$this->input_control(
 								array(
-									'label'             => apply_filters( 'repeater_input_labels_filter', esc_html__( 'Link', 'open-mart' ), $this->id, 'customizer_repeater_link2_control' ),
+									'label'             => apply_filters( 'repeater_input_labels_filter', esc_html__( 'Link', 'hunk-companion' ), $this->id, 'customizer_repeater_link2_control' ),
 									'class'             => 'customizer-repeater-link2-control',
 									'sanitize_callback' => 'esc_url_raw',
 									'type'              => apply_filters( 'open_repeater_input_types_filter', '', $this->id, 'customizer_repeater_link2_control' ),
@@ -545,7 +545,7 @@ class open_mart_Repeater extends WP_Customize_Control {
 						if ( $this->customizer_repeater_shortcode_control == true ) {
 							$this->input_control(
 								array(
-									'label' => apply_filters( 'repeater_input_labels_filter', esc_html__( 'Shortcode', 'open-mart' ), $this->id, 'customizer_repeater_shortcode_control' ),
+									'label' => apply_filters( 'repeater_input_labels_filter', esc_html__( 'Shortcode', 'hunk-companion' ), $this->id, 'customizer_repeater_shortcode_control' ),
 									'class' => 'customizer-repeater-shortcode-control',
 									'type'  => apply_filters( 'open_repeater_input_types_filter', '', $this->id, 'customizer_repeater_shortcode_control' ),
 								), $shortcode
@@ -564,7 +564,7 @@ class open_mart_Repeater extends WP_Customize_Control {
 							echo 'style="display:none;"';
 						}
 						echo '>';
-						esc_html_e( 'Delete field', 'open-mart' );
+						esc_html_e( 'Delete field', 'hunk-companion' );
 						?>
 						</button>
 
@@ -597,7 +597,7 @@ class open_mart_Repeater extends WP_Customize_Control {
 					if ( $this->customizer_repeater_color_control == true ) {
 						$this->input_control(
 							array(
-								'label'             => apply_filters( 'repeater_input_labels_filter', esc_html__( 'Color', 'open-mart' ), $this->id, 'customizer_repeater_color_control' ),
+								'label'             => apply_filters( 'repeater_input_labels_filter', esc_html__( 'Color', 'hunk-companion' ), $this->id, 'customizer_repeater_color_control' ),
 								'class'             => 'customizer-repeater-color-control',
 								'type'              => apply_filters( 'open_repeater_input_types_filter', 'color', $this->id, 'customizer_repeater_color_control' ),
 								'sanitize_callback' => 'sanitize_hex_color',
@@ -607,7 +607,7 @@ class open_mart_Repeater extends WP_Customize_Control {
 					if ( $this->customizer_repeater_color2_control == true ) {
 						$this->input_control(
 							array(
-								'label'             => apply_filters( 'repeater_input_labels_filter', esc_html__( 'Color', 'open-mart' ), $this->id, 'customizer_repeater_color2_control' ),
+								'label'             => apply_filters( 'repeater_input_labels_filter', esc_html__( 'Color', 'hunk-companion' ), $this->id, 'customizer_repeater_color2_control' ),
 								'class'             => 'customizer-repeater-color2-control',
 								'type'              => apply_filters( 'open_repeater_input_types_filter', 'color', $this->id, 'customizer_repeater_color2_control' ),
 								'sanitize_callback' => 'sanitize_hex_color',
@@ -617,7 +617,7 @@ class open_mart_Repeater extends WP_Customize_Control {
 					if ( $this->customizer_repeater_title_control == true ) {
 						$this->input_control(
 							array(
-								'label' => apply_filters( 'repeater_input_labels_filter', esc_html__( 'Title', 'open-mart' ), $this->id, 'customizer_repeater_title_control' ),
+								'label' => apply_filters( 'repeater_input_labels_filter', esc_html__( 'Title', 'hunk-companion' ), $this->id, 'customizer_repeater_title_control' ),
 								'class' => 'customizer-repeater-title-control',
 								'type'  => apply_filters( 'open_repeater_input_types_filter', '', $this->id, 'customizer_repeater_title_control' ),
 							)
@@ -628,7 +628,7 @@ class open_mart_Repeater extends WP_Customize_Control {
 						if ( $this->customizer_repeater_price_control == true ) {
 						$this->input_control(
 							array(
-								'label' => apply_filters( 'repeater_input_labels_filter', esc_html__( 'Price', 'open-mart' ), $this->id, 'customizer_repeater_price_control' ),
+								'label' => apply_filters( 'repeater_input_labels_filter', esc_html__( 'Price', 'hunk-companion' ), $this->id, 'customizer_repeater_price_control' ),
 								'class' => 'customizer-repeater-price-control',
 								'type'  => apply_filters( 'open_repeater_input_types_filter', '', $this->id, 'customizer_repeater_price_control' ),
 							)
@@ -639,7 +639,7 @@ class open_mart_Repeater extends WP_Customize_Control {
 						if ( $this->customizer_repeater_number_control == true ) {
 						$this->input_control(
 							array(
-								'label' => apply_filters( 'repeater_input_labels_filter', esc_html__( 'Number', 'open-mart' ), $this->id, 'customizer_repeater_number_control' ),
+								'label' => apply_filters( 'repeater_input_labels_filter', esc_html__( 'Number', 'hunk-companion' ), $this->id, 'customizer_repeater_number_control' ),
 								'class' => 'customizer-repeater-number-control',
 								'type'  => apply_filters( 'open_repeater_input_types_filter', '', $this->id, 'customizer_repeater_number_control' ),
 							)
@@ -650,7 +650,7 @@ class open_mart_Repeater extends WP_Customize_Control {
 					if ( $this->customizer_repeater_subtitle_control == true ) {
 						$this->input_control(
 							array(
-								'label' => apply_filters( 'repeater_input_labels_filter', esc_html__( 'Subtitle', 'open-mart' ), $this->id, 'customizer_repeater_subtitle_control' ),
+								'label' => apply_filters( 'repeater_input_labels_filter', esc_html__( 'Subtitle', 'hunk-companion' ), $this->id, 'customizer_repeater_subtitle_control' ),
 								'class' => 'customizer-repeater-subtitle-control',
 								'type'  => apply_filters( 'open_repeater_input_types_filter', '', $this->id, 'customizer_repeater_subtitle_control' ),
 							)
@@ -659,7 +659,7 @@ class open_mart_Repeater extends WP_Customize_Control {
 					if ( $this->customizer_repeater_text_control == true ) {
 						$this->input_control(
 							array(
-								'label' => apply_filters( 'repeater_input_labels_filter', esc_html__( 'Text', 'open-mart' ), $this->id, 'customizer_repeater_text_control' ),
+								'label' => apply_filters( 'repeater_input_labels_filter', esc_html__( 'Text', 'hunk-companion' ), $this->id, 'customizer_repeater_text_control' ),
 								'class' => 'customizer-repeater-text-control',
 								'type'  => apply_filters( 'open_repeater_input_types_filter', 'textarea', $this->id, 'customizer_repeater_text_control' ),
 							)
@@ -668,7 +668,7 @@ class open_mart_Repeater extends WP_Customize_Control {
 					if ( $this->customizer_repeater_link_control == true ) {
 						$this->input_control(
 							array(
-								'label' => apply_filters( 'repeater_input_labels_filter', esc_html__( 'Link', 'open-mart' ), $this->id, 'customizer_repeater_link_control' ),
+								'label' => apply_filters( 'repeater_input_labels_filter', esc_html__( 'Link', 'hunk-companion' ), $this->id, 'customizer_repeater_link_control' ),
 								'class' => 'customizer-repeater-link-control',
 								'type'  => apply_filters( 'open_repeater_input_types_filter', '', $this->id, 'customizer_repeater_link_control' ),
 							)
@@ -677,7 +677,7 @@ class open_mart_Repeater extends WP_Customize_Control {
 					if ( $this->customizer_repeater_text2_control == true ) {
 						$this->input_control(
 							array(
-								'label' => apply_filters( 'repeater_input_labels_filter', esc_html__( 'Button Text', 'open-mart' ), $this->id, 'customizer_repeater_text2_control' ),
+								'label' => apply_filters( 'repeater_input_labels_filter', esc_html__( 'Button Text', 'hunk-companion' ), $this->id, 'customizer_repeater_text2_control' ),
 								'class' => 'customizer-repeater-text2-control',
 								'type'  => apply_filters( 'open_repeater_input_types_filter', 'textarea', $this->id, 'customizer_repeater_text2_control' ),
 							)
@@ -686,7 +686,7 @@ class open_mart_Repeater extends WP_Customize_Control {
 					if ( $this->customizer_repeater_link2_control == true ) {
 						$this->input_control(
 							array(
-								'label' => apply_filters( 'repeater_input_labels_filter', esc_html__( 'Link', 'open-mart' ), $this->id, 'customizer_repeater_link2_control' ),
+								'label' => apply_filters( 'repeater_input_labels_filter', esc_html__( 'Link', 'hunk-companion' ), $this->id, 'customizer_repeater_link2_control' ),
 								'class' => 'customizer-repeater-link2-control',
 								'type'  => apply_filters( 'open_repeater_input_types_filter', '', $this->id, 'customizer_repeater_link2_control' ),
 							)
@@ -695,7 +695,7 @@ class open_mart_Repeater extends WP_Customize_Control {
 					if ( $this->customizer_repeater_shortcode_control == true ) {
 						$this->input_control(
 							array(
-								'label' => apply_filters( 'repeater_input_labels_filter', esc_html__( 'Shortcode', 'open-mart' ), $this->id, 'customizer_repeater_shortcode_control' ),
+								'label' => apply_filters( 'repeater_input_labels_filter', esc_html__( 'Shortcode', 'hunk-companion' ), $this->id, 'customizer_repeater_shortcode_control' ),
 								'class' => 'customizer-repeater-shortcode-control',
 								'type'  => apply_filters( 'open_repeater_input_types_filter', '', $this->id, 'customizer_repeater_shortcode_control' ),
 							)
@@ -707,7 +707,7 @@ class open_mart_Repeater extends WP_Customize_Control {
 					?>
 					<input type="hidden" class="social-repeater-box-id">
 					<button type="button" class="social-repeater-general-control-remove-field button" style="display:none;">
-						<?php esc_html_e( 'Delete field', 'open-mart' ); ?>
+						<?php esc_html_e( 'Delete field', 'hunk-companion' ); ?>
 					</button>
 				</div>
 			</div>
@@ -779,13 +779,13 @@ class open_mart_Repeater extends WP_Customize_Control {
 		?>
 			>
 			<span class="customize-control-title">
-				<?php esc_html_e( 'Icon', 'open-mart' ); ?>
+				<?php esc_html_e( 'Icon', 'hunk-companion' ); ?>
 			</span>
 			<span class="description customize-control-description">
 				<?php
 				echo sprintf(
 					/* translators: Fontawesome link with full list of icons available */
-					esc_html__( 'Note: Some icons may not be displayed here. You can see the full list of icons at Fontawesome Website.', 'open-mart' )
+					esc_html__( 'Note: Some icons may not be displayed here. You can see the full list of icons at Fontawesome Website.', 'hunk-companion' )
 					
 				);
 				?>
@@ -914,10 +914,10 @@ class open_mart_Repeater extends WP_Customize_Control {
 		?>
 			>
 			<span class="customize-control-title">
-				<?php esc_html_e( 'Image', 'open-mart' ); ?>
+				<?php esc_html_e( 'Image', 'hunk-companion' ); ?>
 			</span>
 			<input type="text" class="widefat custom-media-url" value="<?php echo esc_attr( $value ); ?>">
-			<input type="button" class="button button-secondary customizer-repeater-custom-media-button" value="<?php esc_attr_e( 'Upload Image', 'open-mart' ); ?>" />
+			<input type="button" class="button button-secondary customizer-repeater-custom-media-button" value="<?php esc_attr_e( 'Upload Image', 'hunk-companion' ); ?>" />
 		</div>
 		<?php
 	}
@@ -937,10 +937,10 @@ class open_mart_Repeater extends WP_Customize_Control {
 		?>
 			>
 			<span class="customize-control-title">
-				<?php esc_html_e( 'Logo Image', 'open-mart' ); ?>
+				<?php esc_html_e( 'Logo Image', 'hunk-companion' ); ?>
 			</span>
 			<input type="text" class="widefat custom-logo-media-url" value="<?php echo esc_attr( $value ); ?>">
-			<input type="button" class="button button-secondary customizer-repeater-logo-custom-media-button" value="<?php esc_attr_e( 'Upload Image', 'open-mart' ); ?>" />
+			<input type="button" class="button button-secondary customizer-repeater-logo-custom-media-button" value="<?php esc_attr_e( 'Upload Image', 'hunk-companion' ); ?>" />
 		</div>
 		<?php
 	}
@@ -953,13 +953,13 @@ class open_mart_Repeater extends WP_Customize_Control {
 	private function icon_type_choice( $value = 'customizer_repeater_icon' ) {
 		?>
 		<span class="customize-control-title">
-			<?php esc_html_e( 'Image type', 'open-mart' ); ?>
+			<?php esc_html_e( 'Image type', 'hunk-companion' ); ?>
 		</span>
 		<select class="customizer-repeater-image-choice">
-			<option value="customizer_repeater_icon" <?php selected( $value, 'customizer_repeater_icon' ); ?>><?php esc_html_e( 'Icon', 'open-mart' ); ?></option>
-			<option value="customizer_repeater_image" <?php selected( $value, 'customizer_repeater_image' ); ?>><?php esc_html_e( 'Image', 'open-mart' ); ?></option>
-			<option value="customizer_repeater_logo_image" <?php selected( $value, 'customizer_repeater_logo_image' ); ?>><?php esc_html_e( 'Logo Image', 'open-mart' ); ?></option>
-			<option value="customizer_repeater_none" <?php selected( $value, 'customizer_repeater_none' ); ?>><?php esc_html_e( 'None', 'open-mart' ); ?></option>
+			<option value="customizer_repeater_icon" <?php selected( $value, 'customizer_repeater_icon' ); ?>><?php esc_html_e( 'Icon', 'hunk-companion' ); ?></option>
+			<option value="customizer_repeater_image" <?php selected( $value, 'customizer_repeater_image' ); ?>><?php esc_html_e( 'Image', 'hunk-companion' ); ?></option>
+			<option value="customizer_repeater_logo_image" <?php selected( $value, 'customizer_repeater_logo_image' ); ?>><?php esc_html_e( 'Logo Image', 'hunk-companion' ); ?></option>
+			<option value="customizer_repeater_none" <?php selected( $value, 'customizer_repeater_none' ); ?>><?php esc_html_e( 'None', 'hunk-companion' ); ?></option>
 		</select>
 		<?php
 	}
@@ -973,12 +973,12 @@ class open_mart_Repeater extends WP_Customize_Control {
 		$social_repeater = array();
 		$show_del        = 0;
 		?>
-		<span class="customize-control-title"><?php esc_html_e( 'Social icons', 'open-mart' ); ?></span>
+		<span class="customize-control-title"><?php esc_html_e( 'Social icons', 'hunk-companion' ); ?></span>
 		<?php
 		echo '<span class="description customize-control-description">';
 		echo sprintf(
 			/* translators: Fontawesome link with full list of icons available */
-			esc_html__( 'Note: Some icons may not be displayed here. You can see the full list of icons at Fontawesome website .', 'open-mart' )
+			esc_html__( 'Note: Some icons may not be displayed here. You can see the full list of icons at Fontawesome website .', 'hunk-companion' )
 			
 		);
 		echo '</span>';
@@ -1087,15 +1087,15 @@ class open_mart_Repeater extends WP_Customize_Control {
 		</div> <!-- /.iconpicker -->
 	</div> <!-- /.popover-content -->
 </div> <!-- /.iconpicker-popover -->
-					<input type="text" class="customizer-repeater-social-repeater-link" placeholder="<?php esc_attr_e( 'Link', 'open-mart' ); ?>">
+					<input type="text" class="customizer-repeater-social-repeater-link" placeholder="<?php esc_attr_e( 'Link', 'hunk-companion' ); ?>">
 					<input type="hidden" class="customizer-repeater-social-repeater-id" value="">
 					<button class="social-repeater-remove-social-item" style="display:none">
-						<?php esc_html_e( 'Remove Icon', 'open-mart' ); ?>
+						<?php esc_html_e( 'Remove Icon', 'hunk-companion' ); ?>
 					</button>
 				</div>
 				<input type="hidden" id="social-repeater-socials-repeater-colector" class="social-repeater-socials-repeater-colector" value=""/>
 			</div>
-			<button class="social-repeater-add-social-item button-secondary"><?php esc_html_e( 'Add Icon', 'open-mart' ); ?></button>
+			<button class="social-repeater-add-social-item button-secondary"><?php esc_html_e( 'Add Icon', 'hunk-companion' ); ?></button>
 			<?php
 		} else {
 			?>
@@ -1200,7 +1200,7 @@ class open_mart_Repeater extends WP_Customize_Control {
 		</div> <!-- /.iconpicker -->
 	</div> <!-- /.popover-content -->
 </div> <!-- /.iconpicker-popover -->
-						<?php echo '<input type="text" class="customizer-repeater-social-repeater-link" placeholder="' . esc_attr__( 'Link', 'open-mart' ) . '" value="';
+						<?php echo '<input type="text" class="customizer-repeater-social-repeater-link" placeholder="' . esc_attr__( 'Link', 'hunk-companion' ) . '" value="';
 					if ( ! empty( $social_icon['link'] ) ) {
 						echo esc_url( $social_icon['link'] );
 					}
@@ -1214,13 +1214,13 @@ class open_mart_Repeater extends WP_Customize_Control {
 					if ( $show_del == 1 ) {
 						echo 'display:none';
 					}
-						echo '">' . esc_html__( 'Remove Icon', 'open-mart' ) . '</button>';
+						echo '">' . esc_html__( 'Remove Icon', 'hunk-companion' ) . '</button>';
 					echo '</div>';
 				}
 				?>
 				<input type="hidden" id="social-repeater-socials-repeater-colector" class="social-repeater-socials-repeater-colector" value="<?php echo esc_textarea( html_entity_decode( $value ) ); ?>" />
 			</div>
-			<button class="social-repeater-add-social-item button-secondary"><?php esc_html_e( 'Add Icon', 'open-mart' ); ?></button>
+			<button class="social-repeater-add-social-item button-secondary"><?php esc_html_e( 'Add Icon', 'hunk-companion' ); ?></button>
 			<?php
 		}
 	}

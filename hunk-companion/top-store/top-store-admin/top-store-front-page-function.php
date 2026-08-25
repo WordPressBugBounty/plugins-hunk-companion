@@ -223,9 +223,11 @@ function top_store_mobile_navbar(){?>
             <a href="#" class="menu-btn" id="mob-menu-btn">
               
                 <div class="btn">
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
+                          <svg width="1.44em" height="1em" viewBox="0 0 26 18" fill="none" xmlns="http://www.w3.org/2000/svg" style="display: inline-block; vertical-align: middle;">
+  <path d="M4 4.5H22" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M4 9H22" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M4 13.5H22" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>
               </div>
                 
             </a>

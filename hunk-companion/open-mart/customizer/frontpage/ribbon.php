@@ -4,7 +4,7 @@ $wp_customize->add_setting( 'open_mart_disable_ribbon_sec', array(
                 'sanitize_callback'     => 'open_mart_sanitize_checkbox',
             ) );
 $wp_customize->add_control( new WP_Customize_Control( $wp_customize, 'open_mart_disable_ribbon_sec', array(
-                'label'                 => esc_html__('Disable Section', 'open-mart'),
+                'label'                 => esc_html__('Disable Section', 'hunk-companion'),
                 'type'                  => 'checkbox',
                  'priority'   => 1,
                 'section'               => 'open_mart_ribbon',
@@ -44,7 +44,7 @@ $wp_customize->add_control( new WP_Customize_Control( $wp_customize, 'open_mart_
             $wp_customize,
             'open_mart_ribbon_bg_background_image',
             array(
-                'label'     => esc_html__( 'Background Image', 'open-mart' ),
+                'label'     => esc_html__( 'Background Image', 'hunk-companion' ),
                 'section'   => 'open_mart_ribbon',
                 'priority'   => 2,
                 'settings'    => array(
@@ -67,7 +67,7 @@ $wp_customize->add_setting('open_mart_ribbon_text', array(
         
   ));
 $wp_customize->add_control('open_mart_ribbon_text', array(
-        'label'    => __('Heading', 'open-mart'),
+        'label'    => __('Heading', 'hunk-companion'),
         'section'  => 'open_mart_ribbon',
         'settings' => 'open_mart_ribbon_text',
          'type'    => 'textarea',
@@ -81,7 +81,7 @@ $wp_customize->add_setting('open_mart_ribbon_subheading', array(
         
   ));
 $wp_customize->add_control('open_mart_ribbon_subheading', array(
-        'label'    => __('Sub Heading', 'open-mart'),
+        'label'    => __('Sub Heading', 'hunk-companion'),
         'section'  => 'open_mart_ribbon',
         'settings' => 'open_mart_ribbon_subheading',
          'type'    => 'textarea',
@@ -95,7 +95,7 @@ $wp_customize->add_setting('open_mart_ribbon_btn_text', array(
         
   ));
 $wp_customize->add_control('open_mart_ribbon_btn_text', array(
-        'label'    => __('Button Text', 'open-mart'),
+        'label'    => __('Button Text', 'hunk-companion'),
         'section'  => 'open_mart_ribbon',
         'settings' => 'open_mart_ribbon_btn_text',
          'type'    => 'text',
@@ -108,7 +108,7 @@ $wp_customize->add_setting('open_mart_ribbon_btn_link', array(
         
   ));
 $wp_customize->add_control('open_mart_ribbon_btn_link', array(
-        'label'    => __('Button Link', 'open-mart'),
+        'label'    => __('Button Link', 'hunk-companion'),
         'section'  => 'open_mart_ribbon',
         'settings' => 'open_mart_ribbon_btn_link',
          'type'    => 'text',
@@ -120,7 +120,7 @@ $wp_customize->add_setting('open_mart_ribbon_sideimg', array(
         'sanitize_callback' => 'open_mart_sanitize_upload',
     ));
 $wp_customize->add_control( new WP_Customize_Image_Control($wp_customize, 'open_mart_ribbon_sideimg', array(
-        'label'          => __('Image', 'open-mart'),
+        'label'          => __('Image', 'hunk-companion'),
         'section'        => 'open_mart_ribbon',
         'settings'       => 'open_mart_ribbon_sideimg',
  )));
@@ -132,12 +132,12 @@ $wp_customize->add_setting('open_mart_ribbon_side', array(
     ));
 $wp_customize->add_control( 'open_mart_ribbon_side', array(
         'settings' => 'open_mart_ribbon_side',
-        'label'   => __('PLace Image On','open-mart'),
+        'label'   => __('PLace Image On','hunk-companion'),
         'section' => 'open_mart_ribbon',
         'type'    => 'select',
         'choices'    => array(
-        'left'     => __('Left (Pro)','open-mart'),
-        'right'     => __('Right','open-mart'),
+        'left'     => __('Left (Pro)','hunk-companion'),
+        'right'     => __('Right','hunk-companion'),
             
         ),
     ));
@@ -149,6 +149,6 @@ $wp_customize->add_control(new open_mart_Misc_Control( $wp_customize, 'open_mart
         'section'     => 'open_mart_ribbon',
         'type'        => 'doc-link',
         'url'         => 'https://themehunk.com/docs/open-mart/#ribbon-section',
-        'description' => esc_html__( 'To know more go with this', 'open-mart' ),
+        'description' => esc_html__( 'To know more go with this', 'hunk-companion' ),
         'priority'   =>100,
     )));

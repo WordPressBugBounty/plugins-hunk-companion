@@ -16,7 +16,7 @@ class open_mart_highlights_column extends WP_Widget {
     function __construct() {
         $widget_ops = array('classname' => 'openmart-highlights-column',
             'description' => 'Show your highlights provided');
-        parent::__construct('openmart-highlights-column-widget', __('Open Mart : Highlight Widget','open-mart'), $widget_ops);
+        parent::__construct('openmart-highlights-column-widget', __('Open Mart : Highlight Widget','hunk-companion'), $widget_ops);
     }
 
     function widget($args, $instance) {
@@ -123,21 +123,21 @@ class open_mart_highlights_column extends WP_Widget {
 
     function update($new_instance, $old_instance) {
         $instance = $old_instance;
-        $instance['widgettitle'] = strip_tags( $new_instance['widgettitle'] );
+        $instance['widgettitle'] = wp_strip_all_tags( $new_instance['widgettitle'] );
         $instance['fontaws1'] = $new_instance['fontaws1'];
-        $instance['title1'] = strip_tags( $new_instance['title1'] );
+        $instance['title1'] = wp_strip_all_tags( $new_instance['title1'] );
         $instance['text1'] = $new_instance['text1'];
         $instance['fontaws2'] = $new_instance['fontaws2'];
-        $instance['title2'] = strip_tags( $new_instance['title2'] );
+        $instance['title2'] = wp_strip_all_tags( $new_instance['title2'] );
         $instance['text2'] = $new_instance['text2'];
         $instance['fontaws3'] = $new_instance['fontaws3'];
-        $instance['title3'] = strip_tags( $new_instance['title3'] );
+        $instance['title3'] = wp_strip_all_tags( $new_instance['title3'] );
         $instance['text3'] = $new_instance['text3'];
         $instance['fontaws4'] = $new_instance['fontaws4'];
-        $instance['title4'] = strip_tags( $new_instance['title4'] );
+        $instance['title4'] = wp_strip_all_tags( $new_instance['title4'] );
         $instance['text4'] = $new_instance['text4'];
         $instance['fontaws5'] = $new_instance['fontaws5'];
-        $instance['title5'] = strip_tags( $new_instance['title5'] );
+        $instance['title5'] = wp_strip_all_tags( $new_instance['title5'] );
         $instance['text5'] = $new_instance['text5'];
         return $instance;
     }
@@ -190,71 +190,71 @@ class open_mart_highlights_column extends WP_Widget {
     ?>
         <div class="clearfix"></div>
         <p> 
-        <label for="<?php echo $this->get_field_id('widgettitle'); ?>"><?php _e('Widget Title ( Will be display in mobile view )','open-mart'); ?></label> 
+        <label for="<?php echo $this->get_field_id('widgettitle'); ?>"><?php _e('Widget Title ( Will be display in mobile view )','hunk-companion'); ?></label> 
         <input type="text" class="widefat" name="<?php echo $this->get_field_name('widgettitle'); ?>" id="<?php echo $this->get_field_id('widgettitle'); ?>" value="<?php  echo $widgettitle; ?>" style="margin-top:5px;">
      </p>
       <p>
-        <label for="<?php echo $this->get_field_id('title1'); ?>"><?php _e('Title','open-mart'); ?></label>
+        <label for="<?php echo $this->get_field_id('title1'); ?>"><?php _e('Title','hunk-companion'); ?></label>
         <input type="text" class="widefat" name="<?php echo $this->get_field_name('title1'); ?>" id="<?php echo $this->get_field_id('title1'); ?>" value="<?php  echo $title1; ?>" style="margin-top:5px;">
      </p>
      <p>
-        <label for="<?php echo $this->get_field_id('text1'); ?>"><?php _e('Description','open-mart'); ?></label>
+        <label for="<?php echo $this->get_field_id('text1'); ?>"><?php _e('Description','hunk-companion'); ?></label>
         <textarea  name="<?php echo $this->get_field_name('text1'); ?>" id="<?php echo $this->get_field_id('text1'); ?>"  class="widefat" ><?php echo $text1; ?></textarea>
      </p> 
      <p>
-        <label for="<?php echo $this->get_field_id('fontaws1'); ?>"><?php _e('Font Awesome Icon','open-mart'); ?></label>
+        <label for="<?php echo $this->get_field_id('fontaws1'); ?>"><?php _e('Font Awesome Icon','hunk-companion'); ?></label>
         <input type="text" class="widefat" name="<?php echo $this->get_field_name('fontaws1'); ?>" id="<?php echo $this->get_field_id('fontaws1'); ?>" value="<?php  echo $fontaws1; ?>" style="margin-top:5px;">
      </p>
 
      <p>
-        <label for="<?php echo $this->get_field_id('title2'); ?>"><?php _e('Title','open-mart'); ?></label>
+        <label for="<?php echo $this->get_field_id('title2'); ?>"><?php _e('Title','hunk-companion'); ?></label>
         <input type="text" class="widefat" name="<?php echo $this->get_field_name('title2'); ?>" id="<?php echo $this->get_field_id('title2'); ?>" value="<?php  echo $title2; ?>" style="margin-top:5px;">
      </p>
      <p>
-        <label for="<?php echo $this->get_field_id('text2'); ?>"><?php _e('Description','open-mart'); ?></label>
+        <label for="<?php echo $this->get_field_id('text2'); ?>"><?php _e('Description','hunk-companion'); ?></label>
         <textarea  name="<?php echo $this->get_field_name('text2'); ?>" id="<?php echo $this->get_field_id('text2'); ?>"  class="widefat" ><?php echo $text2; ?></textarea>
      </p> 
      <p>
-        <label for="<?php echo $this->get_field_id('fontaws2'); ?>"><?php _e('Font Awesome Icon','open-mart'); ?></label>
+        <label for="<?php echo $this->get_field_id('fontaws2'); ?>"><?php _e('Font Awesome Icon','hunk-companion'); ?></label>
         <input type="text" class="widefat" name="<?php echo $this->get_field_name('fontaws2'); ?>" id="<?php echo $this->get_field_id('fontaws2'); ?>" value="<?php  echo $fontaws2; ?>" style="margin-top:5px;">
      </p>
 
      <p>
-        <label for="<?php echo $this->get_field_id('title3'); ?>"><?php _e('Title','open-mart'); ?></label>
+        <label for="<?php echo $this->get_field_id('title3'); ?>"><?php _e('Title','hunk-companion'); ?></label>
         <input type="text" class="widefat" name="<?php echo $this->get_field_name('title3'); ?>" id="<?php echo $this->get_field_id('title3'); ?>" value="<?php  echo $title3; ?>" style="margin-top:5px;">
      </p>
      <p>
-        <label for="<?php echo $this->get_field_id('text3'); ?>"><?php _e('Description','open-mart'); ?></label>
+        <label for="<?php echo $this->get_field_id('text3'); ?>"><?php _e('Description','hunk-companion'); ?></label>
         <textarea  name="<?php echo $this->get_field_name('text3'); ?>" id="<?php echo $this->get_field_id('text3'); ?>"  class="widefat" ><?php echo $text3; ?></textarea>
      </p> 
      <p>
-        <label for="<?php echo $this->get_field_id('fontaws3'); ?>"><?php _e('Font Awesome Icon','open-mart'); ?></label>
+        <label for="<?php echo $this->get_field_id('fontaws3'); ?>"><?php _e('Font Awesome Icon','hunk-companion'); ?></label>
         <input type="text" class="widefat" name="<?php echo $this->get_field_name('fontaws3'); ?>" id="<?php echo $this->get_field_id('fontaws3'); ?>" value="<?php  echo $fontaws3; ?>" style="margin-top:5px;">
      </p>
 
      <p>
-        <label for="<?php echo $this->get_field_id('title4'); ?>"><?php _e('Title','open-mart'); ?></label>
+        <label for="<?php echo $this->get_field_id('title4'); ?>"><?php _e('Title','hunk-companion'); ?></label>
         <input type="text" class="widefat" name="<?php echo $this->get_field_name('title4'); ?>" id="<?php echo $this->get_field_id('title4'); ?>" value="<?php  echo $title4; ?>" style="margin-top:5px;">
      </p>
      <p>
-        <label for="<?php echo $this->get_field_id('text4'); ?>"><?php _e('Description','open-mart'); ?></label>
+        <label for="<?php echo $this->get_field_id('text4'); ?>"><?php _e('Description','hunk-companion'); ?></label>
         <textarea  name="<?php echo $this->get_field_name('text4'); ?>" id="<?php echo $this->get_field_id('text4'); ?>"  class="widefat" ><?php echo $text4; ?></textarea>
      </p> 
      <p>
-        <label for="<?php echo $this->get_field_id('fontaws4'); ?>"><?php _e('Font Awesome Icon','open-mart'); ?></label>
+        <label for="<?php echo $this->get_field_id('fontaws4'); ?>"><?php _e('Font Awesome Icon','hunk-companion'); ?></label>
         <input type="text" class="widefat" name="<?php echo $this->get_field_name('fontaws4'); ?>" id="<?php echo $this->get_field_id('fontaws4'); ?>" value="<?php  echo $fontaws4; ?>" style="margin-top:5px;">
      </p>
 
      <p>
-        <label for="<?php echo $this->get_field_id('title5'); ?>"><?php _e('Title','open-mart'); ?></label>
+        <label for="<?php echo $this->get_field_id('title5'); ?>"><?php _e('Title','hunk-companion'); ?></label>
         <input type="text" class="widefat" name="<?php echo $this->get_field_name('title5'); ?>" id="<?php echo $this->get_field_id('title5'); ?>" value="<?php  echo $title5; ?>" style="margin-top:5px;">
      </p>
      <p>
-        <label for="<?php echo $this->get_field_id('text5'); ?>"><?php _e('Description','open-mart'); ?></label>
+        <label for="<?php echo $this->get_field_id('text5'); ?>"><?php _e('Description','hunk-companion'); ?></label>
         <textarea  name="<?php echo $this->get_field_name('text5'); ?>" id="<?php echo $this->get_field_id('text5'); ?>"  class="widefat" ><?php echo $text5; ?></textarea>
      </p> 
      <p>
-        <label for="<?php echo $this->get_field_id('fontaws5'); ?>"><?php _e('Font Awesome Icon','open-mart'); ?></label>
+        <label for="<?php echo $this->get_field_id('fontaws5'); ?>"><?php _e('Font Awesome Icon','hunk-companion'); ?></label>
         <input type="text" class="widefat" name="<?php echo $this->get_field_name('fontaws5'); ?>" id="<?php echo $this->get_field_id('fontaws5'); ?>" value="<?php  echo $fontaws5; ?>" style="margin-top:5px;">
      </p>      
 

@@ -2,20 +2,53 @@
 if (!class_exists('simple_elemento_addon')) {
     class simple_elemento_addon
     {
-        function __construct()
+        public function __construct()
         {
             add_action('wp_ajax_elemento_quick_view_product_simple', [$this, 'elemento_quick_view_product_simple_']);
             add_action('wp_ajax_nopriv_elemento_quick_view_product_simple', [$this, 'elemento_quick_view_product_simple_']);
         }
-        function elemento_quick_view_product_simple_()
+        public function elemento_quick_view_product_simple_()
         {
-            if (isset($_POST['product_id']) && intval($_POST['product_id'])) {
-                $product_id = intval($_POST['product_id']);
-                echo $this->getQuickViewHtml($product_id);
+            check_ajax_referer('elemento_quick_view', 'nonce');
+
+            if (! isset($_POST['product_id'])) {
+                wp_die();
             }
+
+            $product_id = absint(wp_unslash($_POST['product_id']));
+
+            if (! $product_id) {
+                wp_die();
+            }
+
+            $product = wc_get_product($product_id);
+
+            if (! $product) {
+                wp_die();
+            }
+
+            if (current_user_can('read_post', $product_id)) {
+                echo $this->getQuickViewHtml($product_id);
+                wp_die();
+            }
+
+            if ('publish' !== get_post_status($product_id)) {
+                wp_die();
+            }
+
+            if (post_password_required($product_id)) {
+                wp_die();
+            }
+
+            if ('hidden' === $product->get_catalog_visibility()) {
+                wp_die();
+            }
+
+            echo $this->getQuickViewHtml($product_id);
+
             wp_die();
         }
-        function  elemento_add_tocart($product, $quickview = false)
+        public function elemento_add_tocart($product, $quickview = false)
         {
             // <a href="%s" rel="nofollow" data-product_id="%s" data-product_sku="%s" data-quantity="%s" class="button th-button %s %s"><span class="dashicons dashicons-cart"></span></a>'
             if ($quickview == 'quickview') {
@@ -55,9 +88,19 @@ if (!class_exists('simple_elemento_addon')) {
             }
             return $cart_url;
         }
-        function getQuickViewHtml($product_id)
+        public function getQuickViewHtml($product_id)
         {
+
+            if (! $product_id) {
+                return '';
+            }
+
             $product = wc_get_product($product_id);
+
+            if (! $product) {
+                return '';
+            }
+
             $addToCArt = $this->elemento_add_tocart($product, 'quickview');
             // $productLink = get_permalink($productId);
             $regularPrice = $product->get_regular_price();
@@ -81,7 +124,7 @@ if (!class_exists('simple_elemento_addon')) {
                     // 'autoPlayDirection' => 1,
                     'slider_controll' => 'dot'
                 ];
-                // .............. 
+                // ..............
                 $dataSetting = wp_json_encode($sliderSetting);
                 $postHtml = '<div class="elemento-addons-quick-view-slider">';
                 $postHtml .= "<div class='elemento-addons-block-slide-wrapper elemento-owl-slider-common-secript' id='elemento-addons-block-slide-wrapper' data-setting='" . $dataSetting . "'>";
@@ -89,7 +132,7 @@ if (!class_exists('simple_elemento_addon')) {
                 $postHtml .= '<div class="elemento-addons-owl-np-cln elemento-addons-owl-next"><span class="dashicons dashicons-arrow-right-alt"></span></div>';
 
                 $postHtml .= "<div class='elemento-owl-slider owl-carousel owl-theme'>";
-                // main image 
+                // main image
                 $postHtml .= "<div class='item'>";
                 $imageUrl = wp_get_attachment_image_src(get_post_thumbnail_id($product_id), 'single-post-thumbnail');
                 $postHtml .= '<div class="elemento-quick-view-slides">';
@@ -118,16 +161,16 @@ if (!class_exists('simple_elemento_addon')) {
             $html =  '';
             $html .= '<div class="elemento-quickview-wrapper">';
             $html .= '<div>';
-            // close btn 
+            // close btn
             $html .= "<span class='elemento-quickview-close'><i class='dashicons dashicons-no-alt'></i></span>";
             // sale tag
             $html .= $ps_sale;
-            // left content 
+            // left content
             $html .= '<div class="left_content_">';
             $html .= $leftContentImg;
             $html .= '</div>';
-            // left content 
-            // right content 
+            // left content
+            // right content
             $html .= '<div class="right_content_">';
             $html .= '<span class="title_">';
             $html .= $product->get_name();
@@ -144,7 +187,7 @@ if (!class_exists('simple_elemento_addon')) {
             $html .= '<span class="category_">';
             $html .= 'Categories : ' . $product->get_categories();
             $html .= '</span>';
-            // add to cart 
+            // add to cart
             $html .= '<div class="quickview-add-to-cart">';
             $html .= '<div class="plus-minus">';
             $html .= '<span class="minus_">-</span>';
@@ -153,14 +196,14 @@ if (!class_exists('simple_elemento_addon')) {
             $html .= '</div>';
             $html .= $addToCArt;
             $html .= '</div>';
-            // add to cart 
+            // add to cart
             $html .= '</div>';
-            // right content 
+            // right content
             $html .= '</div>';
             $html .= '</div>';
 
             return $html;
-            // print_r($product);
+
         }
     }
 }

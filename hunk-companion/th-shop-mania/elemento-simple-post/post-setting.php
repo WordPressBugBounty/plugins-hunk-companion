@@ -8,7 +8,7 @@ class elemento_post_simple
         if (!empty($category)) {
             $arrcate = ['all' => "All"];
             foreach ($category as $cate_value) {
-                $arrcate[$cate_value->slug] = __($cate_value->name, 'elemento-addons');
+                $arrcate[$cate_value->slug] = $cate_value->name;
             }
             return $arrcate;
         }
@@ -100,7 +100,7 @@ class elemento_post_simple
         $pagination_ .= '<div class="elemento-addons-pagination">';
         // next previous btn 
         $disableAndEnable =  $currentPage < 2 ? 'disable' : "";
-        $pagination_ .= '<a href="#" data-link="prev" class="elemento-post-link ' . $disableAndEnable . '">' . __('Previous') . '</a>';
+        $pagination_ .= '<a href="#" data-link="prev" class="elemento-post-link ' . $disableAndEnable . '">' . __('Previous','hunk-companion') . '</a>';
         // pagination link number 
         // -------------------------
         // 1 - left links = 1 ,self link = 1 ==then==   2 
@@ -138,7 +138,7 @@ class elemento_post_simple
         // -------------------------
         // next previous btn 
         $disableAndEnable = $currentPage == $totalPAges ? 'disable' : "";
-        $pagination_ .= '<a href="#" data-link="next" class="elemento-post-link ' . $disableAndEnable . '">' . __('Next') . '</a>';
+        $pagination_ .= '<a href="#" data-link="next" class="elemento-post-link ' . $disableAndEnable . '">' . __('Next','hunk-companion') . '</a>';
         $pagination_ .= '</div>';
         // pagination data -------------- 
         return $pagination_;
@@ -196,8 +196,8 @@ class elemento_post_simple
             //     $html .= '<span class="elemento-post-time">' . get_post_time() . '</span>';
             // }
             if (in_array("comments", $options['post_meta_data'])) {
-                $showComment = get_comments_number() ? get_comments_number() : __('No', 'elemento-addons');
-                $html .= '<span class="elemento-post-comments">' . $showComment  . ' ' . __('Comment', 'elemento-addons') . '</span>';
+                $showComment = get_comments_number() ? get_comments_number() : __('No', 'hunk-companion');
+                $html .= '<span class="elemento-post-comments">' . $showComment  . ' ' . __('Comment', 'hunk-companion') . '</span>';
             }
             // if (in_array("datemodified", $options['post_meta_data'])) {
             //     $html .= '<span class="elemento-post-date">' . get_the_author() . '</span>';

@@ -54,14 +54,17 @@ if($hide_section == ''|| $hide_section == '0' ){
   
               $current_class = '';
              
-$category_list .='<div class="thunk-category">
-          <a href="'.$term_link.'">
-            <img src="' . $image . '" alt="" />
-            <span class="title">'.$product_category->name. ' ('.$product_category->count.')</span>
-           </a>
-          </div>';
-          }
-          echo $category_list;
+            $category_list .= '<div class="thunk-category">
+              <a href="' . esc_url( $term_link ) . '">
+                <img src="' . esc_url( $image ) . '" alt="" />
+                <span class="title">' . esc_html( $product_category->name ) . ' (' . absint( $product_category->count ) . ')</span>
+              </a>
+            </div>';
+            }
+
+            // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- $category_list is already escaped above.
+            echo $category_list;
+
        }
     } 
 

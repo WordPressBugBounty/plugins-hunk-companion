@@ -17,20 +17,20 @@ $wp_customize->add_setting( 'open_mart_disable_vt_cat_sec', array(
                 'sanitize_callback'     => 'open_mart_sanitize_checkbox',
             ) );
 $wp_customize->add_control( new WP_Customize_Control( $wp_customize, 'open_mart_disable_vt_cat_sec', array(
-                'label'                 => esc_html__('Disable Section', 'open-mart'),
+                'label'                 => esc_html__('Disable Section', 'hunk-companion'),
                 'type'                  => 'checkbox',
                 'section'               => 'open_mart_vt_category_tab_section',
                 'settings'              => 'open_mart_disable_vt_cat_sec',
             ) ) );
 // section heading
 $wp_customize->add_setting('open_mart_vt_cat_tab_heading', array(
-        'default' => __('Vertical Product','open-mart'),
+        'default' => __('Vertical Product','hunk-companion'),
         'capability'        => 'edit_theme_options',
         'sanitize_callback' => 'open_mart_sanitize_text',
         'transport'         => 'postMessage',
 ));
 $wp_customize->add_control( 'open_mart_vt_cat_tab_heading', array(
-        'label'    => __('Section Heading', 'open-mart'),
+        'label'    => __('Section Heading', 'hunk-companion'),
         'section'  => 'open_mart_vt_category_tab_section',
          'type'       => 'text',
 ));
@@ -43,7 +43,7 @@ $wp_customize->add_control( 'open_mart_vt_cat_tab_heading', array(
     $wp_customize->add_control(new open_mart_Customize_Control_Checkbox_Multiple(
             $wp_customize,'open_mart_vt_category_tab_list', array(
         'settings'=> 'open_mart_vt_category_tab_list',
-        'label'   => __( 'Choose Categories To Show', 'open-mart' ),
+        'label'   => __( 'Choose Categories To Show', 'hunk-companion' ),
         'section' => 'open_mart_vt_category_tab_section',
         'choices' => open_mart_get_category_list(array('taxonomy' =>'product_cat'),false),
         ) 
@@ -58,13 +58,13 @@ $wp_customize->add_setting('open_mart_vt_category_optn', array(
     ));
 $wp_customize->add_control( 'open_mart_vt_category_optn', array(
         'settings' => 'open_mart_vt_category_optn',
-        'label'   => __('Choose Option','open-mart'),
+        'label'   => __('Choose Option','hunk-companion'),
         'section' => 'open_mart_vt_category_tab_section',
         'type'    => 'select',
         'choices'    => array(
-        'recent'     => __('Recent','open-mart'),
-        'featured'   => __('Featured','open-mart'),
-        'random'     => __('Random','open-mart'),
+        'recent'     => __('Recent','hunk-companion'),
+        'featured'   => __('Featured','hunk-companion'),
+        'random'     => __('Random','hunk-companion'),
             
         ),
     ));
@@ -74,7 +74,7 @@ $wp_customize->add_setting( 'open_mart_single_row_slide_cat_vt', array(
                 'sanitize_callback'     => 'open_mart_sanitize_checkbox',
             ) );
 $wp_customize->add_control( new WP_Customize_Control( $wp_customize, 'open_mart_single_row_slide_cat_vt', array(
-                'label'                 => esc_html__('Enable Single Row Slide', 'open-mart'),
+                'label'                 => esc_html__('Enable Single Row Slide', 'hunk-companion'),
                 'type'                  => 'checkbox',
                 'section'               => 'open_mart_vt_category_tab_section',
                 'settings'              => 'open_mart_single_row_slide_cat_vt',
@@ -87,7 +87,7 @@ $wp_customize->add_control( new WP_Customize_Control( $wp_customize, 'open_mart_
     'sanitize_callback' => 'open_mart_sanitize_checkbox',
   ) );
   $wp_customize->add_control( new open_mart_Toggle_Control( $wp_customize, 'open_mart_vt_cat_slider_optn', array(
-    'label'       => esc_html__( 'Slide Auto Play', 'open-mart' ),
+    'label'       => esc_html__( 'Slide Auto Play', 'hunk-companion' ),
     'section'     => 'open_mart_vt_category_tab_section',
     'type'        => 'toggle',
     'settings'    => 'open_mart_vt_cat_slider_optn',
@@ -100,7 +100,7 @@ $wp_customize->add_control( new WP_Customize_Control( $wp_customize, 'open_mart_
     'sanitize_callback' => 'open_mart_sanitize_checkbox',
   ) );
   $wp_customize->add_control( new open_mart_Toggle_Control( $wp_customize, 'open_mart_vt_banner_atply', array(
-    'label'       => esc_html__( 'Banner Slide Auto Play', 'open-mart' ),
+    'label'       => esc_html__( 'Banner Slide Auto Play', 'hunk-companion' ),
     'section'     => 'open_mart_vt_category_tab_section',
     'type'        => 'toggle',
     'settings'    => 'open_mart_vt_banner_atply',
@@ -117,10 +117,10 @@ $wp_customize->add_control( new WP_Customize_Control( $wp_customize, 'open_mart_
             $wp_customize->add_control(
                 new open_mart_Repeater(
                     $wp_customize, 'open_mart_vt1_banner_content', array(
-                        'label'                                => esc_html__( 'Banner Content', 'open-mart' ),
+                        'label'                                => esc_html__( 'Banner Content', 'hunk-companion' ),
                         'section'                              => 'open_mart_vt_category_tab_section',
-                        'add_field_label'                      => esc_html__( 'Add new Banner', 'open-mart' ),
-                        'item_name'                            => esc_html__( 'Banner Image', 'open-mart' ),
+                        'add_field_label'                      => esc_html__( 'Add new Banner', 'hunk-companion' ),
+                        'item_name'                            => esc_html__( 'Banner Image', 'hunk-companion' ),
                         
                         'customizer_repeater_title_control'    => false,   
                         'customizer_repeater_subtitle_control'    => false, 
@@ -145,12 +145,12 @@ $wp_customize->add_control( new WP_Customize_Control( $wp_customize, 'open_mart_
        ));
         $wp_customize->add_control( 'open_mart_vt_banner_position', array(
                 'settings' => 'open_mart_vt_banner_position',
-                'label'   => __('Banner Position','open-mart'),
+                'label'   => __('Banner Position','hunk-companion'),
                 'section' => 'open_mart_vt_category_tab_section',
                 'type'    => 'select',
                 'choices'    => array(
-                'left'     => __('Left','open-mart'),
-                'right'     => __('Right (Pro)','open-mart'),    
+                'left'     => __('Left','hunk-companion'),
+                'right'     => __('Right (Pro)','hunk-companion'),    
                 ),
             ));
 
@@ -162,6 +162,6 @@ $wp_customize->add_control(new open_mart_Misc_Control( $wp_customize, 'open_mart
         'section'    => 'open_mart_vt_category_tab_section',
         'type'      => 'doc-link',
         'url'       => 'https://themehunk.com/docs/open-mart/#vertical-tabbed',
-        'description' => esc_html__( 'To know more go with this', 'open-mart' ),
+        'description' => esc_html__( 'To know more go with this', 'hunk-companion' ),
         'priority'   =>100,
     )));

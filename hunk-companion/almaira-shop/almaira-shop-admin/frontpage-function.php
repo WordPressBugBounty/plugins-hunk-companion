@@ -15,7 +15,7 @@ function almaira_shop_display_customizer_shortcut( $class_name ){
         </svg>';
 	echo'<span class="almaira-focus-section customize-partial-edit-shortcut customize-partial-edit-shortcut-' . esc_attr( $class_name ) . '">
             <button class="customize-partial-edit-shortcut-button">
-                ' . $icon . '
+                ' . esc_html($icon) . '
             </button>
         </span>';
 }

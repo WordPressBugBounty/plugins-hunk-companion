@@ -116,66 +116,159 @@ foreach ($cats as $cat){
  $return .= '</ul>';
  return $return;
 }
-function portfolioline_portfolio_ajax(){
+function portfolioline_portfolio_ajax() {
 
-    if ( ! current_user_can( 'administrator' ) ) {
-  
-        wp_die( - 1, 403 );
-        
-    } 
+	/*
+	 * Do not use current_user_can() here.
+	 *
+	 * This AJAX action is intentionally available to non-logged-in users
+	 * via the wp_ajax_nopriv_ hook below. This endpoint only retrieves
+	 * publicly available portfolio posts and does not perform any
+	 * privileged or data-modifying action.
+	 *
+	 * The AJAX request is protected using a nonce.
+	 */
+	check_ajax_referer( 'portfoliolite_nonce', 'nonce' );
 
-    check_ajax_referer('portfoliolite_nonce','nonce');
+	// Get and sanitize category slug.
+	$cat_slug = isset( $_POST['cate_slug'] )
+		? sanitize_title( wp_unslash( $_POST['cate_slug'] ) )
+		: '';
 
+	// Get and sanitize page number.
+	$paged = isset( $_POST['post_page'] )
+		? absint( wp_unslash( $_POST['post_page'] ) )
+		: 1;
 
-          $layout = get_theme_mod('dynamic_grid','standard-layout');
-          $cat_slug = esc_attr($_POST['cate_slug']);
-           $perpage_post = get_theme_mod('our_port_default_images',8);
-          $loop = new WP_Query( array(
-          'post_type' => 'portfolio',
-          'tax_query' => array(
-                array(
-                  'taxonomy' => 'portfolio-cate',
-                  'field'    => 'slug',
-                  'terms'    =>  esc_attr($cat_slug),
-                )),
-          'posts_per_page' => $perpage_post,
-          'paged'     => absint($_POST['post_page']),
-          'pagination'     => true,
-          'meta_query'     => array(array( 'key' => '_thumbnail_id')),
-          ));
-          // $total_post = $loop->found_posts; 
-           if ($loop->have_posts()) {
-            while ($loop->have_posts()) : $loop->the_post();
-            echo '<li class="element-item post '.esc_attr($cat_slug).'" lfb-page = "2" totalpost = "'.esc_attr($total_post).'" data-category="transition" data-max-pages="'. esc_attr($loop->max_num_pages).'" >'?>
-            <div class="portfolio-image">
-                <figure class="protfolio-img-efc">
-        <?php if ( $layout =='four-Masnory' || $layout =='three-Masnory' ){ 
-                  if ( has_post_thumbnail() ) : ?>
-                    <a href="<?php the_permalink(); ?>" title="<?php the_title_attribute(); ?>">
-                      <?php the_post_thumbnail(); ?>
-                    </a>
-            <?php endif; 
-                }
-                  else{
-                    global $grid_layout; ?>
-                  <?php if ((function_exists('has_post_thumbnail')) && (has_post_thumbnail())) { ?>
-                  <a href="<?php the_permalink(); ?>">
-                    <?php portfoliolite_grid_thumb($grid_layout,true); ?>
-                  </a>
-                  <?php } }?>
-                  <figcaption>
-                  <a href="<?php the_permalink(); ?>"><h3><?php the_title(); ?></h3></a>
-                  <p><?php the_category(', '); ?></p>
-                  </figcaption>
-                </figure>
-              </div>
-            </li> 
-           <?php endwhile; }
-wp_reset_postdata();
-die();
+	if ( $paged < 1 ) {
+		$paged = 1;
+	}
+
+	// Get layout option.
+	$layout = get_theme_mod( 'dynamic_grid', 'standard-layout' );
+
+	// Get posts per page.
+	$perpage_post = absint(
+		get_theme_mod( 'our_port_default_images', 8 )
+	);
+
+	if ( $perpage_post < 1 ) {
+		$perpage_post = 8;
+	}
+
+	$args = array(
+		'post_type'           => 'portfolio',
+		'post_status'         => 'publish',
+		'posts_per_page'      => $perpage_post,
+		'paged'               => $paged,
+		'ignore_sticky_posts' => true,
+
+		'tax_query' => array(
+			array(
+				'taxonomy' => 'portfolio-cate',
+				'field'    => 'slug',
+				'terms'    => $cat_slug,
+			),
+		),
+
+		'meta_query' => array(
+			array(
+				'key'     => '_thumbnail_id',
+				'compare' => 'EXISTS',
+			),
+		),
+	);
+
+	$loop = new WP_Query( $args );
+
+	$total_post = $loop->found_posts;
+
+	if ( $loop->have_posts() ) {
+
+		while ( $loop->have_posts() ) {
+
+			$loop->the_post();
+			?>
+			
+			<li
+				class="element-item post <?php echo esc_attr( $cat_slug ); ?>"
+				lfb-page="2"
+				totalpost="<?php echo esc_attr( $total_post ); ?>"
+				data-category="transition"
+				data-max-pages="<?php echo esc_attr( $loop->max_num_pages ); ?>"
+			>
+				<div class="portfolio-image">
+
+					<figure class="protfolio-img-efc">
+
+						<?php
+						if ( 'four-Masnory' === $layout || 'three-Masnory' === $layout ) {
+
+							if ( has_post_thumbnail() ) {
+								?>
+								<a
+									href="<?php echo esc_url( get_permalink() ); ?>"
+									title="<?php the_title_attribute(); ?>"
+								>
+									<?php the_post_thumbnail(); ?>
+								</a>
+								<?php
+							}
+
+						} else {
+
+							global $grid_layout;
+
+							if ( function_exists( 'has_post_thumbnail' ) && has_post_thumbnail() ) {
+								?>
+								<a href="<?php echo esc_url( get_permalink() ); ?>">
+									<?php
+									portfoliolite_grid_thumb(
+										$grid_layout,
+										true
+									);
+									?>
+								</a>
+								<?php
+							}
+						}
+						?>
+
+						<figcaption>
+
+							<a href="<?php echo esc_url( get_permalink() ); ?>">
+								<h3><?php the_title(); ?></h3>
+							</a>
+
+							<p>
+								<?php the_category( ', ' ); ?>
+							</p>
+
+						</figcaption>
+
+					</figure>
+
+				</div>
+			</li>
+
+			<?php
+		}
+	}
+
+	wp_reset_postdata();
+
+	wp_die();
 }
-add_action('wp_ajax_nopriv_portfolioline_portfolio_ajax', 'portfolioline_portfolio_ajax'); // load more
-add_action('wp_ajax_portfolioline_portfolio_ajax', 'portfolioline_portfolio_ajax');
+
+add_action(
+	'wp_ajax_nopriv_portfolioline_portfolio_ajax',
+	'portfolioline_portfolio_ajax'
+);
+
+add_action(
+	'wp_ajax_portfolioline_portfolio_ajax',
+	'portfolioline_portfolio_ajax'
+);
 
 /**
  * Augmentation to the $_SERVER['DOCUMENT_ROOT'] functionality, because it cannot be relied on to provide the right path
@@ -235,7 +328,7 @@ if ((function_exists('is_multisite') && is_multisite()) || ($single_site = true)
         if (!file_exists($upload_path)) { // Create the directory if it is missing
             wp_mkdir_p($upload_path);
         }
-        $file_path = parse_url($img_url);
+        $file_path = wp_parse_url($img_url);
         if (isset($file_path['host']) && $_SERVER['HTTP_HOST'] != $file_path['host'] && $file_path['host'] != '') {  // The image is not locally hosted
             $remote_file_info = pathinfo($file_path['path']); // Can't use $img_url as the parameter because pathinfo includes the 'query' for the URL
             if (isset($remote_file_info['extension'])) {

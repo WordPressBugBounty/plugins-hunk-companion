@@ -1,4 +1,5 @@
 <?php
+
 if (!defined('SIMPLE_ADDON_URL')) {
     define('SIMPLE_ADDON_URL', plugin_dir_url(__FILE__));
 }
@@ -8,7 +9,7 @@ if (!defined('SIMPLE_ADDON_PATH')) {
 if (!class_exists('ElementoSimpleAddon')) {
     class ElementoSimpleAddon
     {
-        function __construct()
+        public function __construct()
         {
             add_action('elementor/frontend/after_enqueue_styles', [$this, 'style_enque']);
             add_action('elementor/frontend/after_register_scripts', [$this, 'widget_scripts']);
@@ -34,13 +35,21 @@ if (!class_exists('ElementoSimpleAddon')) {
             wp_register_script('owl-carousel-script-simple', SIMPLE_ADDON_URL . 'assets/owl-slider/owl-slider-script.js', [], '', true);
             wp_enqueue_script('owl-carousel');
             wp_enqueue_script('owl-carousel-script-simple');
-            // elite addons 
+            // elite addons
         }
         public function simple_elemento_addons_script()
         {
             wp_enqueue_style('th-icon', SIMPLE_ADDON_URL . 'assets/th-icon/style.css', '');
             wp_enqueue_script('simple-addon-secript', SIMPLE_ADDON_URL . 'assets/custom.js', ['jquery'], '', true);
-            wp_localize_script('simple-addon-secript', 'elemento_simple_url', array('admin_ajax' => admin_url('admin-ajax.php')));
+            wp_localize_script(
+                'simple-addon-secript',
+                'elemento_simple_url',
+                array(
+                'admin_ajax' => admin_url('admin-ajax.php'),
+                'nonce'      => wp_create_nonce('elemento_quick_view'),
+                'postnonce'      => wp_create_nonce('elemento_simple_post_nonce'),
+                )
+            );
         }
     }
 }
@@ -61,36 +70,35 @@ if (!function_exists('product_shop_add_category')) {
     }
     add_action('elementor/elements/categories_registered', 'elemento_addons_simple_category', 1);
 }
-// addon register 
+// addon register
 if (!function_exists('elemento_addons_simple_addons')) {
     include_once 'post-filter.php';
 
     function elemento_addons_simple_addons()
     {
         if (class_exists('WooCommerce')) {
-        include_once 'product-simple-addon/product-simple-addon.php';
+            include_once 'product-simple-addon/product-simple-addon.php';
         }
         include_once 'elemento-simple-post/elemento-post.php';
     }
     add_action('elementor/widgets/widgets_registered', 'elemento_addons_simple_addons');
 }
-// wishlist 
+// wishlist
 if (!function_exists('elemento_addons_wishlist_wpc')) {
     function elemento_addons_wishlist_wpc($productId)
     {
-         if (intval($productId) && shortcode_exists('thwl_add_to_wishlist')) {
-          $html = '<div class="elemento-wishlist">';
-          $html .= do_shortcode('[thwl_add_to_wishlist 
+        if (intval($productId) && shortcode_exists('thwl_add_to_wishlist')) {
+            $html = '<div class="elemento-wishlist">';
+            $html .= do_shortcode('[thwl_add_to_wishlist 
                       product_id="' . esc_attr($productId) . '" 
                       add_text="' . esc_attr__('Wishlist', 'th-shop-mania') . '" 
                       browse_text="' . esc_attr__('Added', 'th-shop-mania') . '"
                       theme_style="yes"
                       custom_class="th-wishlist-integrated"
                     ]');
-          $html .= '</div>';
+            $html .= '</div>';
             return $html;
-      }
-        elseif (intval($productId) && shortcode_exists('yith_wcwl_add_to_wishlist')) {
+        } elseif (intval($productId) && shortcode_exists('yith_wcwl_add_to_wishlist')) {
             $html = '<div class="elemento-wishlist">';
             $html .= do_shortcode('[yith_wcwl_add_to_wishlist product_id="' . esc_attr($productId). '" already_in_wishslist_text="<span>already added</span>"]');
             $html .= '</div>';
@@ -98,12 +106,12 @@ if (!function_exists('elemento_addons_wishlist_wpc')) {
         }
     }
 }
-// compare 
+// compare
 if (!function_exists('elemento_addons_compare')) {
     function elemento_addons_compare($productId)
     {
         if (intval($productId) && (shortcode_exists('th_compare') || shortcode_exists('tpcp_compare'))) {
-            
+
             $html = do_shortcode('[th_compare pid="' . esc_attr($productId) . '"]');
             return $html;
         }

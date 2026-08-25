@@ -28,26 +28,26 @@ class Open_Shop_Defaults_Models extends Open_Shop_Singleton{
 				array(
 					array(
 						'icon_value' => 'fa-cog',
-						'title'      => esc_html__( 'Free Shiping', 'open-shop' ),
-						'subtitle'   => esc_html__( 'On all order over ', 'open-shop' ),
+						'title'      => esc_html__( 'Free Shiping', 'hunk-companion' ),
+						'subtitle'   => esc_html__( 'On all order over ', 'hunk-companion' ),
 						
 					),
 					array(
 						'icon_value' => 'fa-cog',
-						'title'      => esc_html__( 'Free Shiping', 'open-shop' ),
-						'subtitle'   => esc_html__( 'On all order over ', 'open-shop' ),
+						'title'      => esc_html__( 'Free Shiping', 'hunk-companion' ),
+						'subtitle'   => esc_html__( 'On all order over ', 'hunk-companion' ),
 						
 					),
 					array(
 						'icon_value' => 'fa-cog',
-						'title'      => esc_html__( 'Free Shiping', 'open-shop' ),
-						'subtitle'   => esc_html__( 'On all order over ', 'open-shop' ),
+						'title'      => esc_html__( 'Free Shiping', 'hunk-companion' ),
+						'subtitle'   => esc_html__( 'On all order over ', 'hunk-companion' ),
 						
 					),
 					array(
 						'icon_value' => 'fa-cog',
-						'title'      => esc_html__( 'Free Shiping', 'open-shop' ),
-						'subtitle'   => esc_html__( 'On all order over ', 'open-shop' ),
+						'title'      => esc_html__( 'Free Shiping', 'hunk-companion' ),
+						'subtitle'   => esc_html__( 'On all order over ', 'hunk-companion' ),
 						
 					),
 				)
