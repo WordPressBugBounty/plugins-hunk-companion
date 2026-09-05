@@ -122,7 +122,8 @@ class HUNK_COMPANION_SITES_APP{
     if(isset( $_POST['data'] ) && current_user_can('manage_options')){
 
           $data = wp_unslash( $_POST['data']);
-          $data = json_decode($data)->data;
+          $data = json_decode($data, true);
+          $data = isset( $data['data'] ) ? $data['data'] : array();
         HUNK_COMPANION_SITES_IMPORT::instance()->import_options($data);
         exit();
     }

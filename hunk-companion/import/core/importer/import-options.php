@@ -81,6 +81,9 @@ class HUNK_COMPAION_OPTIONS_IMPORT {
 			'woocommerce_view_order_page_title',
 			'woocommerce_change_password_page_title',
 			'woocommerce_logout_page_title',
+			//store one module.
+			'th_store_one_module_set',
+			'th_store_one_module_option',
 
 			// Categories.
 			'woocommerce_product_cat',

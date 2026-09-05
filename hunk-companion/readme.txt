@@ -3,7 +3,7 @@ Contributors: themehunk
 Author URI: : https://www.themehunk.com/
 Tags: themehunk, customizer, Testimonial, Team, service
 Tested up to: 7.1
-Stable tag: 2.0.7
+Stable tag: 2.0.8
 License: GPLv3 or later
 License URL: https://www.gnu.org/licenses/gpl-3.0.en.html
 
@@ -59,6 +59,10 @@ Yes this plugin is specially make for ThemeHunk themes like Gogo. You can instal
 2. screenshot-2.png
 
 == Changelog ==
+
+= 2.0.8 =
+Fix: Duplicate Cart, Checkout, My Account, Shop, Refund and Returns Policy, Wishlist and Product Compare pages created on demo import.
+Fix: Product category images (webp/avif) not importing/showing after demo import.
 
 = 2.0.7 =
 TH Shop Mania : B2b demo added.

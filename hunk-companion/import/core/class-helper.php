@@ -127,9 +127,15 @@ if ( ! class_exists( 'HUNK_COMPANION_SITES_HELPER' ) ) :
 			if ( ! empty( $file ) ) {
 
 				// Set variables for storage, fix file filename for query strings.
-				preg_match( '/[^\?]+\.(jpe?g|jpe|svg|gif|png|mp4)\b/i', $file, $matches );
-				$file_array         = array();
-				$file_array['name'] = basename( $matches[0] );
+				preg_match( '/[^\?]+\.(jpe?g|jpe|svg|gif|png|webp|avif|bmp|mp4)\b/i', $file, $matches );
+				$file_array = array();
+
+				if ( ! empty( $matches[0] ) ) {
+					$file_array['name'] = basename( $matches[0] );
+				} else {
+					// Extension not recognised above (e.g. CDN/query-only URL); fall back to the URL path basename.
+					$file_array['name'] = basename( wp_parse_url( $file, PHP_URL_PATH ) );
+				}
 
 				// Download file to temp location.
 				$file_array['tmp_name'] = download_url( $file );
@@ -140,7 +146,17 @@ if ( ! class_exists( 'HUNK_COMPANION_SITES_HELPER' ) ) :
 				}
 
 				// Do the validation and storage stuff.
+				// Some sites restrict upload mimes and/or run on WP versions predating
+				// native webp/avif support, which would otherwise reject these images.
+				$allow_mimes = function( $mimes ) {
+					$mimes['webp'] = 'image/webp';
+					$mimes['avif'] = 'image/avif';
+					return $mimes;
+				};
+
+				add_filter( 'upload_mimes', $allow_mimes );
 				$id = media_handle_sideload( $file_array, 0 );
+				remove_filter( 'upload_mimes', $allow_mimes );
 
 				// If error storing permanently, unlink.
 				if ( is_wp_error( $id ) ) {

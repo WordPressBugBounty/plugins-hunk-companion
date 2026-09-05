@@ -2168,7 +2168,28 @@ class WXR_Importer extends WP_Importer {
 
 
 		if ( $this->options['prefill_existing_posts'] ) {
-			return isset( $this->exists['post'][ $exists_key ] ) ? $this->exists['post'][ $exists_key ] : false;
+			if ( isset( $this->exists['post'][ $exists_key ] ) ) {
+				return $this->exists['post'][ $exists_key ];
+			}
+
+			/*
+			 * Guid lookup only matches posts that came from a previous import of
+			 * this same file. Pages such as Cart, Checkout, My Account, Shop,
+			 * Refund and Returns Policy, Wishlist and Product Compare are usually
+			 * already created locally (by WooCommerce/plugin activation) with a
+			 * different guid, so fall back to a title match for pages to avoid
+			 * creating duplicates of them.
+			 */
+			if ( 'page' === $data['post_type'] && ! empty( $data['post_title'] ) ) {
+				$existing_page = get_page_by_title( $data['post_title'], OBJECT, 'page' );
+
+				if ( $existing_page ) {
+					$this->exists['post'][ $exists_key ] = $existing_page->ID;
+					return $existing_page->ID;
+				}
+			}
+
+			return false;
 		}
 
 		// No prefilling, but might have already handled it
